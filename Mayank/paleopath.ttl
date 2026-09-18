@@ -1,0 +1,453 @@
+@prefix pp:      <https://w3id.org/paleopath/onto/> .
+@prefix ppd:     <https://w3id.org/paleopath/data/> .
+@prefix hedge:   <https://w3id.org/paleopath/vocab/hedge/> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dul:     <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
+@prefix prov:    <http://www.w3.org/ns/prov#> .
+
+################################################################
+# Ontology header
+################################################################
+
+<https://w3id.org/paleopath/onto/> a owl:Ontology ;
+    dcterms:title "Paleopathological Claims Ontology"@en ;
+    dcterms:description """An ontology that keeps observation and inference apart
+        in paleopathology. It provides no way to state that an individual had a
+        disease. It provides ways to state that a named author, in a named
+        publication, claimed a disease, grounded in specified evidence, qualified
+        by the hedge the source itself used, having ruled out named
+        alternatives."""@en ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    owl:versionInfo "0.1.0 — Phase 2 draft" ;
+    rdfs:seeAlso <https://doi.org/10.1186/2050-7445-1-19> .
+
+################################################################
+# 1. THE BONE — what physically exists
+################################################################
+
+pp:SkeletalIndividual a owl:Class ;
+    rdfs:subClassOf dul:PhysicalObject ;
+    rdfs:label "skeletal individual"@en ;
+    rdfs:comment """The human remains recovered from one grave. NOT the living
+        person, and NOT a patient: nothing about health can be asserted of it."""@en .
+
+pp:SkeletalElement a owl:Class ;
+    rdfs:subClassOf dul:PhysicalObject ;
+    rdfs:label "skeletal element"@en ;
+    rdfs:comment "A bone or bone region, e.g. the right tibia, the frontal bone."@en .
+
+pp:Lesion a owl:Class ;
+    rdfs:subClassOf dul:PhysicalObject ;
+    rdfs:label "lesion"@en ;
+    rdfs:comment """A physical alteration on a skeletal element. A lesion is a
+        thing on a bone; it is not a diagnosis and carries no disease."""@en .
+
+pp:BurialSite a owl:Class ;
+    rdfs:subClassOf dul:PhysicalObject ;
+    rdfs:label "burial site"@en .
+
+pp:isElementOf a owl:ObjectProperty ;
+    rdfs:domain pp:SkeletalElement ; rdfs:range pp:SkeletalIndividual ;
+    rdfs:label "is element of"@en .
+
+pp:bearsLesion a owl:ObjectProperty ;
+    rdfs:domain pp:SkeletalElement ; rdfs:range pp:Lesion ;
+    rdfs:label "bears lesion"@en .
+
+pp:recoveredFrom a owl:ObjectProperty ;
+    rdfs:domain pp:SkeletalIndividual ; rdfs:range pp:BurialSite ;
+    rdfs:label "recovered from"@en .
+
+################################################################
+# 2. OBSERVATION — what someone did, when, with what
+#    (DD-07: a negative observation is evidence; silence is not)
+################################################################
+
+pp:Observation a owl:Class ;
+    rdfs:subClassOf dul:Event ;
+    rdfs:label "observation"@en ;
+    rdfs:comment """An act of looking or measuring, by an agent, at a time, using
+        a method. Always dated to when the OBSERVING happened, never to the
+        period of the material observed."""@en .
+
+pp:LesionObservation a owl:Class ; rdfs:subClassOf pp:Observation ;
+    rdfs:label "lesion observation"@en .
+
+pp:NegativeObservation a owl:Class ; rdfs:subClassOf pp:Observation ;
+    rdfs:label "negative observation"@en ;
+    rdfs:comment """Something was looked for and not found. Distinct from an
+        absence of observation. Grounds the leprosy and Paget's exclusions."""@en .
+
+pp:ScreeningObservation a owl:Class ; rdfs:subClassOf pp:Observation ;
+    rdfs:label "screening observation"@en ;
+    rdfs:comment "Examination of a population, yielding a count."@en .
+
+pp:Measurement a owl:Class ; rdfs:subClassOf pp:Observation ;
+    rdfs:label "measurement"@en .
+
+pp:RadiocarbonDetermination a owl:Class ; rdfs:subClassOf pp:Measurement ;
+    rdfs:label "radiocarbon determination"@en ;
+    rdfs:comment "The raw uncalibrated result in years BP. Not a date."@en .
+
+pp:IsotopeMeasurement a owl:Class ; rdfs:subClassOf pp:Measurement ;
+    rdfs:label "stable isotope measurement"@en .
+
+pp:Estimate a owl:Class ; rdfs:subClassOf pp:Observation ;
+    rdfs:label "estimate"@en ;
+    rdfs:comment """Age or sex derived from morphology by a published method.
+        Always a range or a hedged value, never a number."""@en .
+
+pp:hasObserver a owl:ObjectProperty ;
+    rdfs:domain pp:Observation ; rdfs:range dul:Agent ;
+    rdfs:label "has observer"@en .
+
+pp:observedOn a owl:ObjectProperty ;
+    rdfs:domain pp:Observation ;
+    rdfs:label "observed on"@en ;
+    rdfs:comment "The physical thing examined: an element, a lesion, an individual."@en .
+
+pp:usingMethod a owl:ObjectProperty ;
+    rdfs:domain pp:Observation ; rdfs:range pp:Method ;
+    rdfs:label "using method"@en .
+
+pp:soughtFeature a owl:ObjectProperty ;
+    rdfs:domain pp:NegativeObservation ;
+    rdfs:label "sought feature"@en ;
+    rdfs:comment "What was looked for and not found."@en .
+
+pp:observedAt a owl:DatatypeProperty ;
+    rdfs:domain pp:Observation ; rdfs:range xsd:gYear ;
+    rdfs:label "observed at"@en ;
+    rdfs:comment "When the observing happened — the present day, not the past."@en .
+
+pp:statedCount a owl:DatatypeProperty ;
+    rdfs:domain pp:ScreeningObservation ; rdfs:range xsd:nonNegativeInteger ;
+    rdfs:label "stated count"@en .
+
+################################################################
+# 3. VALUES — a measurement is never a bare number (DD-05)
+################################################################
+
+pp:QuantityValue a owl:Class ;
+    rdfs:label "quantity value"@en ;
+    rdfs:comment "An amount, its uncertainty and its unit, kept together."@en .
+
+pp:hasValue a owl:ObjectProperty ;
+    rdfs:domain pp:Measurement ; rdfs:range pp:QuantityValue ;
+    rdfs:label "has value"@en .
+
+pp:amount      a owl:DatatypeProperty ; rdfs:domain pp:QuantityValue ; rdfs:range xsd:decimal .
+pp:uncertainty a owl:DatatypeProperty ; rdfs:domain pp:QuantityValue ; rdfs:range xsd:decimal .
+pp:unit        a owl:ObjectProperty   ; rdfs:domain pp:QuantityValue .
+
+pp:ReferenceRange a owl:Class ;
+    rdfs:label "reference range"@en ;
+    rdfs:comment """A published baseline against which a measurement is judged
+        elevated. Itself a claim from prior literature, so it carries a source."""@en .
+
+pp:judgedAgainst a owl:ObjectProperty ;
+    rdfs:range pp:ReferenceRange ; rdfs:label "judged against"@en .
+
+pp:rangeMinimum a owl:DatatypeProperty ; rdfs:domain pp:ReferenceRange ; rdfs:range xsd:decimal .
+pp:rangeMaximum a owl:DatatypeProperty ; rdfs:domain pp:ReferenceRange ; rdfs:range xsd:decimal .
+
+################################################################
+# 4. CLAIM — what someone concluded, and is named for
+################################################################
+
+pp:Claim a owl:Class ;
+    rdfs:subClassOf dul:Situation ;
+    rdfs:label "claim"@en ;
+    rdfs:comment """An interpretation advanced by a named agent in a named
+        publication, resting on stated grounds, carrying the hedge the source
+        itself used. A claim is never a fact."""@en .
+
+pp:DiagnosticClaim a owl:Class ; rdfs:subClassOf pp:Claim ;
+    rdfs:label "diagnostic claim"@en .
+
+pp:DatingClaim a owl:Class ; rdfs:subClassOf pp:Claim ;
+    rdfs:label "dating claim"@en .
+
+pp:TreatmentClaim a owl:Class ; rdfs:subClassOf pp:Claim ;
+    rdfs:label "treatment claim"@en ;
+    rdfs:comment "A claim about a past event, grounded in a present measurement."@en .
+
+pp:IndistinguishabilityClaim a owl:Class ; rdfs:subClassOf pp:Claim ;
+    rdfs:label "indistinguishability claim"@en ;
+    rdfs:comment """A claim that a set of conditions cannot be told apart on a
+        given class of evidence. The reason competing diagnoses coexist."""@en .
+
+pp:MethodLimitClaim a owl:Class ; rdfs:subClassOf pp:Claim ;
+    rdfs:label "method limit claim"@en ;
+    rdfs:comment "A stated limit on what a method can establish."@en .
+
+pp:AdjudicationClaim a owl:Class ; rdfs:subClassOf pp:Claim ;
+    rdfs:label "adjudication claim"@en ;
+    rdfs:comment "A claim about other claims: one is preferred, or declared in error."@en .
+
+# --- the four properties that carry the argument -------------
+
+pp:hasAuthor a owl:ObjectProperty ;
+    rdfs:domain pp:Claim ; rdfs:range dul:Agent ;
+    rdfs:label "has author"@en .
+
+pp:reportedIn a owl:ObjectProperty ;
+    rdfs:range pp:Publication ; rdfs:label "reported in"@en .
+
+pp:hasHedge a owl:ObjectProperty ;
+    rdfs:domain pp:Claim ; rdfs:range skos:Concept ;
+    rdfs:label "has hedge"@en ;
+    rdfs:comment """The qualifier the source itself used, as a term in the hedge
+        scheme. Never a number. Exactly one per claim."""@en .
+
+pp:groundedIn a owl:ObjectProperty ;
+    rdfs:domain pp:Claim ;
+    rdfs:range [ a owl:Class ; owl:unionOf ( pp:Observation pp:Claim ) ] ;
+    rdfs:label "grounded in"@en ;
+    rdfs:comment "DD-02: grounds may be an observation OR another claim."@en .
+
+pp:groundedInObservation a owl:ObjectProperty ;
+    rdfs:subPropertyOf pp:groundedIn ; rdfs:range pp:Observation .
+
+pp:groundedInClaim a owl:ObjectProperty ;
+    rdfs:subPropertyOf pp:groundedIn ; rdfs:range pp:Claim .
+
+pp:appliesFramework a owl:ObjectProperty ;
+    rdfs:domain pp:Claim ; rdfs:range pp:DiagnosticFramework ;
+    rdfs:label "applies framework"@en .
+
+pp:atCriterionTier a owl:ObjectProperty ;
+    rdfs:domain pp:Claim ; rdfs:range pp:CriterionTier ;
+    rdfs:label "at criterion tier"@en ;
+    rdfs:comment "DD-09: Hackett distinguishes diagnostic from on-trial criteria."@en .
+
+pp:reportedOnPage a owl:DatatypeProperty ;
+    rdfs:range xsd:positiveInteger ; rdfs:label "reported on page"@en .
+
+# --- what a diagnostic claim says ----------------------------
+
+pp:claimsDisease a owl:ObjectProperty ;
+    rdfs:domain pp:DiagnosticClaim ; rdfs:range pp:DiseaseConcept ;
+    rdfs:label "claims disease"@en .
+
+pp:excludesDisease a owl:ObjectProperty ;
+    rdfs:domain pp:DiagnosticClaim ; rdfs:range pp:DiseaseConcept ;
+    rdfs:label "excludes disease"@en ;
+    rdfs:comment "DD-07: usually grounded in a NegativeObservation."@en .
+
+pp:aboutIndividual a owl:ObjectProperty ;
+    rdfs:domain pp:Claim ; rdfs:range pp:SkeletalIndividual ;
+    rdfs:label "about individual"@en ;
+    rdfs:comment """Which skeleton the claim concerns. NOTE: this connects a
+        CLAIM to an individual, never a disease to an individual."""@en .
+
+# --- claims about claims (DD-03, DD-04) ----------------------
+
+pp:adjudicates a owl:ObjectProperty ;
+    rdfs:domain pp:AdjudicationClaim ; rdfs:range pp:Claim ;
+    rdfs:label "adjudicates"@en ;
+    rdfs:comment "The claim being judged."@en .
+
+pp:inFavourOf a owl:ObjectProperty ;
+    rdfs:domain pp:AdjudicationClaim ; rdfs:range pp:Claim ;
+    rdfs:label "in favour of"@en ;
+    rdfs:comment "The claim preferred."@en .
+
+pp:supersedes a owl:ObjectProperty ;
+    rdfs:domain pp:Claim ; rdfs:range pp:Claim ;
+    rdfs:label "supersedes"@en ;
+    rdfs:comment """Convenience shortcut, derived from an AdjudicationClaim by
+        property chain. Never asserted directly."""@en ;
+    owl:propertyChainAxiom ( [ owl:inverseOf pp:inFavourOf ] pp:adjudicates ) .
+
+pp:rivalOf a owl:ObjectProperty , owl:SymmetricProperty ;
+    rdfs:domain pp:Claim ; rdfs:range pp:Claim ;
+    rdfs:label "rival of"@en ;
+    rdfs:comment """DD-04: a competing reading of the same evidence, neither
+        accepted nor excluded. Ranking is read from the hedges."""@en .
+
+################################################################
+# 5. CONTRAST — what a disagreement consists in (DD-08)
+################################################################
+
+pp:Contrast a owl:Class ;
+    rdfs:subClassOf dul:Situation ;
+    rdfs:label "contrast"@en ;
+    rdfs:comment """States what two competing claims hold constant and what they
+        differ in: same lesions, different criteria, different disease."""@en .
+
+pp:contrastsClaim a owl:ObjectProperty ;
+    rdfs:domain pp:Contrast ; rdfs:range pp:Claim ; rdfs:label "contrasts claim"@en .
+
+pp:sharedEvidence a owl:ObjectProperty ;
+    rdfs:domain pp:Contrast ; rdfs:range pp:Observation ; rdfs:label "shared evidence"@en .
+
+pp:differingFramework a owl:ObjectProperty ;
+    rdfs:domain pp:Contrast ; rdfs:range pp:DiagnosticFramework ; rdfs:label "differing framework"@en .
+
+pp:differingDisease a owl:ObjectProperty ;
+    rdfs:domain pp:Contrast ; rdfs:range pp:DiseaseConcept ; rdfs:label "differing disease"@en .
+
+pp:Contrast rdfs:subClassOf
+    [ a owl:Restriction ; owl:onProperty pp:contrastsClaim ;
+      owl:qualifiedCardinality "2"^^xsd:nonNegativeInteger ; owl:onClass pp:Claim ] .
+
+################################################################
+# 6. DATING — a chain, not a number (DD-05)
+################################################################
+
+pp:TimeInterval a owl:Class ; rdfs:label "time interval"@en .
+
+pp:earliestYear a owl:DatatypeProperty ; rdfs:domain pp:TimeInterval ; rdfs:range xsd:gYear .
+pp:latestYear   a owl:DatatypeProperty ; rdfs:domain pp:TimeInterval ; rdfs:range xsd:gYear .
+
+pp:hasCalibratedInterval a owl:ObjectProperty ;
+    rdfs:domain pp:DatingClaim ; rdfs:range pp:TimeInterval ;
+    rdfs:label "has calibrated interval"@en ;
+    rdfs:comment "One to many. Skeleton 94 has three once corrected."@en .
+
+pp:Correction a owl:Class ;
+    rdfs:label "correction"@en ;
+    rdfs:comment "An adjustment applied to a determination, itself licensed by an inference."@en .
+
+pp:appliesCorrection a owl:ObjectProperty ;
+    rdfs:domain pp:DatingClaim ; rdfs:range pp:Correction ;
+    rdfs:label "applies correction"@en .
+
+pp:usesCalibrationCurve a owl:ObjectProperty ;
+    rdfs:domain pp:DatingClaim ; rdfs:label "uses calibration curve"@en .
+
+pp:atSigmaLevel a owl:DatatypeProperty ;
+    rdfs:domain pp:DatingClaim ; rdfs:range xsd:string ;
+    rdfs:label "at sigma level"@en ;
+    rdfs:comment "e.g. '1 sigma', '95% CI'. Table 1 and Table 2 differ on this."@en .
+
+pp:Threshold a owl:Class ;
+    rdfs:label "threshold"@en ;
+    rdfs:comment "A date the research question turns on. Here: AD 1493."@en .
+
+pp:thresholdYear a owl:DatatypeProperty ; rdfs:domain pp:Threshold ; rdfs:range xsd:gYear .
+
+################################################################
+# 7. EVENTS IN THE PAST — inferred, never observed (DD, CQ12)
+################################################################
+
+pp:PastEvent a owl:Class ;
+    rdfs:subClassOf dul:Event ;
+    rdfs:label "past event"@en ;
+    rdfs:comment """An event in the life of the individual. Never observed — only
+        ever the object of a claim grounded in a present-day measurement."""@en .
+
+pp:TreatmentEvent a owl:Class ; rdfs:subClassOf pp:PastEvent ;
+    rdfs:label "treatment event"@en .
+
+pp:claimsEvent a owl:ObjectProperty ;
+    rdfs:domain pp:TreatmentClaim ; rdfs:range pp:PastEvent ;
+    rdfs:label "claims event"@en .
+
+pp:hasSubstance a owl:ObjectProperty ;
+    rdfs:domain pp:TreatmentEvent ; rdfs:label "has substance"@en .
+
+################################################################
+# 8. DESCRIPTIONS — the lenses (D&S)
+################################################################
+
+pp:DiagnosticFramework a owl:Class ;
+    rdfs:subClassOf dul:Description ;
+    rdfs:label "diagnostic framework"@en ;
+    rdfs:comment "A published set of criteria, e.g. Hackett 1976."@en .
+
+pp:CriterionTier a owl:Class ;
+    rdfs:label "criterion tier"@en ;
+    rdfs:comment "DD-09: 'diagnostic criterion' vs 'on-trial criterion'."@en .
+
+pp:Method a owl:Class ;
+    rdfs:subClassOf dul:Description ;
+    rdfs:label "method"@en .
+
+pp:DatingMethod a owl:Class ; rdfs:subClassOf pp:Method ; rdfs:label "dating method"@en .
+
+pp:Publication a owl:Class ;
+    rdfs:subClassOf dul:InformationObject ;
+    rdfs:label "publication"@en .
+
+pp:DiseaseConcept a owl:Class ;
+    rdfs:subClassOf skos:Concept ;
+    rdfs:label "disease concept"@en ;
+    rdfs:comment """DD-06: a term in a vocabulary, NOT a class of individuals.
+        Organised with skos:broader; linked out with skos:closeMatch."""@en .
+
+################################################################
+# 9. THE AXIOMS THAT MAKE IT REFUSE
+################################################################
+
+# --- every claim is attributed, grounded and hedged ----------
+
+pp:Claim rdfs:subClassOf
+    [ a owl:Restriction ; owl:onProperty pp:hasAuthor ;
+      owl:someValuesFrom dul:Agent ] ,
+    [ a owl:Restriction ; owl:onProperty pp:groundedIn ;
+      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onClass [ a owl:Class ; owl:unionOf ( pp:Observation pp:Claim ) ] ] ,
+    [ a owl:Restriction ; owl:onProperty pp:hasHedge ;
+      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onClass skos:Concept ] .
+
+# --- every observation has an observer -----------------------
+
+pp:Observation rdfs:subClassOf
+    [ a owl:Restriction ; owl:onProperty pp:hasObserver ;
+      owl:someValuesFrom dul:Agent ] .
+
+# --- a dating claim has at least one interval -----------------
+
+pp:DatingClaim rdfs:subClassOf
+    [ a owl:Restriction ; owl:onProperty pp:hasCalibratedInterval ;
+      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onClass pp:TimeInterval ] .
+
+# --- a treatment claim rests on a measurement (CQ12) ---------
+
+pp:TreatmentClaim rdfs:subClassOf
+    [ a owl:Restriction ; owl:onProperty pp:groundedInObservation ;
+      owl:someValuesFrom pp:Measurement ] .
+
+# --- disjointness: without this, nothing can be wrong ---------
+
+[] a owl:AllDisjointClasses ;
+   owl:members ( pp:SkeletalIndividual pp:SkeletalElement pp:Lesion
+                 pp:Observation pp:Claim pp:DiseaseConcept
+                 pp:TimeInterval pp:DiagnosticFramework pp:Method
+                 pp:Publication pp:PastEvent pp:QuantityValue ) .
+
+[] a owl:AllDisjointClasses ;
+   owl:members ( pp:LesionObservation pp:NegativeObservation
+                 pp:ScreeningObservation pp:Measurement pp:Estimate ) .
+
+[] a owl:AllDisjointClasses ;
+   owl:members ( pp:DiagnosticClaim pp:DatingClaim pp:TreatmentClaim
+                 pp:IndistinguishabilityClaim pp:MethodLimitClaim
+                 pp:AdjudicationClaim ) .
+
+# --- a claim cannot both assert and exclude the same disease --
+
+pp:claimsDisease owl:propertyDisjointWith pp:excludesDisease .
+
+################################################################
+# 10. WHAT IS DELIBERATELY ABSENT
+#
+#   - no object property with domain pp:SkeletalIndividual and
+#     range pp:DiseaseConcept                      (DD-01, CQ20)
+#   - no datatype property pp:deathYear or similar (DD-05, CQ21)
+#   - no pp:confidence with a numeric range        (Phase 1 rule)
+#   - no skos:broader between venereal syphilis and
+#     non-venereal treponematosis                  (DD-06, CQ23)
+#
+#   These absences are the model's argument. They are tested by
+#   CQ20-CQ23, which must return nothing.
+################################################################
