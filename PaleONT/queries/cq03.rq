@@ -1,0 +1,16 @@
+# CQ3 · Which diagnoses were explicitly rejected?
+# Expected: rows.  rejected claim | condition | specimen | rejecting agent | basis
+# Note the shape: we reach the condition THROUGH the rejected claim. The
+# rejection itself never touches a condition — that is the range of po:rejects.
+PREFIX po: <https://w3id.org/paleont/>
+
+SELECT ?rejectedClaim ?condition ?specimen ?agent ?basis
+WHERE {
+  ?r a po:RejectionClaim ;
+     po:rejects       ?rejectedClaim ;
+     po:aboutSpecimen ?specimen ;
+     po:heldBy        ?agent .
+  OPTIONAL { ?r po:groundedIn ?basis }
+  OPTIONAL { ?rejectedClaim po:proposesCondition ?condition }
+  FILTER NOT EXISTS { ?r po:isNegated true }   # D6: a denial is not an assertion
+}

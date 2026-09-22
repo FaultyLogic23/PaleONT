@@ -1,0 +1,16 @@
+# CQ7 · Which techniques are presented as able to discriminate between
+#       competing hypotheses?
+# Expected: rows.  technique | condition | declared discriminating power
+# "Which ones cannot" is a value filter on the third column, not a second
+# question — and it is a CLAIM of the source, never a property of the technique.
+PREFIX po: <https://w3id.org/paleont/>
+
+SELECT ?technique ?condition ?power ?wording
+WHERE {
+  ?m a po:MethodologicalClaim ;
+     po:aboutTechnique         ?technique ;
+     po:hasDiscriminatingPower ?power .
+  OPTIONAL { ?m po:discriminatesBetween ?condition }
+  OPTIONAL { ?m po:hedgeWording ?wording }
+  FILTER NOT EXISTS { ?m po:isNegated true }   # D6: a denial is not an assertion
+}

@@ -1,0 +1,31 @@
+# CQ4b-tolerant · For which specimens do two datings disagree, once the
+#                 source's OWN stated precision is applied?
+#
+# Expected: fewer rows than cq04b.rq.
+#
+# Decision D7. The strict query compares calibrated intervals as if their
+# endpoints were facts. They are not: Schwarz et al. state that "the precision
+# of the radiocarbon dates of medieval samples are often better than ±25 to 30
+# years for the 1 sigma statistical uncertainty of the calibrated age
+# interval". The ±30 below is THEIR figure, not ours — which is what makes it
+# usable. Inventing a tolerance would be the reduction this project argues
+# against, committed by us.
+#
+# Run both. Where the two queries differ, the disagreement was an artefact of
+# reading a hedged estimate as a boundary.
+PREFIX po: <https://w3id.org/paleont/>
+
+SELECT DISTINCT ?specimen ?datingA ?datingB
+WHERE {
+  ?datingA a po:DatingClaim ; po:aboutSpecimen ?specimen .
+  ?datingB a po:DatingClaim ; po:aboutSpecimen ?specimen .
+  FILTER(STR(?datingA) < STR(?datingB))
+  FILTER NOT EXISTS { ?datingA po:isNegated true }
+  FILTER NOT EXISTS { ?datingB po:isNegated true }
+
+  FILTER NOT EXISTS {
+    ?datingA po:hasResult ?ia . ?ia po:startYear ?sa ; po:endYear ?ea .
+    ?datingB po:hasResult ?ib . ?ib po:startYear ?sb ; po:endYear ?eb .
+    FILTER(?ea + 30 >= ?sb && ?eb + 30 >= ?sa)
+  }
+}

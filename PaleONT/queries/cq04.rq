@@ -1,0 +1,15 @@
+# CQ4 · Which datings were produced for each specimen?
+# Expected: rows.  specimen | technique | start | end | correction
+PREFIX po: <https://w3id.org/paleont/>
+
+SELECT ?specimen ?technique ?start ?end ?correction
+WHERE {
+  ?d a po:DatingClaim ;
+     po:aboutSpecimen ?specimen ;
+     po:hasResult     ?interval .
+  ?interval po:startYear ?start ; po:endYear ?end .
+  OPTIONAL { ?d po:appliedCorrection ?correction }
+  OPTIONAL { ?d po:groundedIn ?obs . ?obs po:usedTechnique ?technique }
+  FILTER NOT EXISTS { ?d po:isNegated true }   # D6: a denial is not an assertion
+}
+ORDER BY ?start

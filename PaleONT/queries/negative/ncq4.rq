@@ -1,0 +1,15 @@
+# NCQ4 · Which technique proves the diagnosis?
+# MUST RETURN EMPTY — but for a different reason from the others.
+# Here the model is willing: po:Discriminating exists as a value. It returns
+# nothing because the SOURCE never claims any technique is decisive. This is
+# a limit of the paper, not of the ontology, and the distinction matters at
+# the oral.
+PREFIX po: <https://w3id.org/paleont/>
+
+SELECT ?technique ?condition
+WHERE {
+  ?m a po:MethodologicalClaim ;
+     po:aboutTechnique         ?technique ;
+     po:hasDiscriminatingPower po:Discriminating .
+  OPTIONAL { ?m po:discriminatesBetween ?condition }
+}

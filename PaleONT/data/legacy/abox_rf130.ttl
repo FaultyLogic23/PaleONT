@@ -1,0 +1,358 @@
+@prefix po:   <https://w3id.org/paleont/> .
+@prefix ex:   <https://w3id.org/paleont/data/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix cito: <http://purl.org/spar/cito/> .
+
+################################################################################
+#  PaleONT — A-Box · Refshale, Skeleton 130
+#
+#  Requires vocabulary.ttl.
+#
+#  WHY THIS SPECIMEN. It is the opposite of Sk. 90 in every dimension that
+#  the model cares about: rural not urban, female not male, mid-adult not
+#  late-juvenile, mercury within the normal range, and — decisively — the
+#  source grants it a WEAKER hedge. Sk. 90's lesions are "indicative of"
+#  treponemal infection; Refshale 130's are only "consistent with".
+#
+#  Two things it forced, both recorded below: the vocabulary split, and
+#  decision D6 (a negative the model cannot express).
+################################################################################
+
+
+### 1 · The specimen ###########################################################
+
+ex:rf130 a po:Specimen ;
+    po:specimenID "Refshale-130" ;
+    rdfs:label    "Refshale, Skeleton 130"@en ;
+    rdfs:comment  "Burial 130, Refshale graveyard, Maribo district, Lolland. Rural site. Completely preserved adult female."@en .
+
+
+### 2 · LAYER 0 — OBSERVATIONS #################################################
+
+ex:rf130_obs_radius a po:Observation ;
+    po:observedOn         ex:rf130 ;
+    po:observesLesionType ex:linearStriation , ex:coarsePitting , ex:rugoseExpansion ;
+    po:onBone             ex:radius ;
+    po:usedTechnique      ex:macroscopic ;
+    po:declaredIn         ex:schwarz2013 ;
+    rdfs:label "Left radius: coarse striations on the lateral distal side, coarse pitting and moderate rugose new bone on the medial distal end; right radius the same, with small round and oval depressions"@en .
+
+ex:rf130_obs_humerus a po:Observation ;
+    po:observedOn         ex:rf130 ;
+    po:observesLesionType ex:clusteredPitting ;
+    po:onBone             ex:humerus ;
+    po:usedTechnique      ex:macroscopic ;
+    po:declaredIn         ex:schwarz2013 ;
+    rdfs:label "Distal ends of both humeri display clustered pitting"@en .
+
+ex:rf130_obs_femur a po:Observation ;
+    po:observedOn         ex:rf130 ;
+    po:observesLesionType ex:rugoseExpansion , ex:coarsePitting ;
+    po:onBone             ex:femur ;
+    po:usedTechnique      ex:macroscopic ;
+    po:declaredIn         ex:schwarz2013 ;
+    rdfs:label "Femora with expanded diaphysis, rippling of the surface and coarse pitting"@en .
+
+ex:rf130_obs_fibula a po:Observation ;
+    po:observedOn         ex:rf130 ;
+    po:observesLesionType ex:periostealReaction ;
+    po:onBone             ex:fibula ;
+    po:usedTechnique      ex:macroscopic ;
+    po:declaredIn         ex:schwarz2013 ;
+    rdfs:label "Both fibulae thickened, with areas of new bone layers at the distal end"@en .
+
+ex:rf130_obs_tibia a po:Observation ;
+    po:observedOn         ex:rf130 ;
+    po:observesLesionType ex:periostealReaction , ex:linearStriation ;
+    po:onBone             ex:tibia ;
+    po:usedTechnique      ex:macroscopic ;
+    po:declaredIn         ex:schwarz2013 ;
+    rdfs:label "Tibiae: multiple channelled vascular impressions posteriorly; periostitis and linear striations dominating the anterior and medial diaphysis; shaft slightly bowed anteriorly"@en .
+
+ex:rf130_obs_tibia_ct a po:Observation ;
+    po:observedOn         ex:rf130 ;
+    po:observesLesionType ex:osteolyticLesion ;
+    po:onBone             ex:tibia ;
+    po:usedTechnique      ex:ct ;
+    po:declaredIn         ex:schwarz2013 ;
+    rdfs:label "CT: osteolytic changes within the cortex of the right tibia — described as non-specific"@en .
+
+ex:rf130_obs_femur_ct a po:Observation ;
+    po:observedOn         ex:rf130 ;
+    po:observesLesionType ex:increasedRadiodensity ;
+    po:onBone             ex:femur ;
+    po:usedTechnique      ex:ct ;
+    po:declaredIn         ex:schwarz2013 ;
+    rdfs:label "CT: increased radiodensity in the right femur — described as non-specific, and possibly normal variation"@en .
+
+ex:rf130_obs_mercury a po:Observation ;
+    po:observedOn    ex:rf130 ;
+    po:usedTechnique ex:cvaas ;
+    po:declaredIn    ex:schwarz2013 ;
+    rdfs:label "Hg concentration of 22 ± 3 ng/g — within the 10–100 ng/g range normal for non-exposed medieval Danish individuals"@en .
+
+ex:rf130_obs_radiocarbon a po:Observation ;
+    po:observedOn    ex:rf130 ;
+    po:usedTechnique ex:radiocarbon ;
+    po:declaredIn    ex:schwarz2013 ;
+    rdfs:label "Uncalibrated radiocarbon age 925 ± 25 BP; corrected 870 ± 25 BP"@en .
+
+ex:rf130_obs_isotopes a po:Observation ;
+    po:observedOn    ex:rf130 ;
+    po:usedTechnique ex:irms ;
+    po:declaredIn    ex:schwarz2013 ;
+    rdfs:label "δ13C −18.61 ‰, δ15N 12.18 ‰, C:N 3.4 — estimated marine diet 13 %"@en .
+
+ex:rf130_obs_armPosition a po:Observation ;
+    po:observedOn    ex:rf130 ;
+    po:usedTechnique ex:armPosition ;
+    po:declaredIn    ex:schwarz2013 ;
+    rdfs:label "Burial arm position recorded"@en .
+
+ex:rf130_obs_transition a po:Observation ;
+    po:observedOn    ex:rf130 ;
+    po:usedTechnique ex:transitionAnalysis ;
+    po:declaredIn    ex:schwarz2013 ;
+    rdfs:label "Transition analysis on the auricular surface and pubic symphysis"@en .
+
+ex:rf130_obs_sex a po:Observation ;
+    po:observedOn    ex:rf130 ;
+    po:usedTechnique ex:pelvicMorphology ;
+    po:declaredIn    ex:schwarz2013 ;
+    rdfs:label "Pelvic morphology consistent with a female individual"@en .
+
+
+### 3 · LAYER 1 — DIAGNOSIS ####################################################
+# The contrast with Sk. 90 is the point of adding this specimen.
+
+ex:rf130_claim_systemic a po:DiagnosticClaim ;
+    po:aboutSpecimen     ex:rf130 ;
+    po:proposesCondition ex:systemicDisease ;
+    po:groundedIn        ex:rf130_obs_radius , ex:rf130_obs_humerus ,
+                         ex:rf130_obs_femur , ex:rf130_obs_fibula ,
+                         ex:rf130_obs_tibia ;
+    po:heldBy            ex:schwarzTeam ;
+    po:underFramework    po:ModernBiomedical ;
+    po:framesContent     po:ModernBiomedical ;
+    po:hedge             po:Probable ;
+    po:hedgeWording      "changes observed on nearly all the long bones indicate a systemic disease" ;
+    po:declaredIn        ex:schwarz2013 ;
+    rdfs:label "A systemic disease proposed for Refshale 130"@en .
+
+ex:rf130_claim_treponematosis a po:DiagnosticClaim ;
+    po:aboutSpecimen     ex:rf130 ;
+    po:proposesCondition ex:treponematosis ;
+    po:groundedIn        ex:rf130_obs_tibia , ex:rf130_obs_femur ;
+    po:heldBy            ex:schwarzTeam ;
+    po:underFramework    po:ModernBiomedical ;
+    po:framesContent     po:ModernBiomedical ;
+    po:hedge             po:Possible ;
+    po:hedgeWording      "lesions consistent with treponemal disease are found on several long bones, but only those in skeleton 90 from St. Albani are indicative of treponemal infection" ;
+    po:declaredIn        ex:schwarz2013 ;
+    rdfs:label "Treponemal disease entertained for Refshale 130, at a lower confidence than Sk. 90"@en ;
+    rdfs:comment """THE CONTRAST. Same condition, same study, same framework,
+        same techniques — and a different hedge: 'consistent with' here,
+        'indicative of' for Sk. 90. Run CQ2 across both specimens and the
+        difference is a column, not an impression. This is what the
+        po:ConfidenceLevel decision was for."""@en .
+
+
+### 4 · LAYER 1 — AGE ##########################################################
+
+ex:rf130_claim_age a po:AgeClaim ;
+    po:aboutSpecimen  ex:rf130 ;
+    po:minAge         24 ;
+    po:maxAge         46 ;
+    po:groundedIn     ex:rf130_obs_transition ;
+    po:heldBy         ex:schwarzTeam ;
+    po:underFramework po:ModernBiomedical ;
+    po:framesContent  po:ModernBiomedical ;
+    po:hedge          po:Probable ;
+    po:hedgeWording   "transition analysis suggests an age between 24.7 to 46.4 years with a maximum likelihood of 32.9 years" ;
+    po:declaredIn     ex:schwarz2013 ;
+    rdfs:label "Age at death of Refshale 130 estimated at 24.7–46.4 years"@en ;
+    rdfs:comment "⚠ The maximum-likelihood value of 32.9 years is lost: po:minAge and po:maxAge cannot carry a modal estimate. Minor, but it is the kind of loss that should be declared rather than discovered."@en .
+
+
+### 5 · LAYER 1 — DATING #######################################################
+# A second disagreement, and it runs the OPPOSITE way to Sk. 90's: here the
+# archaeological date is LATER than the radiocarbon date.
+
+ex:rf130_interval_armPosition a po:CalibratedInterval ;
+    po:startYear 1250 ; po:endYear 1400 ;
+    po:confidenceInterval "archaeological — no statistical confidence stated" ;
+    rdfs:label "AD 1250–1400 (archaeological, arm position)"@en .
+
+ex:rf130_interval_c14 a po:CalibratedInterval ;
+    po:startYear 1160 ; po:endYear 1212 ;
+    po:confidenceInterval "1 sigma" ;
+    rdfs:label "calAD 1160–1212 at ±1 sigma"@en .
+
+ex:rf130_interval_c14_95 a po:CalibratedInterval ;
+    po:startYear 1149 ; po:endYear 1224 ;
+    po:confidenceInterval "95% CI, corrected for marine component" ;
+    rdfs:label "calAD 1149–1224, 95% CI corrected for marine component"@en ;
+    rdfs:comment """Table 2 gives three disjoint ranges at 95% for this sample
+        — 1047–1089, 1121–1139, 1149–1224. Only the last is recorded here, as
+        the one nearest the archaeological date; recording all three would
+        need a multi-range interval, which no competency question asks for.
+        Declared rather than silently dropped."""@en .
+
+ex:rf130_claim_date_armPosition a po:DatingClaim ;
+    po:aboutSpecimen  ex:rf130 ;
+    po:hasResult      ex:rf130_interval_armPosition ;
+    po:groundedIn     ex:rf130_obs_armPosition ;
+    po:heldBy         ex:schwarzTeam ;
+    po:underFramework po:ModernBiomedical ;
+    po:framesContent  po:ModernBiomedical ;
+    po:hedge          po:Possible ;
+    po:declaredIn     ex:schwarz2013 ;
+    rdfs:label "Archaeological date of Refshale 130 by arm position"@en .
+
+ex:rf130_claim_date_c14 a po:DatingClaim ;
+    po:aboutSpecimen     ex:rf130 ;
+    po:hasResult         ex:rf130_interval_c14 , ex:rf130_interval_c14_95 ;
+    po:appliedCorrection ex:marineCorrection ;
+    po:groundedIn        ex:rf130_obs_radiocarbon , ex:rf130_obs_isotopes ;
+    po:heldBy            ex:schwarzTeam ;
+    po:underFramework    po:ModernBiomedical ;
+    po:framesContent     po:ModernBiomedical ;
+    po:hedge             po:Probable ;
+    po:hedgeWording      "the skeleton is radiocarbon dated to calAD 1160–1212 at ± 1 sigma" ;
+    po:declaredIn        ex:schwarz2013 ;
+    rdfs:label "Radiocarbon date of Refshale 130, marine-corrected (45 years, 13 % marine diet)"@en .
+
+ex:rf130_claim_accordance a po:MethodologicalClaim ;
+    po:aboutTechnique         ex:radiocarbon ;
+    po:appliedTo              ex:rf130 ;
+    po:hasDiscriminatingPower po:Suggestive ;
+    po:heldBy                 ex:schwarzTeam ;
+    po:underFramework         po:ModernBiomedical ;
+    po:framesContent          po:ModernBiomedical ;
+    po:hedge                  po:Probable ;
+    po:hedgeWording           "only in the case of burial 130 from Refshale is seen a complete accordance" ;
+    po:declaredIn             ex:schwarz2013 ;
+    rdfs:label "The paper claims complete accordance between the two dates for Refshale 130"@en ;
+    rdfs:comment """The claim is about the RADIOCARBON dating: among the five
+        specimens, Refshale 130 is the one whose radiocarbon age the paper
+        regards as in complete accordance with the archaeological date.
+
+        RESOLVED, and the resolution is a result worth presenting.
+
+        Read literally, the two intervals conflict: archaeological 1250–1400
+        against radiocarbon 1160–1212 at 1 sigma. queries/cq04b.rq reports the
+        disagreement, and the prose claims accordance.
+
+        But a calibrated interval is not a fact with edges. The paper itself
+        states that "the precision of the radiocarbon dates of medieval
+        samples are often better than ±25 to 30 years for the 1 sigma
+        statistical uncertainty", and publishes a 95% range for this sample
+        reaching 1224. Apply the paper's OWN figure to the paper's OWN 95%
+        interval — 1224 + 30 = 1254, against an archaeological date beginning
+        in 1250 — and the intervals meet.
+
+        queries/cq04b_tolerant.rq does exactly that and returns ONE row,
+        St. Albani 90, leaving Refshale 130 out. The model reproduces the
+        source's own judgement, including the word "only".
+
+        THE POINT. The strict query was committing the reduction this project
+        argues against: reading a hedged estimate as a boundary. Both queries
+        are kept, because the difference between them is the finding — and
+        because the tolerance is the source's figure, not ours. Inventing one
+        would have been the same error wearing a better disguise."""@en .
+
+
+### 6 · LAYER 1 — MERCURY, AND WHAT THE MODEL CANNOT SAY #######################
+#
+#  DECISION D6 — RESOLVED (option c).
+#
+#  The source asserts a NEGATIVE about this specimen: the individuals from
+#  Refshale and Tirup "were not exposed to high amounts of Hg during their
+#  life". That is a claim, and the model has no way to hold it.
+#
+#  Three options:
+#    (a) leave it out. The observation (22 ± 3 ng/g, within the normal range)
+#        is recorded; no TreatmentClaim exists; the reader infers. Costs
+#        nothing, but the model is then silent about something the source
+#        actually said.
+#    (b) a po:RejectionClaim rejecting a treatment claim nobody made. Contrived:
+#        po:rejects would point at a claim invented only to be rejected.
+#    (c) a negation flag on po:Claim, e.g. po:isNegated. This is what the course
+#        slides do in the Ferguson unit tests — "who is refused to receive
+#        what?" is answered with ?e po:isNegated "true". Precedent exists.
+#
+#  Option (c) was chosen: po:isNegated, following the Ferguson precedent in
+#  the course slides. A denial is a claim like any other — same agent, same
+#  ground, same hedge — and the model was wrong to be able to hold only one
+#  of the two. NCQ3 is unaffected: the model still cannot assert that anyone
+#  WAS healthy, only that someone denied a particular condition.
+################################################################################
+
+ex:rf130_claim_noMercuryTreatment a po:TreatmentClaim ;
+    po:aboutSpecimen     ex:rf130 ;
+    po:proposesTreatment ex:mercuryTreatment ;
+    po:isNegated         true ;
+    po:groundedIn        ex:rf130_obs_mercury ;
+    po:heldBy            ex:schwarzTeam ;
+    po:underFramework    po:ModernBiomedical ;
+    po:framesContent     po:MedievalHumoral ;
+    po:hedge             po:Probable ;
+    po:hedgeWording      "these individuals were not exposed to high amounts of Hg during their life, but exhibit Hg concentrations typical for the non-exposed individuals" ;
+    po:declaredIn        ex:schwarz2013 ;
+    rdfs:label "Treatment with Hg-containing medicine DENIED for Refshale 130"@en ;
+    rdfs:comment """D6 resolved. The claim still carries all seven properties —
+        agent, ground, standpoint, framed content, hedge, source — and differs
+        from Sk. 90's treatment claim in exactly one place: po:isNegated.
+
+        Compare the two with CQ8 and the asymmetry the model used to have
+        disappears: the same shape holds an assertion and a denial."""@en .
+
+
+### 7 · LAYER 3 — DIFFERENTIAL DIAGNOSIS #######################################
+# The leprosy exclusion is stated for all five skeletons, so it applies here.
+
+ex:rf130_claim_alt_leprosy a po:DiagnosticClaim ;
+    po:aboutSpecimen ex:rf130 ; po:proposesCondition ex:leprosy ;
+    po:heldBy ex:schwarzTeam ; po:underFramework po:ModernBiomedical ;
+    po:framesContent po:ModernBiomedical ; po:hedge po:Possible ;
+    po:declaredIn ex:schwarz2013 ;
+    rdfs:label "Leprosy entertained as a differential diagnosis for Refshale 130"@en .
+
+ex:rf130_reject_leprosy a po:RejectionClaim ;
+    po:aboutSpecimen ex:rf130 ; po:rejects ex:rf130_claim_alt_leprosy ;
+    po:groundedIn ex:rf130_obs_tibia , ex:rf130_obs_radius ;
+    po:heldBy ex:schwarzTeam ; po:underFramework po:ModernBiomedical ;
+    po:framesContent po:ModernBiomedical ; po:hedge po:Probable ;
+    po:hedgeWording "none of the five skeletons described in this paper shows any lesions diagnostic of leprosy" ;
+    po:declaredIn ex:schwarz2013 ;
+    rdfs:label "Leprosy rejected for Refshale 130"@en .
+
+ex:rf130_claim_alt_tuberculosis a po:DiagnosticClaim ;
+    po:aboutSpecimen ex:rf130 ; po:proposesCondition ex:tuberculosis ;
+    po:heldBy ex:schwarzTeam ; po:underFramework po:ModernBiomedical ;
+    po:framesContent po:ModernBiomedical ; po:hedge po:Possible ;
+    po:declaredIn ex:schwarz2013 ;
+    rdfs:label "Tuberculosis entertained as a differential diagnosis for Refshale 130"@en .
+
+ex:rf130_reject_tuberculosis a po:RejectionClaim ;
+    po:aboutSpecimen ex:rf130 ; po:rejects ex:rf130_claim_alt_tuberculosis ;
+    po:groundedIn ex:rf130_obs_femur , ex:rf130_obs_humerus ;
+    po:heldBy ex:schwarzTeam ; po:underFramework po:ModernBiomedical ;
+    po:framesContent po:ModernBiomedical ; po:hedge po:Probable ;
+    po:hedgeWording "tuberculosis is usually affecting the spine and the inner table of the cranium while hypertrophic expansion of the long bones is described as unusual" ;
+    po:declaredIn ex:schwarz2013 ;
+    rdfs:label "Tuberculosis rejected for Refshale 130"@en .
+
+
+### 8 · LAYER 3 — PRIOR LITERATURE #############################################
+
+ex:rf130_claim_boldsen a po:DiagnosticClaim ;
+    po:aboutSpecimen  ex:rf130 ;
+    po:heldBy         ex:boldsen ;
+    po:underFramework po:ModernBiomedical ;
+    po:framesContent  po:ModernBiomedical ;
+    po:hedge          po:Probable ;
+    po:declaredIn     ex:boldsen2007 ;
+    rdfs:label "Boldsen's earlier analysis of Refshale for leprous bone changes"@en .
+
+ex:rf130_reject_leprosy cito:agreesWith ex:rf130_claim_boldsen .

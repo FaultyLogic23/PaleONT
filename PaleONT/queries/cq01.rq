@@ -1,0 +1,14 @@
+# CQ1 · Which lesions were observed on each specimen?
+# Expected: rows.  specimen | lesion type | bone | technique
+PREFIX po: <https://w3id.org/paleont/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?specimen ?lesionType ?bone ?technique
+WHERE {
+  ?obs a po:Observation ;
+       po:observedOn         ?specimen ;
+       po:observesLesionType ?lesionType ;
+       po:usedTechnique      ?technique .
+  OPTIONAL { ?obs po:onBone ?bone }
+}
+ORDER BY ?specimen ?lesionType

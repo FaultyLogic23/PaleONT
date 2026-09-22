@@ -1,0 +1,184 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+  --bone:      #efeae0;   /* osso / avorio                        */
+  --paper:     #faf7f1;   /* il foglio — più chiaro del fondo     */
+  --ground:    #d8d1c2;   /* il piano su cui il foglio appoggia   */
+  --bone-warm: #e4dccd;
+  --sediment:  #cfc4b0;
+  --ochre:     #b07d3a;   /* accento caldo: filetti, numerazioni  */
+  --oxide:     #8a3a2b;   /* pagina corrente, enfasi              */
+  --verdigris: #4e7c6e;   /* link                                 */
+  --charcoal:  #2a2622;   /* testo                                */
+  --ash:       #7a7269;   /* testo secondario                     */
+  --hairline:  #c6bba7;   /* linee sottili                        */
+ 
+  --font-display: "Cinzel", "EB Garamond", Georgia, serif;
+  --font-body:    "EB Garamond", Georgia, "Times New Roman", serif;
+  --font-mono:    "IBM Plex Mono", ui-monospace, "SF Mono", Consolas, monospace;
+}
+
+/* Heading */
+
+ 
+/* ---------- 2. TESTATA ---------- */
+ 
+#head {
+  max-width: var(--measure);
+  margin-inline: auto;
+  padding-block: 3.4rem 1.6rem;
+  text-align: center;
+}
+
+#head h1{
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2.4rem, 7vw, 3.6rem);
+  line-height: 1;
+  letter-spacing: 0.06em;     /* le capitali epigrafiche vogliono aria */
+  margin: 0 0 0.6rem;
+  color: var(--charcoal);
+}
+
+#head h6{
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ash);
+  margin: 0;
+}
+
+#head h6::before,
+#head h6::after{
+  content: "";
+  display: inline-block;
+  width: 1.6rem;
+  vertical-align: middle;
+  border-top: 1px solid var(--ochre);
+  margin: 0 0.9rem;
+}
+
+
+/* Navbar part */
+
+.minstyle {
+  display: flex;
+  justify-content: center;
+  max-width: min(100%, 52rem);
+  margin-inline: auto;
+  padding-block: 0.85rem;
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+  font-family: var(--font-display);
+  font-size: 1rem;
+}
+
+.minstyle ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+  margin: 0; padding: 0;
+  list-style: none;
+  font: inherit;
+}
+.minstyle li  { 
+  list-style: none;
+}
+.minstyle li + li::before{
+  content: "\2022";               /* punto mediano, più discreto del › */
+  color: var(--sediment);
+  margin: 0 0.75em;
+}
+.minstyle a{
+  text-decoration: none;
+  color: var(--ash);
+  letter-spacing: 0.12em;
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+  transition: color .15s ease, border-color .15s ease;
+}
+.minstyle a:hover{
+  color: var(--verdigris);
+  border-bottom-color: var(--verdigris);
+}
+
+
+
+/* body */
+
+body {
+  background-color: var(--ground);
+}
+
+#blankpaper{
+  max-width: 100ch;
+  margin: 2.4rem auto 3.5rem;
+  padding: 3.2rem 3.4rem 3.6rem;
+  background-color: var(--paper);
+  border: 1px solid var(--hairline);
+  /* due ombre: una stretta che stacca il bordo, una larga e
+     morbida che dà lo spessore del foglio sul piano */
+  box-shadow:
+    0 1px 2px rgba(42, 38, 34, 0.06),
+    0 14px 34px rgba(42, 38, 34, 0.10);
+}
+ 
+ 
+/* Text */
+ 
+#blankpaper h3{
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ochre);
+  margin: 2.2rem 0 0.7rem;
+}
+#blankpaper p{
+  margin: 0 0 1.15rem;
+  text-align: justify;
+}
+#blankpaper p:last-child{ margin-bottom: 0; }
+ 
+/* L'apertura del documento: prima riga in maiuscoletto, invece del
+   capolettera — più sobrio e non si rompe con i link dentro */
+#blankpaper .lede::first-line{
+  font-variant: small-caps;
+  letter-spacing: 0.03em;
+}
+ 
+#blankpaper a{
+  color: var(--verdigris);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--sediment);
+  transition: color .15s ease, text-decoration-color .15s ease;
+}
+#blankpaper a:hover{
+  color: var(--oxide);
+  text-decoration-color: var(--oxide);
+}
+ 
+blockquote{
+  margin: 1.6rem 0;
+  padding-left: 1.3rem;
+  border-left: 2px solid var(--ochre);
+  font-style: italic;
+  color: #4a423a;
+}
+ 
+.note{
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  line-height: 1.7;
+  color: var(--ash);
+  letter-spacing: 0.01em;
+}
+
+

@@ -1,0 +1,15 @@
+# CQ8 · Which claims concern a treatment received in life?
+# Expected: rows.  specimen | treatment | agent | hedge | standpoint | framed content
+PREFIX po: <https://w3id.org/paleont/>
+
+SELECT ?specimen ?treatment ?agent ?hedge ?standpoint ?framedContent
+WHERE {
+  ?t a po:TreatmentClaim ;
+     po:aboutSpecimen     ?specimen ;
+     po:proposesTreatment ?treatment ;
+     po:heldBy            ?agent ;
+     po:hedge             ?hedge ;
+     po:underFramework    ?standpoint ;
+     po:framesContent     ?framedContent .
+  FILTER NOT EXISTS { ?t po:isNegated true }   # D6: a denial is not an assertion
+}

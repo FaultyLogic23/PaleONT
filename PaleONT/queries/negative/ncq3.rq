@@ -1,0 +1,14 @@
+# NCQ3 · Which of the screened individuals were free of disease?
+# MUST RETURN EMPTY, in any A-Box.
+# The model has NO vocabulary for asserting health or absence of a condition.
+# Absence of an observation is not an observation of absence — the osteological
+# paradox, and the open-world assumption working in our favour.
+# Note this one cannot be made to return rows by adding data: the predicate
+# does not exist.
+PREFIX po: <https://w3id.org/paleont/>
+
+SELECT ?specimen ?status
+WHERE {
+  ?specimen a po:Specimen ;
+            po:healthStatus ?status .
+}

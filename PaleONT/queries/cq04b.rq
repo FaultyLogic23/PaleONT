@@ -1,0 +1,29 @@
+# CQ4b · For which specimens do two datings disagree?
+#        STRICT reading: the stated bounds are taken literally.
+#
+# Expected: rows.  specimen | dating A | dating B
+#
+# Two datings disagree when NO pair of their stated intervals overlaps. The
+# NOT EXISTS form matters once a dating claim publishes more than one interval
+# (Refshale 130 carries both a 1-sigma and a 95% range): a single
+# non-overlapping pair is not a disagreement if another pair is compatible.
+#
+# ⚠ This query reads a hedged estimate as a hard boundary — see D7, and
+# cq04b_tolerant.rq, which applies the source's own stated precision instead.
+# Both are kept: the difference between them IS the finding.
+PREFIX po: <https://w3id.org/paleont/>
+
+SELECT DISTINCT ?specimen ?datingA ?datingB
+WHERE {
+  ?datingA a po:DatingClaim ; po:aboutSpecimen ?specimen .
+  ?datingB a po:DatingClaim ; po:aboutSpecimen ?specimen .
+  FILTER(STR(?datingA) < STR(?datingB))
+  FILTER NOT EXISTS { ?datingA po:isNegated true }
+  FILTER NOT EXISTS { ?datingB po:isNegated true }
+
+  FILTER NOT EXISTS {
+    ?datingA po:hasResult ?ia . ?ia po:startYear ?sa ; po:endYear ?ea .
+    ?datingB po:hasResult ?ib . ?ib po:startYear ?sb ; po:endYear ?eb .
+    FILTER(?ea >= ?sb && ?eb >= ?sa)
+  }
+}

@@ -1,0 +1,231 @@
+@prefix po:   <https://w3id.org/paleont/> .
+@prefix ex:   <https://w3id.org/paleont/data/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+################################################################################
+#  PaleONT — SHARED VOCABULARY
+#
+#  Everything that is NOT specific to one specimen: sources, agents,
+#  techniques, error sources, corrections, lesion types, bones, conditions,
+#  treatments, and the source-level methodological claims.
+#
+#  Split out when the second specimen was added. With one specimen there was
+#  no way to tell which individuals belonged to the skeleton and which to the
+#  study — the second one makes the line visible. This is the same line the
+#  CSV will need: one table per thing that varies, one vocabulary file for
+#  what does not.
+#
+#  SOURCE
+#  Schwarz S, Skytte L, Rasmussen KL. "Pre-Columbian treponemal infection in
+#  Denmark? — a paleopathological and archaeometric approach".
+#  Heritage Science 2013, 1:19 · doi:10.1186/2050-7445-1-19 · CC BY 2.0
+################################################################################
+
+
+### Sources ####################################################################
+
+ex:schwarz2013 a po:Source ;
+    rdfs:label "Schwarz, Skytte & Rasmussen 2013, Heritage Science 1:19"@en ;
+    dcterms:title "Pre-Columbian treponemal infection in Denmark? — a paleopathological and archaeometric approach"@en ;
+    dcterms:identifier "doi:10.1186/2050-7445-1-19" .
+
+ex:kiefferOlsen1993 a po:Source ;
+    rdfs:label "Kieffer-Olsen 1993 — arm-position chronology for Danish medieval burials"@en .
+
+ex:ortner2011 a po:Source ;
+    rdfs:label "Ortner 2011, Virchows Arch 459:247–254"@en .
+
+ex:harper2008 a po:Source ;
+    rdfs:label "Harper et al. 2008, PLoS Negl Trop Dis 2(1):e148"@en .
+
+ex:boldsen2007 a po:Source ;
+    rdfs:label "Boldsen 2007, Leprosy in medieval Denmark: a comprehensive analysis"@en .
+
+ex:hackett1976 a po:Source ;
+    rdfs:label "Hackett 1976, Diagnostic criteria of syphilis, yaws and treponarid"@en ;
+    rdfs:comment "The source of the on-trial and diagnostic criteria the study scores its lesions against."@en .
+
+
+### Agents #####################################################################
+
+ex:schwarz   a foaf:Person ; foaf:name "Susanne Schwarz" .
+ex:skytte    a foaf:Person ; foaf:name "Lilian Skytte" .
+ex:rasmussen a foaf:Person ; foaf:name "Kaare Lund Rasmussen" .
+ex:ortner    a foaf:Person ; foaf:name "Donald J. Ortner" .
+ex:harper    a foaf:Person ; foaf:name "Kristin N. Harper" .
+ex:boldsen   a foaf:Person ; foaf:name "Jesper L. Boldsen" .
+
+ex:schwarzTeam a foaf:Organization ;
+    foaf:name "Schwarz, Skytte & Rasmussen (2013 study team)" ;
+    rdfs:comment "Holder of the claims the present study makes collectively, so that individual attribution is never invented."@en .
+
+
+### Techniques #################################################################
+# One class, no hierarchy. Whether a technique settles a question is a
+# MethodologicalClaim, never a property of the technique.
+
+ex:macroscopic a po:Technique ;
+    rdfs:label "macroscopic examination"@en .
+
+ex:ct a po:Technique ;
+    rdfs:label "computed tomography (CT) scanning"@en ;
+    rdfs:comment "SOMATOM Sensation 64 (Kiel) and SOMATOM Spirit (Odense), Siemens."@en .
+
+ex:radiocarbon a po:Technique ;
+    rdfs:label "radiocarbon dating"@en ;
+    rdfs:comment "Leibniz Laboratory, Kiel. Calibrated with OxCal v4.1.7 and IntCal09."@en ;
+    po:hasErrorSource ex:marineReservoir , ex:freshwaterReservoir , ex:countingUncertainty .
+
+ex:cvaas a po:Technique ;
+    rdfs:label "cold vapour atomic absorption spectroscopy (CV-AAS)"@en ;
+    rdfs:comment "Flow Injection Mercury System 400, PerkinElmer."@en .
+
+ex:irms a po:Technique ;
+    rdfs:label "isotope-ratio mass spectrometry (IRMS)"@en ;
+    rdfs:comment "δ13C and δ15N on bone collagen, Museum für Naturkunde, Berlin."@en .
+
+ex:armPosition a po:Technique ;
+    rdfs:label "arm-position dating"@en ;
+    rdfs:comment "Archaeological dating from burial arm position (Kieffer-Olsen)."@en ;
+    po:hasErrorSource ex:unsubstantiatedMethod .
+
+ex:transitionAnalysis a po:Technique ;
+    rdfs:label "transition analysis"@en ;
+    rdfs:comment "Age-at-death estimation after Boldsen et al."@en ;
+    po:hasErrorSource ex:adultAgeingError .
+
+ex:epiphysealFusion a po:Technique ;
+    rdfs:label "epiphyseal fusion and dental development assessment"@en .
+
+ex:pelvicMorphology a po:Technique ;
+    rdfs:label "sex estimation from pelvic morphology and skeletal robusticity"@en .
+
+
+### Error sources ##############################################################
+# A limitation of a TECHNIQUE: it holds always. Contrast po:Correction.
+
+ex:marineReservoir a po:ErrorSource ;
+    rdfs:label   "marine reservoir effect"@en ;
+    po:hasEffect "Skeletal remains of individuals consuming a diet rich in marine proteins give radiocarbon dates that appear older than they actually are. The reservoir age for open waters in the North Atlantic and the open inner Danish waters is around 410 years." .
+
+ex:freshwaterReservoir a po:ErrorSource ;
+    rdfs:label   "freshwater reservoir effect"@en ;
+    po:hasEffect "The intake of freshwater fish protein can make radiocarbon ages appear as much as 100 to 1000 years too old; no reliable correction can presently be calculated for it." .
+
+ex:countingUncertainty a po:ErrorSource ;
+    rdfs:label   "statistical uncertainty of the calibrated age interval"@en ;
+    po:hasEffect "The precision of the radiocarbon dates of medieval samples is often better than ±25 to 30 years for the 1 sigma statistical uncertainty of the calibrated age interval; reservoir effects, where present, introduce an offset and an added uncertainty." .
+
+ex:unsubstantiatedMethod a po:ErrorSource ;
+    rdfs:label   "arm-position method not substantiated by scientific dating"@en ;
+    po:hasEffect "The arm position methodology has not been substantiated by scientific dating methods such as radiocarbon dating, dendrochronology or thermoluminescence." .
+
+ex:adultAgeingError a po:ErrorSource ;
+    rdfs:label   "inaccuracy of adult age estimation"@en ;
+    po:hasEffect "The adult skeleton changes little during life, so age is given with an inaccuracy of 10–20 years." .
+
+
+### Corrections ################################################################
+
+ex:marineCorrection a po:Correction ;
+    rdfs:label "marine reservoir correction"@en ;
+    rdfs:comment "K_reservoir = 410 * (19.8 + δ13C_sample) / 8.9 14C-years (Rasmussen et al. 2008). The magnitude depends on the estimated marine diet: 4 years for Sk. 90 (1% marine), 45 years for Refshale 130 (13% marine)."@en .
+
+
+### Lesion types ###############################################################
+
+ex:focalSuperficialCavitation a po:LesionType ;
+    rdfs:label "focal superficial cavitation"@en ;
+    rdfs:comment "An on-trial criterion after Hackett (1976); the Discussion treats it as a diagnostic criterion for treponemal infection once tuberculosis is excluded."@en .
+
+ex:clusteredPitting  a po:LesionType ; rdfs:label "clustered pitting"@en .
+ex:coarsePitting     a po:LesionType ; rdfs:label "coarse pitting"@en .
+ex:osteolyticLesion  a po:LesionType ; rdfs:label "osteolytic lesion"@en .
+ex:periostealReaction a po:LesionType ; rdfs:label "periosteal reaction with cortical thickening"@en .
+ex:linearStriation   a po:LesionType ; rdfs:label "coarse and linear striation"@en .
+ex:rugoseExpansion   a po:LesionType ; rdfs:label "rugose new bone and diaphyseal expansion"@en .
+ex:increasedRadiodensity a po:LesionType ; rdfs:label "increased radiodensity"@en .
+ex:serpiginousCavitation a po:LesionType ; rdfs:label "serpiginous cavitation"@en ;
+    rdfs:comment "Regarded by the source as diagnostic for treponemal disease (Hackett p. 45), while noting that it also occurs in bejel and yaws."@en .
+ex:nodesWithStriation a po:LesionType ; rdfs:label "nodes with striation"@en ;
+    rdfs:comment "An on-trial criterion after Hackett (1976), p. 78."@en .
+ex:boneDeposits      a po:LesionType ; rdfs:label "bone deposits with diffuse borders"@en .
+ex:boneRemodelling   a po:LesionType ; rdfs:label "remodelling"@en .
+ex:diaphysealBowing  a po:LesionType ; rdfs:label "anterior bowing of the diaphysis (sabre shin)"@en .
+
+
+### Bones ######################################################################
+# All five long bones verified against UBERON (labels checked, not guessed):
+#   UBERON:0000976 humerus · UBERON:0000979 tibia · UBERON:0000981 femur
+#   UBERON:0001423 radius bone · UBERON:0001446 fibula
+# The parietal is the exception — see its note below.
+
+ex:parietal a po:Bone ;
+    rdfs:label "parietal bone"@en ;
+    skos:closeMatch <http://purl.obolibrary.org/obo/NCIT_C25312> ;
+    rdfs:comment """NCIT rather than UBERON, deliberately: neither UBERON nor
+        MONDO carried a term at the general level needed, so the NCI Thesaurus
+        was used as a fallback. Mixing alignment targets is acceptable when it
+        is declared — the README must say the same."""@en .
+
+ex:femur a po:Bone ; rdfs:label "femur"@en ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/UBERON_0000981> .
+ex:tibia a po:Bone ; rdfs:label "tibia"@en ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/UBERON_0000979> .
+ex:humerus a po:Bone ; rdfs:label "humerus"@en ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/UBERON_0000976> .
+ex:radius a po:Bone ; rdfs:label "radius"@en ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/UBERON_0001423> .
+ex:fibula a po:Bone ; rdfs:label "fibula"@en ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/UBERON_0001446> .
+ex:frontal a po:Bone ; rdfs:label "frontal bone"@en .          # TODO UBERON
+ex:nasalAperture a po:Bone ; rdfs:label "nasal aperture"@en .  # TODO UBERON
+ex:orbit a po:Bone ; rdfs:label "orbit"@en .                   # TODO UBERON
+
+
+### Conditions #################################################################
+
+ex:treponematosis a po:Condition ;
+    rdfs:label "treponemal infection (treponematosis)"@en ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/MONDO_0007000> ;
+    rdfs:comment "MONDO:0007000 'Treponema infectious disease' — the family covering syphilis, yaws, bejel and pinta, which is the sense the paper uses."@en .
+
+ex:venerealSyphilis a po:Condition ;
+    rdfs:label "venereal syphilis (Treponema pallidum pallidum)"@en ;
+    skos:closeMatch <http://purl.obolibrary.org/obo/MONDO_0005976> ;
+    rdfs:comment "⚠ closeMatch until checked: MONDO:0005976 is 'Syphilis'; the paper's term is specifically VENEREAL syphilis, opposed throughout to the non-venereal treponematoses."@en .
+
+ex:systemicDisease a po:Condition ;
+    rdfs:label "systemic disease (unspecified)"@en ;
+    rdfs:comment "The paper's own level of specificity for Refshale 130: 'changes observed on nearly all the long bones indicate a systemic disease'. Kept as stated rather than sharpened."@en .
+
+ex:leprosy a po:Condition ; rdfs:label "leprosy"@en ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/MONDO_0005124> .
+ex:tuberculosis a po:Condition ; rdfs:label "tuberculosis"@en ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/MONDO_0018076> .
+ex:pagetsDisease a po:Condition ;
+    rdfs:label "Paget's disease of bone (osteitis deformans)"@en ;
+    skos:closeMatch <http://purl.obolibrary.org/obo/MONDO_0005382> ;
+    rdfs:comment "⚠ closeMatch until checked: 'Paget's disease' is ambiguous between the bone disease and Paget disease of the breast. The paper means the skeletal one."@en .
+ex:fungalInfection       a po:Condition ; rdfs:label "fungal infection"@en .
+ex:pyogenicOsteomyelitis a po:Condition ; rdfs:label "pyogenic osteomyelitis"@en .
+ex:boneTumour            a po:Condition ; rdfs:label "bone tumour"@en .
+ex:bejel a po:Condition ; rdfs:label "bejel (endemic syphilis, T. pallidum endemicum)"@en .
+ex:yaws  a po:Condition ; rdfs:label "yaws (T. pertenue)"@en .
+
+
+### Treatments #################################################################
+
+ex:mercuryTreatment a po:Treatment ;
+    rdfs:label "treatment with Hg-containing medicine"@en .
+
+
+################################################################################
+#  The source-level methodological claims that used to live here have moved to
+#  data/csv/claims.csv. They ARE claims — annotated from the text like any
+#  other — and this file now holds only the controlled vocabulary: terms, with
+#  their alignments. Terms are curated by hand; claims are annotated.
+################################################################################

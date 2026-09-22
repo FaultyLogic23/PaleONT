@@ -1,0 +1,9 @@
+# NCQ1 · What disease did this individual have?
+# Expected: EMPTY. There is no path from a Specimen to a Condition.
+PREFIX po: <https://w3id.org/paleont/>
+
+SELECT ?disease
+WHERE {
+  <https://w3id.org/paleont/data/sk90> ?p ?disease .
+  ?disease a po:Condition .
+}

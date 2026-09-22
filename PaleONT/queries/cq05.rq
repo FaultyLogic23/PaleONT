@@ -1,0 +1,9 @@
+# CQ5 · Which error sources does the source declare for each technique?
+# Expected: rows.  technique | error source | declared effect
+PREFIX po: <https://w3id.org/paleont/>
+
+SELECT ?technique ?errorSource ?effect
+WHERE {
+  ?technique   po:hasErrorSource ?errorSource .
+  ?errorSource po:hasEffect      ?effect .
+}

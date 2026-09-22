@@ -1,0 +1,625 @@
+@prefix po:      <https://w3id.org/paleont/> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix cito:    <http://purl.org/spar/cito/> .
+
+################################################################################
+#  PaleONT — T-Box
+#
+#  An ontology for palaeopathological claims: what was observed on human
+#  skeletal remains, what was inferred from it, by whom, under which
+#  framework, and with how much confidence.
+#
+#  DESIGN COMMITMENT (this is the whole point of the ontology):
+#  there is NO property whose domain is po:Specimen and whose range is
+#  po:Condition. No path leads from a set of remains to a disease except
+#  through a po:DiagnosticClaim, which always carries an agent, a framework
+#  and a hedge. See the note at the end of this file.
+################################################################################
+
+<https://w3id.org/paleont/>
+    a               owl:Ontology ;
+    dcterms:title   "PaleONT — an ontology of palaeopathological claims"@en ;
+    dcterms:description """Models the epistemic structure of palaeopathological
+        reporting: observations, the claims grounded in them, the frameworks
+        under which those claims are made, and the adjudication between
+        competing claims."""@en ;
+    owl:versionInfo "0.1.0" .
+
+
+################################################################################
+#  1 · STRUCTURAL CLASSES
+#  These four carry the model. They have properties, constraints, and
+#  design decisions behind them.
+################################################################################
+
+po:Specimen a owl:Class ;
+    rdfs:label   "Specimen"@en ;
+    rdfs:comment """A set of skeletal remains attributed to one individual.
+        The anchor of the graph. Deliberately poor in properties: almost
+        nothing is said ABOUT a specimen, because almost everything one might
+        want to say is in fact a claim someone made."""@en .
+
+po:Observation a owl:Class ;
+    rdfs:label   "Observation"@en ;
+    rdfs:comment """One act of examining a specimen with a technique, yielding
+        one datum. Carries what was seen, on which bone, by which technique.
+        This is the concrete occurrence: the lesion TYPE is shared across
+        specimens, the observation is not."""@en .
+
+po:Claim a owl:Class ;
+    rdfs:label   "Claim"@en ;
+    rdfs:comment """A proposition held by an agent, under a framework, with a
+        stated degree of confidence, grounded in one or more observations.
+        Nothing enters this graph as fact; everything enters as something
+        someone asserted."""@en .
+
+po:CalibratedInterval a owl:Class ;
+    rdfs:label   "Calibrated interval"@en ;
+    rdfs:comment """A dated range with numeric bounds. A class rather than a
+        literal because CQ4b must COMPUTE disagreement by comparing two
+        intervals, which a label cannot support."""@en .
+
+
+################################################################################
+#  2 · CLAIM SUBCLASSES
+#  One design decision instantiated six times, not six decisions.
+#  All six inherit aboutSpecimen, groundedIn, heldBy, underFramework,
+#  hedge and declaredIn from po:Claim.
+################################################################################
+
+po:DiagnosticClaim a owl:Class ;
+    rdfs:subClassOf po:Claim ;
+    rdfs:label   "Diagnostic claim"@en ;
+    rdfs:comment "Proposes a condition for a specimen."@en .
+
+po:RejectionClaim a owl:Class ;
+    rdfs:subClassOf po:Claim ;
+    rdfs:label   "Rejection claim"@en ;
+    rdfs:comment """Rejects another claim. Note the range of po:rejects: a
+        rejection is an act against an ASSERTION, never a verdict on the
+        truth of a disease. Acquittal is not innocence."""@en .
+
+po:DatingClaim a owl:Class ;
+    rdfs:subClassOf po:Claim ;
+    rdfs:label   "Dating claim"@en ;
+    rdfs:comment "Proposes a calibrated interval for a specimen."@en .
+
+po:AgeClaim a owl:Class ;
+    rdfs:subClassOf po:Claim ;
+    rdfs:label   "Age claim"@en ;
+    rdfs:comment """Proposes an age-at-death range. Age is a claim, not a
+        property of the specimen — deliberately the same shape as a
+        diagnosis."""@en .
+
+po:TreatmentClaim a owl:Class ;
+    rdfs:subClassOf po:Claim ;
+    rdfs:label   "Treatment claim"@en ;
+    rdfs:comment """Proposes a treatment received in life. Typically made
+        under a historical framework, and typically grounded in a chemical
+        observation such as mercury."""@en .
+
+po:MethodologicalClaim a owl:Class ;
+    rdfs:subClassOf po:Claim ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty    po:aboutSpecimen ;
+        owl:maxCardinality "0"^^xsd:nonNegativeInteger ] ;
+    rdfs:label   "Methodological claim"@en ;
+    rdfs:comment """A claim about what a technique can or cannot establish.
+        The meta level. Note that it has NO po:aboutSpecimen: its subject
+        matter is a technique, not a skeleton. That absence is how the model
+        distinguishes 'this individual had leprosy' from 'this method cannot
+        tell leprosy from syphilis'."""@en .
+
+[] a owl:AllDisjointClasses ;
+   owl:members ( po:DiagnosticClaim po:RejectionClaim po:DatingClaim
+                 po:AgeClaim po:TreatmentClaim po:MethodologicalClaim ) .
+
+
+################################################################################
+#  3 · VALUE CLASSES
+#  Controlled lists. Cheap to declare, filled with individuals.
+#  Each exists because some query needs to group, count, order or cite its
+#  members — never merely to have a name for something.
+################################################################################
+
+po:Technique a owl:Class ;
+    rdfs:label   "Technique"@en ;
+    rdfs:comment """Any means by which an observation is produced: naked-eye
+        examination, radiography, radiocarbon dating, atomic absorption
+        spectrometry. ONE class, no hierarchy. Ranking techniques by
+        reliability is what the sources ARGUE about, so it must live in
+        po:MethodologicalClaim, never in the schema."""@en .
+
+po:LesionType a owl:Class ;
+    rdfs:label   "Lesion type"@en ;
+    rdfs:comment """The type of a skeletal lesion, shared across specimens.
+        The concrete occurrence is the po:Observation. This split is what
+        makes CQ10 (recurrence across specimens) answerable."""@en .
+
+po:Bone a owl:Class ;
+    rdfs:label   "Bone"@en ;
+    rdfs:comment """Skeletal element. Individuals carry skos:exactMatch links
+        to UBERON rather than using UBERON classes directly as values, which
+        avoids punning."""@en .
+
+po:Condition a owl:Class ;
+    rdfs:label   "Condition"@en ;
+    rdfs:comment """A disease or pathological condition. Individuals carry
+        skos:exactMatch links to MONDO. NOTE: there is no path from
+        po:Specimen to this class."""@en .
+
+po:DiagnosticFramework a owl:Class ;
+    rdfs:label   "Diagnostic framework"@en ;
+    rdfs:comment """The standpoint from which a claim is made — modern
+        biomedical, medieval humoral. Two individuals carry the entire
+        perspectival argument: the same specimen seen through two
+        incommensurable lenses."""@en .
+
+po:ConfidenceLevel a owl:Class ;
+    rdfs:label   "Confidence level"@en ;
+    rdfs:comment """The hedge attached to a claim, as an individual rather
+        than a string or a number. A number would invent precision the source
+        never produced; a string cannot be counted, grouped or ordered."""@en .
+
+po:Source a owl:Class ;
+    rdfs:label   "Source"@en ;
+    rdfs:comment "A publication in which claims are declared."@en .
+
+po:ErrorSource a owl:Class ;
+    rdfs:label   "Error source"@en ;
+    rdfs:comment """A known limitation of a technique — e.g. the marine
+        reservoir effect. A property of the TECHNIQUE: it holds always.
+        Contrast po:Correction."""@en .
+
+po:Correction a owl:Class ;
+    rdfs:label   "Correction"@en ;
+    rdfs:comment """An adjustment applied to one particular dating. A property
+        of THIS dating: it holds here. Recording it is what turns an apparent
+        contradiction between two dates into two declared treatments of one
+        measurement — and prevents CQ4b from reporting false positives."""@en .
+
+po:Treatment a owl:Class ;
+    rdfs:label   "Treatment"@en ;
+    rdfs:comment "A therapeutic intervention received in life."@en .
+
+po:DiscriminatingPower a owl:Class ;
+    rdfs:label   "Discriminating power"@en ;
+    rdfs:comment """How far a technique is said to separate competing
+        hypotheses. A small controlled list, so that 'which techniques
+        cannot discriminate' is a value filter rather than a second
+        question."""@en .
+
+# foaf:Agent is reused, not redeclared. Authors of claims are foaf:Person or
+# foaf:Organization.
+
+
+################################################################################
+#  4 · OBJECT PROPERTIES — LAYER 0, EVIDENCE
+################################################################################
+
+po:observedOn a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:label   "observed on"@en ;
+    rdfs:domain  po:Observation ;
+    rdfs:range   po:Specimen ;
+    rdfs:comment "Functional: one observation concerns one specimen."@en .
+
+po:observesLesionType a owl:ObjectProperty ;
+    rdfs:label   "observes lesion type"@en ;
+    rdfs:domain  po:Observation ;
+    rdfs:range   po:LesionType .
+
+po:onBone a owl:ObjectProperty ;
+    rdfs:label   "on bone"@en ;
+    rdfs:domain  po:Observation ;
+    rdfs:range   po:Bone .
+
+po:usedTechnique a owl:ObjectProperty ;
+    rdfs:label   "used technique"@en ;
+    rdfs:domain  po:Observation ;
+    rdfs:range   po:Technique ;
+    rdfs:comment """Domain is Observation, not Claim. A dating claim therefore
+        reaches its technique through groundedIn/usedTechnique. This enforces
+        that every use of a technique is an observation — see decision D2."""@en .
+
+
+################################################################################
+#  5 · OBJECT PROPERTIES — ON po:Claim, INHERITED BY ALL SIX SUBCLASSES
+################################################################################
+
+po:aboutSpecimen a owl:ObjectProperty ;
+    rdfs:label   "about specimen"@en ;
+    rdfs:domain  po:Claim ;
+    rdfs:range   po:Specimen .
+
+po:groundedIn a owl:ObjectProperty ;
+    rdfs:label   "grounded in"@en ;
+    rdfs:domain  po:Claim ;
+    rdfs:range   po:Observation ;
+    rdfs:comment """THE boundary property. Everything on the left is evidence,
+        everything on the right is interpretation. Not functional: one claim
+        may rest on several observations. See decision D1 on whether the
+        range should widen to include po:Claim."""@en .
+
+po:heldBy a owl:ObjectProperty ;
+    rdfs:label   "held by"@en ;
+    rdfs:domain  po:Claim ;
+    rdfs:range   foaf:Agent .
+
+po:underFramework a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:label   "under framework"@en ;
+    rdfs:domain  po:Claim ;
+    rdfs:range   po:DiagnosticFramework ;
+    rdfs:comment """The standpoint FROM WHICH the claim is made — the frame the
+        claimant occupies. Functional: a claim is made from one position. Two
+        positions on the same content are two claims.
+        For a single modern source every claim is ModernBiomedical, and that
+        uniformity is a finding, not a defect: the paper never leaves the
+        modern frame. What varies is po:framesContent."""@en .
+
+po:framesContent a owl:ObjectProperty ;
+    rdfs:label   "frames content"@en ;
+    rdfs:domain  po:Claim ;
+    rdfs:range   po:DiagnosticFramework ;
+    rdfs:comment """The system of thought TO WHICH the content of the claim
+        belongs. Distinct from po:underFramework, which records where the
+        claimant stands.
+
+        Decision D4. A modern study asserting that an individual was treated
+        with an Hg-containing medicine makes a MODERN claim whose content
+        belongs to the MEDIEVAL humoral frame: mercury counted as a medicine
+        because medieval medicine said so. Collapsing the two into one
+        property forced a choice between a false uniformity (everything
+        modern, CQ8b empty) and an equivocation (the property meaning two
+        different things depending on the claim).
+
+        Deliberately NOT functional: a claim may frame content belonging to
+        more than one system — the mercury case arguably frames both a modern
+        chemical measurement and a medieval therapeutic act — and closing that
+        off buys nothing.
+
+        The consequence is sharper than the version it replaces: the two
+        frames do NOT coexist as equals. One contains the other. The paper
+        does not look at Sk. 90 from inside the medieval frame; it looks from
+        outside and REPRESENTS that frame. There is no standpoint from which
+        both can be seen externally."""@en .
+
+po:hedge a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:label   "hedge"@en ;
+    rdfs:domain  po:Claim ;
+    rdfs:range   po:ConfidenceLevel .
+
+po:declaredIn a owl:ObjectProperty ;
+    rdfs:label   "declared in"@en ;
+    rdfs:range   po:Source ;
+    rdfs:comment """NO rdfs:domain, deliberately. Observations are published in
+        a source just as claims are, and an observation is not a claim — the
+        two classes are disjoint. Declaring the domain as po:Claim made every
+        observation carrying this property inferred to be a Claim, and the
+        ontology inconsistent. HermiT caught it. Either the domain goes, or a
+        union class is introduced; the union buys nothing here, so it goes."""@en .
+
+
+################################################################################
+#  6 · OBJECT PROPERTIES — LAYER 1, INTERPRETATION
+#  proposesCondition, proposesTreatment and hasResult are sub-properties of
+#  po:proposes, so that ONE query can ask what a claim puts forward without
+#  knowing which kind of claim it is. That query is the clearest single
+#  demonstration of the project's thesis.
+################################################################################
+
+po:proposes a owl:ObjectProperty ;
+    rdfs:label   "proposes"@en ;
+    rdfs:domain  po:Claim ;
+    rdfs:comment "Superproperty. Never asserted directly; always inferred."@en .
+
+po:proposesCondition a owl:ObjectProperty ;
+    rdfs:subPropertyOf po:proposes ;
+    rdfs:label   "proposes condition"@en ;
+    rdfs:domain  po:DiagnosticClaim ;
+    rdfs:range   po:Condition .
+
+po:proposesTreatment a owl:ObjectProperty ;
+    rdfs:subPropertyOf po:proposes ;
+    rdfs:label   "proposes treatment"@en ;
+    rdfs:domain  po:TreatmentClaim ;
+    rdfs:range   po:Treatment .
+
+po:hasResult a owl:ObjectProperty ;
+    rdfs:subPropertyOf po:proposes ;
+    rdfs:label   "has result"@en ;
+    rdfs:domain  po:DatingClaim ;
+    rdfs:range   po:CalibratedInterval .
+
+po:appliedCorrection a owl:ObjectProperty ;
+    rdfs:label   "applied correction"@en ;
+    rdfs:domain  po:DatingClaim ;
+    rdfs:range   po:Correction .
+
+
+################################################################################
+#  7 · OBJECT PROPERTIES — LAYER 2, META
+################################################################################
+
+po:aboutTechnique a owl:ObjectProperty ;
+    rdfs:label   "about technique"@en ;
+    rdfs:domain  po:MethodologicalClaim ;
+    rdfs:range   po:Technique .
+
+po:appliedTo a owl:ObjectProperty ;
+    rdfs:label   "applied to"@en ;
+    rdfs:domain  po:MethodologicalClaim ;
+    rdfs:range   po:Specimen ;
+    rdfs:comment """Decision D5. A methodological claim may NOT have
+        po:aboutSpecimen — the restriction above forbids it, because its
+        subject matter is a technique, not a skeleton. But a judgement about a
+        method is often reached in the course of examining particular
+        specimens, and the source says so: "the results of the archaeometric
+        analyses APPLIED HERE cannot elucidate the origin".
+
+        po:appliedTo records that occasion without claiming the judgement is
+        about the skeleton. "CT cannot separate the treponematoses" remains a
+        statement about CT; po:appliedTo says where that was found out.
+
+        Same shape of problem as D4, same shape of solution: when one property
+        is being asked to mean two things, split it rather than equivocate or
+        forbid."""@en .
+
+po:discriminatesBetween a owl:ObjectProperty ;
+    rdfs:label   "discriminates between"@en ;
+    rdfs:domain  po:MethodologicalClaim ;
+    rdfs:range   po:Condition .
+
+po:hasDiscriminatingPower a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:label   "has discriminating power"@en ;
+    rdfs:domain  po:MethodologicalClaim ;
+    rdfs:range   po:DiscriminatingPower .
+
+
+################################################################################
+#  8 · OBJECT PROPERTIES — LAYER 3, ADJUDICATION
+#  po:engagesWith is the layer-3 marker: any claim that reaches it is a
+#  claim about a claim.
+################################################################################
+
+po:engagesWith a owl:ObjectProperty ;
+    rdfs:label   "engages with"@en ;
+    rdfs:domain  po:Claim ;
+    rdfs:range   po:Claim ;
+    rdfs:comment "Superproperty. Never asserted directly; always inferred."@en .
+
+po:rejects a owl:ObjectProperty , owl:IrreflexiveProperty ;
+    rdfs:subPropertyOf po:engagesWith ;
+    rdfs:label   "rejects"@en ;
+    rdfs:domain  po:RejectionClaim ;
+    rdfs:range   po:Claim ;
+    rdfs:comment """RANGE IS po:Claim, NOT po:Condition. This single line is
+        the thesis expressed as an axiom: one rejects an assertion, not a
+        disease. A rejection says nothing about whether the individual was
+        ill."""@en .
+
+# Decision D3 — RESOLVED. po:redetermines was coined here and has been
+# withdrawn in favour of cito:updates, whose definition is
+# "The citing entity provides updated information superseding the cited
+# entity" — exactly the intended sense. One fewer invented term.
+#
+# On using CiTO between CLAIMS rather than between documents: CiTO declares
+# no domain or range on its properties, and says why — "so that this ontology
+# could be easily integrated with other models". The extension of use is not
+# ours; it is designed.
+#
+# cito:corrects is the near neighbour and was not chosen: correcting an ERROR
+# is what po:RejectionClaim already records. The relation between the two
+# dating claims is supersession, not correction.
+#
+# po:rejects stays local: refusing someone else's claim is a distinct act
+# from citing them, and no CiTO property carries the sense of a claim whose
+# whole content is the refusal of another.
+
+cito:agreesWith    rdfs:subPropertyOf po:engagesWith .
+cito:disagreesWith rdfs:subPropertyOf po:engagesWith .
+cito:updates       rdfs:subPropertyOf po:engagesWith .
+
+
+################################################################################
+#  9 · OBJECT PROPERTIES — ON VALUE CLASSES
+################################################################################
+
+po:hasErrorSource a owl:ObjectProperty ;
+    rdfs:label   "has error source"@en ;
+    rdfs:domain  po:Technique ;
+    rdfs:range   po:ErrorSource ;
+    rdfs:comment "Domain is the technique: a known limitation holds always."@en .
+
+po:weakerThan a owl:ObjectProperty , owl:TransitiveProperty ;
+    rdfs:label   "weaker than"@en ;
+    rdfs:domain  po:ConfidenceLevel ;
+    rdfs:range   po:ConfidenceLevel ;
+    rdfs:comment """Orders the confidence levels. This ordering is OURS, not
+        the source's, and must be declared as such in the documentation."""@en .
+
+
+################################################################################
+#  10 · DATATYPE PROPERTIES
+#  Dates are a class, ages are two literals. Not inconsistency: CQ4b compares
+#  two intervals against each other, nothing compares two age estimates.
+#  Structure is introduced only where a query demands it.
+################################################################################
+
+po:specimenID a owl:DatatypeProperty ;
+    rdfs:label "specimen ID"@en ;
+    rdfs:domain po:Specimen ; rdfs:range xsd:string .
+
+po:startYear a owl:DatatypeProperty ;
+    rdfs:label "start year"@en ;
+    rdfs:domain po:CalibratedInterval ; rdfs:range xsd:integer ;
+    rdfs:comment """xsd:integer, NOT xsd:gYear. Two reasons. (1) xsd:gYear is
+        not part of the OWL 2 datatype map, so HermiT refuses to load an
+        ontology that uses it — the reasoner step fails before it starts.
+        (2) integers compare arithmetically, which CQ4b needs, and negative
+        values express BCE without special handling."""@en .
+
+po:endYear a owl:DatatypeProperty ;
+    rdfs:label "end year"@en ;
+    rdfs:domain po:CalibratedInterval ; rdfs:range xsd:integer .
+
+po:minAge a owl:DatatypeProperty ;
+    rdfs:label "minimum age"@en ;
+    rdfs:domain po:AgeClaim ; rdfs:range xsd:integer .
+
+po:maxAge a owl:DatatypeProperty ;
+    rdfs:label "maximum age"@en ;
+    rdfs:domain po:AgeClaim ; rdfs:range xsd:integer .
+
+po:confidenceInterval a owl:DatatypeProperty ;
+    rdfs:label "confidence interval"@en ;
+    rdfs:domain po:CalibratedInterval ; rdfs:range xsd:string ;
+    rdfs:comment """The statistical confidence at which the bounds are stated:
+        "1 sigma", "95% CI", or "archaeological" for an interval that carries
+        no statistical claim at all.
+
+        Decision D7. Without this, CQ4b compares two intervals as if their
+        endpoints were hard boundaries — which is the very reduction this
+        project argues against, committed by our own query. A calibrated
+        radiocarbon interval is not a fact with edges: it is a hedged
+        estimate, and the source says so ("the precision of the radiocarbon
+        dates of medieval samples are often better than ±25 to 30 years for
+        the 1 sigma statistical uncertainty").
+
+        Consequence: a disagreement computed from bare bounds is a claim about
+        the bounds, not about the individual. queries/cq04b_tolerant.rq applies
+        the source's OWN stated precision and reports a different — and, as it
+        turns out, more faithful — result."""@en .
+
+po:hasEffect a owl:DatatypeProperty ;
+    rdfs:label "has effect"@en ;
+    rdfs:domain po:ErrorSource ; rdfs:range xsd:string .
+
+po:isNegated a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:label "is negated"@en ;
+    rdfs:domain po:Claim ; rdfs:range xsd:boolean ;
+    rdfs:comment """Decision D6. The claim asserts the NEGATIVE of its content:
+        not "leprosy is proposed" but "leprosy is denied", not "treated with
+        mercury" but "not treated with mercury".
+
+        WHY IT WAS NEEDED. Every property in this model was affirmative, so a
+        source could be recorded only when it asserted something. Schwarz et
+        al. say of the Refshale and Tirup individuals that they "were not
+        exposed to high amounts of Hg during their life" — a claim, with an
+        agent, a ground and a hedge, that the model simply could not hold.
+        That asymmetry was itself a position: it made denial invisible while
+        assertion was fully represented.
+
+        PRECEDENT. The course slides use exactly this device in the Ferguson
+        unit tests — "who is refused to receive what?" is answered with
+        ?e :isNegated "true", and the affirmative queries carry
+        FILTER NOT EXISTS { ?e :isNegated "true" }. Ours is typed boolean
+        rather than a string, but the pattern is theirs.
+
+        NOT THE SAME AS po:rejects. A RejectionClaim refuses SOMEONE ELSE'S
+        CLAIM — layer 3, a claim about a claim. po:isNegated is layer 1: the
+        claim's own content is asserted negatively. "I reject your diagnosis"
+        and "I claim he was not treated" are different acts.
+
+        NO TENSION WITH NCQ3. A negated claim is still a claim: it carries an
+        agent, a framework and a hedge. The model still cannot say that an
+        individual WAS healthy; it can say that someone denied a particular
+        condition for them. Denials are perspectival too — which is the thesis
+        applied symmetrically rather than an exception to it.
+
+        ABSENCE MEANS AFFIRMATIVE. Claims without this property are positive.
+        Consequence: every query that reports what a source asserts must carry
+        FILTER NOT EXISTS { ?claim po:isNegated true }, or it will report a
+        denial as an assertion. All affected queries were updated."""@en .
+
+po:hedgeWording a owl:DatatypeProperty ;
+    rdfs:label "hedge wording"@en ;
+    rdfs:domain po:Claim ; rdfs:range xsd:string ;
+    rdfs:comment """The source's EXACT words — 'cannot be excluded',
+        'consistent with'. po:hedge gives the normalised level for querying;
+        this keeps the original phrasing, so that our normalisation never
+        silently replaces the author's own hedging."""@en .
+
+
+################################################################################
+#  11 · DISJOINTNESS
+#
+#  All fifteen top-level classes are pairwise disjoint. This is what gives the
+#  reasoner something to catch: without disjointness, a misplaced object is
+#  merely INFERRED to have the declared type, silently, and nothing is flagged.
+#  (RDFS never constrains; OWL only constrains when two types cannot coexist.)
+#
+#  The six Claim subclasses are disjoint among themselves — declared in §2 —
+#  but not from po:Claim, of which they are subclasses.
+################################################################################
+
+[] a owl:AllDisjointClasses ;
+   owl:members ( po:Specimen po:Observation po:Claim po:CalibratedInterval
+                 po:Technique po:LesionType po:Bone po:Condition
+                 po:DiagnosticFramework po:ConfidenceLevel po:Source
+                 po:ErrorSource po:Correction po:Treatment
+                 po:DiscriminatingPower ) .
+
+# Individuals must be declared distinct, or the reasoner cannot detect a
+# violation of a FunctionalProperty: without this, a claim carrying two
+# different hedges is not an error — the reasoner simply concludes that the
+# two hedges are the same individual, and says nothing. OWL makes no unique
+# name assumption.
+
+[] a owl:AllDifferent ;
+   owl:distinctMembers ( po:Certain po:Probable po:Possible po:Tentative ) .
+
+[] a owl:AllDifferent ;
+   owl:distinctMembers ( po:Discriminating po:Suggestive po:Inconclusive ) .
+
+[] a owl:AllDifferent ;
+   owl:distinctMembers ( po:ModernBiomedical po:MedievalHumoral ) .
+
+
+################################################################################
+#  12 · VALUE INDIVIDUALS
+#  These belong to the T-Box in practice: they are the vocabulary, not the
+#  data. Extend them as the article requires.
+################################################################################
+
+po:ModernBiomedical a po:DiagnosticFramework ;
+    rdfs:label "modern biomedical framework"@en .
+
+po:MedievalHumoral a po:DiagnosticFramework ;
+    rdfs:label "medieval humoral framework"@en .
+
+po:Certain   a po:ConfidenceLevel ; rdfs:label "certain"@en .
+po:Probable  a po:ConfidenceLevel ; rdfs:label "probable"@en ;
+             po:weakerThan po:Certain .
+po:Possible  a po:ConfidenceLevel ; rdfs:label "possible"@en ;
+             po:weakerThan po:Probable .
+po:Tentative a po:ConfidenceLevel ; rdfs:label "tentative"@en ;
+             po:weakerThan po:Possible .
+
+po:Discriminating a po:DiscriminatingPower ; rdfs:label "discriminating"@en .
+po:Suggestive     a po:DiscriminatingPower ; rdfs:label "suggestive"@en .
+po:Inconclusive   a po:DiscriminatingPower ; rdfs:label "inconclusive"@en .
+
+
+################################################################################
+#  13 · WHAT IS DELIBERATELY ABSENT
+#
+#  There is NO property with rdfs:domain po:Specimen and rdfs:range
+#  po:Condition. No path runs from a set of remains to a disease without
+#  passing through a po:DiagnosticClaim carrying an agent, a framework and
+#  a hedge.
+#
+#  NCQ1 — 'what disease did this individual have?' — returns empty because
+#  of this absence, not because of a filter in the query.
+#
+#  Exam note: in RDFS, rdfs:domain and rdfs:range do not constrain, they
+#  license entailments (the liberality of RDF). It is only under OWL 2 with
+#  a reasoner that a misplaced object produces an inconsistency. The axioms
+#  above are written to be CHECKED, not merely declared.
+################################################################################

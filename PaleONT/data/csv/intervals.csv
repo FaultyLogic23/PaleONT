@@ -1,0 +1,13 @@
+id,start_year,end_year,confidence_interval,label
+ex:rf130_interval_armPosition,1250,1400,archaeological — no statistical confidence stated,"AD 1250–1400 (archaeological, arm position)"
+ex:rf130_interval_c14,1160,1212,1 sigma,calAD 1160–1212 at ±1 sigma
+ex:rf130_interval_c14_95,1149,1224,"95% CI, corrected for marine component","calAD 1149–1224, 95% CI corrected for marine component"
+ex:sk90_interval_armPosition,1250,1400,archaeological — no statistical confidence stated,AD 1250–1400
+ex:sk90_interval_c14_corrected,1443,1466,1 sigma,calAD 1443–1466 at 1 sigma
+ex:sk90_interval_c14_uncorrected,1435,1488,"95% CI, uncorrected for marine signature","calAD 1435–1488, 95% CI, uncorrected for marine signature"
+ex:sk89_interval_c14,1435,1456,1 sigma,calAD 1435-1456 at 1 sigma
+ex:sk89_interval_c14_95,1425,1482,"95% CI, corrected for marine component","calAD 1425-1482, 95% CI corrected for marine component"
+ex:sk94_interval_armPosition,1250,1400,"archaeological, no statistical confidence stated","AD 1250-1400 (archaeological, arm position B)"
+ex:sk94_interval_c14,1453,1494,1 sigma,calAD 1453-1494 at 1 sigma
+ex:sk94_interval_c14_late,1602,1614,"1 sigma, alternative calibration range","calAD 1602-1614, the later of the two calibration ranges"
+ex:tp292_interval_armPosition,1100,1250,"archaeological, no statistical confidence stated","AD 1100-1250 (archaeological, arm position A)"

@@ -1,0 +1,15 @@
+# NCQ5 · Does the mercury found in this individual prove a disease?
+# MUST RETURN EMPTY.
+# Mercury is an OBSERVATION. That it indicates treatment is a claim. That the
+# treatment implies a disease would be a second claim, made under another
+# frame, by another agent. No observation reaches a condition.
+PREFIX po: <https://w3id.org/paleont/>
+PREFIX ex: <https://w3id.org/paleont/data/>
+
+SELECT ?condition
+WHERE {
+  ?obs a po:Observation ;
+       po:usedTechnique ex:cvaas ;
+       ?p ?condition .
+  ?condition a po:Condition .
+}

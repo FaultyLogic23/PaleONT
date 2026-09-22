@@ -1,0 +1,15 @@
+# CQ2 · Which conditions were proposed for each specimen?
+# Expected: rows. Columns: specimen | condition | agent | hedge | framework
+PREFIX po: <https://w3id.org/paleont/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?specimen ?condition ?agent ?hedge ?framework
+WHERE {
+  ?claim a po:DiagnosticClaim ;
+         po:aboutSpecimen     ?specimen ;
+         po:proposesCondition ?condition ;
+         po:heldBy            ?agent ;
+         po:hedge             ?hedge ;
+         po:underFramework    ?framework .
+  FILTER NOT EXISTS { ?claim po:isNegated true }   # D6: a denial is not an assertion
+}

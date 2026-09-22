@@ -1,0 +1,442 @@
+@prefix po:   <https://w3id.org/paleont/> .
+@prefix ex:   <https://w3id.org/paleont/data/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix cito: <http://purl.org/spar/cito/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+################################################################################
+#  PaleONT — A-Box · vertical slice: St. Albani, Skeleton 90
+#
+#  SOURCE
+#  Schwarz S, Skytte L, Rasmussen KL.
+#  "Pre-Columbian treponemal infection in Denmark? — a paleopathological and
+#  archaeometric approach". Heritage Science 2013, 1:19.
+#  doi:10.1186/2050-7445-1-19 · CC BY 2.0
+#
+#  Every value below is taken from that paper. Where the paper's own wording
+#  matters it is preserved in po:hedgeWording or in rdfs:comment.
+#
+#  Requires vocabulary.ttl, which holds everything shared across specimens:
+#  sources, agents, techniques, error sources, corrections, lesion types,
+#  bones, conditions, treatments and the source-level methodological claims.
+#  This file holds only what is true of Sk. 90.
+#
+#  Individuals are namespaced sk90_* so that five specimens can coexist.
+################################################################################
+
+
+### 1 · The specimen ###########################################################
+
+ex:sk90  a po:Specimen ;
+    po:specimenID "St. Albani-90" ;
+    rdfs:label    "St. Albani, Skeleton 90"@en ;
+    rdfs:comment  "Burial 90, St. Albani churchyard, Odense (Funen), urban site. Male, good state of preservation."@en .
+
+
+################################################################################
+#  8 · LAYER 0 — OBSERVATIONS
+#  What was seen or measured. Note that not one of these mentions a disease.
+################################################################################
+
+ex:sk90_obs_parietal a po:Observation ;
+    po:observedOn         ex:sk90 ;
+    po:observesLesionType ex:focalSuperficialCavitation , ex:clusteredPitting ;
+    po:onBone             ex:parietal ;
+    po:usedTechnique      ex:macroscopic ;
+    po:declaredIn         ex:schwarz2013 ;
+    rdfs:label "Focal superficial cavitation and clustered pits on the right parietal"@en .
+
+ex:sk90_obs_parietal_ct a po:Observation ;
+    po:observedOn         ex:sk90 ;
+    po:observesLesionType ex:osteolyticLesion ;
+    po:onBone             ex:parietal ;
+    po:usedTechnique      ex:ct ;
+    po:declaredIn         ex:schwarz2013 ;
+    rdfs:label "CT: increased density of the diploë, thickening of the tables, outer table interrupted by round notches, focal radiolucent areas"@en .
+
+ex:sk90_obs_femur a po:Observation ;
+    po:observedOn         ex:sk90 ;
+    po:observesLesionType ex:osteolyticLesion ;
+    po:onBone             ex:femur ;
+    po:usedTechnique      ex:ct ;
+    po:declaredIn         ex:schwarz2013 ;
+    rdfs:label "Osteolytic lesion of around 3.5 cm in the trabeculae of the trochanter major; high radiodensity in the proximal diaphysis"@en .
+
+ex:sk90_obs_humerus a po:Observation ;
+    po:observedOn         ex:sk90 ;
+    po:observesLesionType ex:periostealReaction ;
+    po:onBone             ex:humerus ;
+    po:usedTechnique      ex:ct ;
+    po:declaredIn         ex:schwarz2013 ;
+    rdfs:label "Periosteal reactions and cortical thickening, mainly in the distal end"@en .
+
+ex:sk90_obs_tibia a po:Observation ;
+    po:observedOn         ex:sk90 ;
+    po:observesLesionType ex:clusteredPitting , ex:periostealReaction ;
+    po:onBone             ex:tibia ;
+    po:usedTechnique      ex:ct ;
+    po:declaredIn         ex:schwarz2013 ;
+    rdfs:label "Thickened cortex, diffuse changes on the anterior surface, diffuse clustered pitting"@en .
+
+ex:sk90_obs_mercury a po:Observation ;
+    po:observedOn    ex:sk90 ;
+    po:onBone        ex:femur ;
+    po:usedTechnique ex:cvaas ;
+    po:declaredIn    ex:schwarz2013 ;
+    rdfs:label "Hg concentration of 388 ± 7 ng/g in the femur (normal range for medieval Denmark: 10–100 ng/g)"@en .
+
+ex:sk90_obs_radiocarbon a po:Observation ;
+    po:observedOn    ex:sk90 ;
+    po:usedTechnique ex:radiocarbon ;
+    po:declaredIn    ex:schwarz2013 ;
+    rdfs:label "Uncalibrated radiocarbon age 420 ± 20 BP on bone collagen"@en .
+
+ex:sk90_obs_isotopes a po:Observation ;
+    po:observedOn    ex:sk90 ;
+    po:usedTechnique ex:irms ;
+    po:declaredIn    ex:schwarz2013 ;
+    rdfs:label "δ13C −19.72 ‰, δ15N 8.88 ‰, C:N 3.4 — estimated marine diet 1 %"@en .
+
+ex:sk90_obs_armPosition a po:Observation ;
+    po:observedOn    ex:sk90 ;
+    po:usedTechnique ex:armPosition ;
+    po:declaredIn    ex:schwarz2013 ;
+    rdfs:label "Burial arm position recorded"@en .
+
+ex:sk90_obs_pelvis a po:Observation ;
+    po:observedOn    ex:sk90 ;
+    po:usedTechnique ex:macroscopic ;
+    po:declaredIn    ex:schwarz2013 ;
+    rdfs:label "Pelvic morphology and general robust appearance of the skeletal elements"@en .
+
+ex:sk90_obs_transition a po:Observation ;
+    po:observedOn    ex:sk90 ;
+    po:usedTechnique ex:transitionAnalysis ;
+    po:declaredIn    ex:schwarz2013 ;
+    rdfs:label "Transition analysis on the auricular surface and pubic symphysis"@en .
+
+ex:sk90_obs_epiphyses a po:Observation ;
+    po:observedOn    ex:sk90 ;
+    po:usedTechnique ex:epiphysealFusion ;
+    po:declaredIn    ex:schwarz2013 ;
+    rdfs:label "Epiphyseal fusion and dental development"@en .
+
+
+################################################################################
+#  9 · LAYER 1 — DIAGNOSTIC CLAIMS
+#  Six properties, always the same six.
+################################################################################
+
+ex:sk90_claim_treponematosis a po:DiagnosticClaim ;
+    po:aboutSpecimen     ex:sk90 ;
+    po:proposesCondition ex:treponematosis ;
+    po:groundedIn        ex:sk90_obs_parietal , ex:sk90_obs_parietal_ct , ex:sk90_obs_femur ,
+                         ex:sk90_obs_humerus , ex:sk90_obs_tibia ;
+    po:heldBy            ex:schwarzTeam ;
+    po:underFramework    po:ModernBiomedical ;
+    po:framesContent     po:ModernBiomedical ;
+    po:hedge             po:Probable ;
+    po:hedgeWording      "only those in skeleton 90 from St. Albani are indicative of treponemal infection" ;
+    po:declaredIn        ex:schwarz2013 ;
+    rdfs:label "Treponemal infection proposed for Sk. 90"@en ;
+    rdfs:comment "Note the hedge: 'indicative of', not 'diagnostic of'. Sk. 90 is the only one of the five for which the paper goes this far."@en .
+
+ex:sk90_claim_preColumbian a po:DiagnosticClaim ;
+    po:aboutSpecimen     ex:sk90 ;
+    po:proposesCondition ex:treponematosis ;
+    po:groundedIn        ex:sk90_obs_radiocarbon , ex:sk90_obs_isotopes ;
+    po:heldBy            ex:schwarzTeam ;
+    po:underFramework    po:ModernBiomedical ;
+    po:framesContent     po:ModernBiomedical ;
+    po:hedge             po:Certain ;
+    po:hedgeWording      "St. Albani 90 is for sure pre-Columbian, and has therefore full potential to be a pre-Columbian case of treponemal infection" ;
+    po:declaredIn        ex:schwarz2013 ;
+    rdfs:label "Sk. 90 asserted as a pre-Columbian case of treponemal infection"@en ;
+    rdfs:comment "The strongest hedge in the paper, and it is about chronology, not about the disease. Worth noticing at the oral: certainty is granted to the date, never to the diagnosis."@en .
+
+
+################################################################################
+#  10 · LAYER 1 — TREATMENT
+#
+#  ⚠ OPEN DECISION (D4). po:underFramework is set to MedievalHumoral here,
+#  on the reading that the framework is the one within which the act made
+#  sense — mercury as a medicine for skin disease. The competing reading is
+#  that the CLAIM is a modern biomedical claim ABOUT a medieval practice, and
+#  should therefore carry ModernBiomedical.
+#  This is exactly the kind of choice the pattern-matching section must argue.
+#  Whichever is chosen, CQ8b depends on it.
+################################################################################
+
+ex:sk90_claim_mercuryTreatment a po:TreatmentClaim ;
+    po:aboutSpecimen     ex:sk90 ;
+    po:proposesTreatment ex:mercuryTreatment ;
+    po:groundedIn        ex:sk90_obs_mercury ;
+    po:heldBy            ex:schwarzTeam ;
+    po:underFramework    po:ModernBiomedical ;
+    po:framesContent     po:MedievalHumoral ;
+    po:hedge             po:Probable ;
+    po:hedgeWording      "they have apparently been treated with Hg-containing medicine" ;
+    po:declaredIn        ex:schwarz2013 ;
+    rdfs:label "Treatment with Hg-containing medicine proposed for Sk. 90"@en .
+
+# ⬆ claim_treponematosis and claim_mercuryTreatment are what CQ8b retrieves:
+#   the same specimen under two frameworks, with no relation asserted between
+#   them. The mercury does not reach the disease; it reaches a treatment claim,
+#   and stops there. NCQ5.
+
+
+################################################################################
+#  11 · LAYER 1 — AGE
+################################################################################
+
+ex:sk90_claim_age a po:AgeClaim ;
+    po:aboutSpecimen  ex:sk90 ;
+    po:minAge         15 ;
+    po:maxAge         23 ;
+    po:groundedIn     ex:sk90_obs_transition , ex:sk90_obs_epiphyses ;
+    po:heldBy         ex:schwarzTeam ;
+    po:underFramework po:ModernBiomedical ;
+    po:framesContent  po:ModernBiomedical ;
+    po:hedge          po:Probable ;
+    po:hedgeWording   "the lowest possible age was 15 years while the upper end estimate was 22.7 years at a level of 95% confidence" ;
+    po:declaredIn     ex:schwarz2013 ;
+    rdfs:label "Age at death of Sk. 90 estimated at 15–22.7 years (late-juvenile to early-adult)"@en .
+
+
+################################################################################
+#  12 · LAYER 1 — DATING
+#  Three claims on one individual. Two of them disagree by roughly two
+#  centuries, and the disagreement is between METHODS, not between authors.
+################################################################################
+
+ex:sk90_interval_armPosition a po:CalibratedInterval ;
+    po:startYear 1250 ; po:endYear 1400 ;
+    po:confidenceInterval "archaeological — no statistical confidence stated" ;
+    rdfs:label "AD 1250–1400"@en ;
+    rdfs:comment "As given in the body text for Skeleton 90. Table 2 records the archaeological date for Sct.Albani90 as 1100–1400; the two do not agree, and that discrepancy is itself in the source."@en .
+
+ex:sk90_interval_c14_uncorrected a po:CalibratedInterval ;
+    po:startYear 1435 ; po:endYear 1488 ;
+    po:confidenceInterval "95% CI, uncorrected for marine signature" ;
+    rdfs:label "calAD 1435–1488, 95% CI, uncorrected for marine signature"@en .
+
+ex:sk90_interval_c14_corrected a po:CalibratedInterval ;
+    po:startYear 1443 ; po:endYear 1466 ;
+    po:confidenceInterval "1 sigma" ;
+    rdfs:label "calAD 1443–1466 at 1 sigma"@en ;
+    rdfs:comment "The value the Discussion relies on. The 95% CI corrected for marine component is 1437–1489."@en .
+
+ex:sk90_claim_date_armPosition a po:DatingClaim ;
+    po:aboutSpecimen  ex:sk90 ;
+    po:hasResult      ex:sk90_interval_armPosition ;
+    po:groundedIn     ex:sk90_obs_armPosition ;
+    po:heldBy         ex:schwarzTeam ;
+    po:underFramework po:ModernBiomedical ;
+    po:framesContent  po:ModernBiomedical ;
+    po:hedge          po:Possible ;
+    po:hedgeWording   "the observed arm position dates the individual to between AD 1250–1400" ;
+    po:declaredIn     ex:schwarz2013 ;
+    rdfs:label "Archaeological date of Sk. 90 by arm position"@en .
+
+ex:sk90_claim_date_c14 a po:DatingClaim ;
+    po:aboutSpecimen     ex:sk90 ;
+    po:hasResult         ex:sk90_interval_c14_corrected ;
+    po:appliedCorrection ex:marineCorrection ;
+    po:groundedIn        ex:sk90_obs_radiocarbon , ex:sk90_obs_isotopes ;
+    po:heldBy            ex:schwarzTeam ;
+    po:underFramework    po:ModernBiomedical ;
+    po:framesContent     po:ModernBiomedical ;
+    po:hedge             po:Certain ;
+    po:hedgeWording      "the radiocarbon age for this individual can be considered to be completely reliable" ;
+    po:declaredIn        ex:schwarz2013 ;
+    rdfs:label "Radiocarbon date of Sk. 90, marine-corrected"@en ;
+    rdfs:comment "The correction applied is only 4 years, because the estimated marine diet is 1%. It is that low figure — an isotope observation — that licenses the certainty."@en .
+
+
+################################################################################
+#  13 · LAYER 3 — ADJUDICATION
+#  A claim about a claim. None of these says anything about whether Sk. 90
+#  was ill: they refuse assertions.
+################################################################################
+
+ex:sk90_reject_armPositionDate a po:RejectionClaim ;
+    po:aboutSpecimen  ex:sk90 ;
+    po:rejects        ex:sk90_claim_date_armPosition ;
+    po:groundedIn     ex:sk90_obs_isotopes ;
+    po:heldBy         ex:schwarzTeam ;
+    po:underFramework po:ModernBiomedical ;
+    po:framesContent  po:ModernBiomedical ;
+    po:hedge          po:Probable ;
+    po:hedgeWording   "this fact points to an error in the archaeological date by arm position (AD 1250–1400) as compared to reliable radiocarbon date of calAD 1443–1466" ;
+    po:declaredIn     ex:schwarz2013 ;
+    rdfs:label "The arm-position date for Sk. 90 is rejected in favour of the radiocarbon date"@en .
+
+# --- differential diagnosis: seven candidates refused ---------------------------
+
+ex:sk90_claim_alt_leprosy a po:DiagnosticClaim ;
+    po:aboutSpecimen ex:sk90 ; po:proposesCondition ex:leprosy ;
+    po:heldBy ex:schwarzTeam ; po:underFramework po:ModernBiomedical ;
+    po:framesContent po:ModernBiomedical ;
+    po:hedge po:Possible ; po:declaredIn ex:schwarz2013 ;
+    rdfs:label "Leprosy entertained as a differential diagnosis"@en .
+
+ex:sk90_reject_leprosy a po:RejectionClaim ;
+    po:aboutSpecimen ex:sk90 ; po:rejects ex:sk90_claim_alt_leprosy ;
+    po:groundedIn ex:sk90_obs_parietal , ex:sk90_obs_tibia ;
+    po:heldBy ex:schwarzTeam ; po:underFramework po:ModernBiomedical ;
+    po:framesContent po:ModernBiomedical ;
+    po:hedge po:Probable ;
+    po:hedgeWording "none of the five skeletons described in this paper shows any lesions diagnostic of leprosy" ;
+    po:declaredIn ex:schwarz2013 ;
+    rdfs:label "Leprosy rejected"@en .
+
+ex:sk90_claim_alt_tuberculosis a po:DiagnosticClaim ;
+    po:aboutSpecimen ex:sk90 ; po:proposesCondition ex:tuberculosis ;
+    po:heldBy ex:schwarzTeam ; po:underFramework po:ModernBiomedical ;
+    po:framesContent po:ModernBiomedical ;
+    po:hedge po:Possible ; po:declaredIn ex:schwarz2013 ;
+    rdfs:label "Tuberculosis entertained as a differential diagnosis"@en .
+
+ex:sk90_reject_tuberculosis a po:RejectionClaim ;
+    po:aboutSpecimen ex:sk90 ; po:rejects ex:sk90_claim_alt_tuberculosis ;
+    po:groundedIn ex:sk90_obs_femur , ex:sk90_obs_humerus ;
+    po:heldBy ex:schwarzTeam ; po:underFramework po:ModernBiomedical ;
+    po:framesContent po:ModernBiomedical ;
+    po:hedge po:Probable ;
+    po:hedgeWording "tuberculosis is usually affecting the spine and the inner table of the cranium while hypertrophic expansion of the long bones is described as unusual" ;
+    po:declaredIn ex:schwarz2013 ;
+    rdfs:label "Tuberculosis rejected"@en ;
+    rdfs:comment "This rejection does work elsewhere: the Discussion states that because tuberculosis can be excluded, focal superficial cavitation may be regarded as a diagnostic criterion for treponemal infection."@en .
+
+ex:sk90_claim_alt_pagets a po:DiagnosticClaim ;
+    po:aboutSpecimen ex:sk90 ; po:proposesCondition ex:pagetsDisease ;
+    po:heldBy ex:schwarzTeam ; po:underFramework po:ModernBiomedical ;
+    po:framesContent po:ModernBiomedical ;
+    po:hedge po:Possible ; po:declaredIn ex:schwarz2013 ;
+    rdfs:label "Paget's disease entertained as a differential diagnosis"@en .
+
+ex:sk90_reject_pagets a po:RejectionClaim ;
+    po:aboutSpecimen ex:sk90 ; po:rejects ex:sk90_claim_alt_pagets ;
+    po:groundedIn ex:sk90_obs_parietal_ct ;
+    po:heldBy ex:schwarzTeam ; po:underFramework po:ModernBiomedical ;
+    po:framesContent po:ModernBiomedical ;
+    po:hedge po:Probable ;
+    po:hedgeWording "Paget's disease is excluded for the cases described here, because no marble-like bone thickening was present on the CT scans" ;
+    po:declaredIn ex:schwarz2013 ;
+    rdfs:label "Paget's disease rejected"@en .
+
+ex:sk90_claim_alt_fungal a po:DiagnosticClaim ;
+    po:aboutSpecimen ex:sk90 ; po:proposesCondition ex:fungalInfection ;
+    po:heldBy ex:schwarzTeam ; po:underFramework po:ModernBiomedical ;
+    po:framesContent po:ModernBiomedical ;
+    po:hedge po:Possible ; po:declaredIn ex:schwarz2013 ;
+    rdfs:label "Fungal infection entertained as a differential diagnosis"@en .
+
+ex:sk90_reject_fungal a po:RejectionClaim ;
+    po:aboutSpecimen ex:sk90 ; po:rejects ex:sk90_claim_alt_fungal ;
+    po:groundedIn ex:sk90_obs_humerus ;
+    po:heldBy ex:schwarzTeam ; po:underFramework po:ModernBiomedical ;
+    po:framesContent po:ModernBiomedical ;
+    po:hedge po:Possible ;
+    po:hedgeWording "hypertrophic lesions are also unlikely for a fungal infection" ;
+    po:declaredIn ex:schwarz2013 ;
+    rdfs:label "Fungal infection rejected"@en .
+
+ex:sk90_claim_alt_osteomyelitis a po:DiagnosticClaim ;
+    po:aboutSpecimen ex:sk90 ; po:proposesCondition ex:pyogenicOsteomyelitis ;
+    po:heldBy ex:schwarzTeam ; po:underFramework po:ModernBiomedical ;
+    po:framesContent po:ModernBiomedical ;
+    po:hedge po:Possible ; po:declaredIn ex:schwarz2013 ;
+    rdfs:label "Pyogenic osteomyelitis entertained as a differential diagnosis"@en .
+
+ex:sk90_reject_osteomyelitis a po:RejectionClaim ;
+    po:aboutSpecimen ex:sk90 ; po:rejects ex:sk90_claim_alt_osteomyelitis ;
+    po:groundedIn ex:sk90_obs_femur , ex:sk90_obs_tibia , ex:sk90_obs_humerus ;
+    po:heldBy ex:schwarzTeam ; po:underFramework po:ModernBiomedical ;
+    po:framesContent po:ModernBiomedical ;
+    po:hedge po:Probable ;
+    po:hedgeWording "changes caused by pyogenic osteomyelitis are characterized by cloacae and sequestrate, but usually do not involve multiple skeletal elements" ;
+    po:declaredIn ex:schwarz2013 ;
+    rdfs:label "Pyogenic osteomyelitis rejected"@en .
+
+ex:sk90_claim_alt_tumour a po:DiagnosticClaim ;
+    po:aboutSpecimen ex:sk90 ; po:proposesCondition ex:boneTumour ;
+    po:heldBy ex:schwarzTeam ; po:underFramework po:ModernBiomedical ;
+    po:framesContent po:ModernBiomedical ;
+    po:hedge po:Possible ; po:declaredIn ex:schwarz2013 ;
+    rdfs:label "Bone tumour entertained as a differential diagnosis"@en .
+
+ex:sk90_reject_tumour a po:RejectionClaim ;
+    po:aboutSpecimen ex:sk90 ; po:rejects ex:sk90_claim_alt_tumour ;
+    po:groundedIn ex:sk90_obs_parietal_ct ;
+    po:heldBy ex:schwarzTeam ; po:underFramework po:ModernBiomedical ;
+    po:framesContent po:ModernBiomedical ;
+    po:hedge po:Probable ;
+    po:hedgeWording "changes associated with bone tumours are solitary, lytic lesions and periosteal reactions in the radiological image" ;
+    po:declaredIn ex:schwarz2013 ;
+    rdfs:label "Bone tumour rejected"@en .
+
+# --- and the rejection the paper's abstract is built on ------------------------
+
+ex:sk90_claim_alt_venereal a po:DiagnosticClaim ;
+    po:aboutSpecimen ex:sk90 ; po:proposesCondition ex:venerealSyphilis ;
+    po:heldBy ex:schwarzTeam ; po:underFramework po:ModernBiomedical ;
+    po:framesContent po:ModernBiomedical ;
+    po:hedge po:Possible ;
+    po:hedgeWording "considering the climate and geography at the sites, venereal syphilis might be the treponemal disease causing the pathologies on the skeletal remains" ;
+    po:declaredIn ex:schwarz2013 ;
+    rdfs:label "Pre-Columbian venereal syphilis entertained"@en .
+
+ex:sk90_reject_venereal a po:RejectionClaim ;
+    po:aboutSpecimen ex:sk90 ; po:rejects ex:sk90_claim_alt_venereal ;
+    po:groundedIn ex:sk90_obs_parietal , ex:sk90_obs_tibia ;
+    po:heldBy ex:schwarzTeam ; po:underFramework po:ModernBiomedical ;
+    po:framesContent po:ModernBiomedical ;
+    po:hedge po:Probable ;
+    po:hedgeWording "the hypothesis that pre-Columbian venereal syphilis existed among the analysed skeletal material is rejected with the help of various archaeometric analyses" ;
+    po:declaredIn ex:schwarz2013 ;
+    rdfs:label "Pre-Columbian venereal syphilis rejected"@en ;
+    rdfs:comment "The paper rejects VENEREAL syphilis while proposing a less aggressive, possibly non-venereal treponematosis. Rejecting one claim is not asserting the negation of a disease — precisely NCQ1 and the rejection argument."@en .
+
+
+################################################################################
+#  15 · LAYER 3 — ENGAGEMENT WITH PRIOR LITERATURE
+################################################################################
+
+ex:sk90_claim_ortner a po:DiagnosticClaim ;
+    po:aboutSpecimen  ex:sk90 ;
+    po:heldBy         ex:ortner ;
+    po:underFramework po:ModernBiomedical ;
+    po:framesContent  po:ModernBiomedical ;
+    po:hedge          po:Tentative ;
+    po:hedgeWording   "the presence of syphilis in the Old World before 1500 A.D. remains a very contentious issue" ;
+    po:declaredIn     ex:ortner2011 ;
+    rdfs:label "Ortner: pre-1500 Old World syphilis remains contentious"@en ;
+    rdfs:comment "Modelled as aboutSpecimen sk90 only because this slice holds one specimen; in the full A-Box it is a claim about the question, not about an individual. ⚠ revisit when the model is scaled — this may be the case that forces a claim with no specimen at all."@en .
+
+ex:sk90_claim_harper a po:DiagnosticClaim ;
+    po:aboutSpecimen  ex:sk90 ;
+    po:heldBy         ex:harper ;
+    po:underFramework po:ModernBiomedical ;
+    po:framesContent  po:ModernBiomedical ;
+    po:hedge          po:Probable ;
+    po:hedgeWording   "disproved most of the alleged pre-Columbian dates of single findings of syphilis from the Old World" ;
+    po:declaredIn     ex:harper2008 ;
+    rdfs:label "Harper et al.: most alleged pre-Columbian syphilis dates disproved"@en .
+
+ex:sk90_claim_preColumbian cito:agreesWith  ex:sk90_claim_harper .
+ex:sk90_claim_preColumbian cito:disagreesWith ex:sk90_claim_ortner .
+ex:sk90_claim_date_c14     cito:updates     ex:sk90_claim_date_armPosition .
+
+
+################################################################################
+#  WHAT IS NOT IN THIS FILE
+#
+#  There is no triple of the form   ex:sk90 <anything> ex:treponematosis .
+#
+#  Sixteen claims, thirteen observations, and not one path from the remains to
+#  a disease. That absence is the project.
+################################################################################

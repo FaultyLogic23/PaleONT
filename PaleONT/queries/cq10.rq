@@ -1,0 +1,14 @@
+# CQ10 · Which lesion types recur across more than one specimen?
+# Expected: rows ONLY once a second specimen is in the A-Box. With the
+# vertical slice (Sk. 90 alone) this returns nothing, and that is arithmetic,
+# not a model failure: COUNT(DISTINCT ?specimen) cannot exceed 1.
+# Works only because CQ1 kept lesion TYPE separate from the observation.
+PREFIX po: <https://w3id.org/paleont/>
+
+SELECT ?lesionType (COUNT(DISTINCT ?specimen) AS ?specimenCount)
+WHERE {
+  ?obs po:observesLesionType ?lesionType ;
+       po:observedOn         ?specimen .
+}
+GROUP BY ?lesionType
+HAVING (COUNT(DISTINCT ?specimen) > 1)

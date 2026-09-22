@@ -1,0 +1,21 @@
+# THE DEMONSTRATION QUERY — not a competency question, the argument itself.
+# One row for every assertion ever made about this specimen, across diagnosis,
+# treatment and dating, each with who said it and how sure they were.
+#
+# ⚠ REQUIRES RDFS ENTAILMENT (po:proposes is a superproperty).
+#
+# Read the hedge column: in this source, certainty is granted to the DATE,
+# never to the disease.
+PREFIX po: <https://w3id.org/paleont/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?claim ?proposed ?agent ?hedge ?wording
+WHERE {
+  ?claim a po:Claim ;
+         po:aboutSpecimen <https://w3id.org/paleont/data/sk90> ;
+         po:proposes ?proposed ;
+         po:heldBy   ?agent ;
+         po:hedge    ?hedge .
+  OPTIONAL { ?claim po:hedgeWording ?wording }
+  FILTER NOT EXISTS { ?claim po:isNegated true }   # D6: a denial is not an assertion
+}

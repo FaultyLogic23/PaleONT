@@ -1,0 +1,22 @@
+# CQ11 · Which claims does the source explicitly DENY?
+# Expected: rows.  specimen | claim | what is denied | agent | hedge | wording
+#
+# Decision D6. Until po:isNegated existed the model could hold only what a
+# source asserted, never what it denied — an asymmetry that made denial
+# invisible while assertion was fully represented. A denial is a claim like
+# any other: same agent, same grounding observation, same hedge. It differs
+# in exactly one property.
+#
+# ⚠ REQUIRES RDFS ENTAILMENT (po:proposes is a superproperty).
+PREFIX po: <https://w3id.org/paleont/>
+
+SELECT ?specimen ?claim ?denied ?agent ?hedge ?wording
+WHERE {
+  ?claim a po:Claim ;
+         po:isNegated  true ;
+         po:proposes   ?denied ;
+         po:heldBy     ?agent ;
+         po:hedge      ?hedge .
+  OPTIONAL { ?claim po:aboutSpecimen ?specimen }
+  OPTIONAL { ?claim po:hedgeWording ?wording }
+}

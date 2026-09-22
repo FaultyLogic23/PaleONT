@@ -1,0 +1,16 @@
+# CQ9 · How was the age of each individual estimated?
+# Expected: rows.  specimen | min | max | technique | hedge
+# Age is a CLAIM, not a property of the specimen — deliberately the same shape
+# as a diagnosis.
+PREFIX po: <https://w3id.org/paleont/>
+
+SELECT ?specimen ?minAge ?maxAge ?technique ?hedge
+WHERE {
+  ?a a po:AgeClaim ;
+     po:aboutSpecimen ?specimen ;
+     po:minAge        ?minAge ;
+     po:maxAge        ?maxAge ;
+     po:hedge         ?hedge .
+  OPTIONAL { ?a po:groundedIn ?obs . ?obs po:usedTechnique ?technique }
+  FILTER NOT EXISTS { ?a po:isNegated true }   # D6: a denial is not an assertion
+}

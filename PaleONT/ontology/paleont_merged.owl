@@ -1,0 +1,2395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:cito="http://purl.org/spar/cito/"
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:foaf="http://xmlns.com/foaf/0.1/"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:po="https://w3id.org/paleont/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/rf130_claim_age">
+    <rdf:type rdf:resource="https://w3id.org/paleont/AgeClaim"/>
+    <rdfs:label xml:lang="en">Age at death of Refshale 130 estimated at 24.7–46.4 years</rdfs:label>
+    <po:aboutSpecimen rdf:resource="https://w3id.org/paleont/data/rf130"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/rf130_obs_transition"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Probable"/>
+    <po:hedgeWording>transition analysis suggests an age between 24.7 to 46.4 years with a maximum likelihood of 32.9 years</po:hedgeWording>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/schwarzTeam"/>
+    <po:maxAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">46</po:maxAge>
+    <po:minAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">24</po:minAge>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/Claim">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Claim</rdfs:label>
+    <rdfs:comment xml:lang="en">A proposition held by an agent, under a framework, with a
+        stated degree of confidence, grounded in one or more observations.
+        Nothing enters this graph as fact; everything enters as something
+        someone asserted.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk90_reject_venereal">
+    <rdf:type rdf:resource="https://w3id.org/paleont/RejectionClaim"/>
+    <rdfs:label xml:lang="en">Pre-Columbian venereal syphilis rejected</rdfs:label>
+    <po:aboutSpecimen rdf:resource="https://w3id.org/paleont/data/sk90"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/sk90_obs_parietal"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/sk90_obs_tibia"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Probable"/>
+    <po:hedgeWording>the hypothesis that pre-Columbian venereal syphilis existed among the analysed skeletal material is rejected with the help of various archaeometric analyses</po:hedgeWording>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/schwarzTeam"/>
+    <po:rejects rdf:resource="https://w3id.org/paleont/data/sk90_claim_alt_venereal"/>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/Discriminating">
+    <rdf:type rdf:resource="https://w3id.org/paleont/DiscriminatingPower"/>
+    <rdfs:label xml:lang="en">discriminating</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/rf130_reject_leprosy">
+    <rdf:type rdf:resource="https://w3id.org/paleont/RejectionClaim"/>
+    <rdfs:label xml:lang="en">Leprosy rejected for Refshale 130</rdfs:label>
+    <cito:agreesWith rdf:resource="https://w3id.org/paleont/data/rf130_claim_boldsen"/>
+    <po:aboutSpecimen rdf:resource="https://w3id.org/paleont/data/rf130"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/rf130_obs_radius"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/rf130_obs_tibia"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Probable"/>
+    <po:hedgeWording>none of the five skeletons described in this paper shows any lesions diagnostic of leprosy</po:hedgeWording>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/schwarzTeam"/>
+    <po:rejects rdf:resource="https://w3id.org/paleont/data/rf130_claim_alt_leprosy"/>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk89_claim_alt_leprosy">
+    <rdf:type rdf:resource="https://w3id.org/paleont/DiagnosticClaim"/>
+    <rdfs:label xml:lang="en">Leprosy entertained as a differential diagnosis for sk89</rdfs:label>
+    <po:aboutSpecimen rdf:resource="https://w3id.org/paleont/data/sk89"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Possible"/>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/schwarzTeam"/>
+    <po:proposesCondition rdf:resource="https://w3id.org/paleont/data/leprosy"/>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/tp292_claim_noMercuryTreatment">
+    <rdf:type rdf:resource="https://w3id.org/paleont/TreatmentClaim"/>
+    <rdfs:label xml:lang="en">Treatment with Hg-containing medicine DENIED for Tirup 292</rdfs:label>
+    <po:aboutSpecimen rdf:resource="https://w3id.org/paleont/data/tp292"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/MedievalHumoral"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/tp292_obs_mercury"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Probable"/>
+    <po:hedgeWording>these individuals were not exposed to high amounts of Hg during their life, but exhibit Hg concentrations typical for the non-exposed individuals</po:hedgeWording>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/schwarzTeam"/>
+    <po:isNegated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</po:isNegated>
+    <po:proposesTreatment rdf:resource="https://w3id.org/paleont/data/mercuryTreatment"/>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk90_claim_alt_pagets">
+    <rdf:type rdf:resource="https://w3id.org/paleont/DiagnosticClaim"/>
+    <rdfs:label xml:lang="en">Paget's disease entertained as a differential diagnosis</rdfs:label>
+    <po:aboutSpecimen rdf:resource="https://w3id.org/paleont/data/sk90"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Possible"/>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/schwarzTeam"/>
+    <po:proposesCondition rdf:resource="https://w3id.org/paleont/data/pagetsDisease"/>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk90_obs_mercury">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Observation"/>
+    <rdfs:label xml:lang="en">Hg concentration of 388 ± 7 ng/g in the femur (normal range for medieval Denmark: 10–100 ng/g)</rdfs:label>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:observedOn rdf:resource="https://w3id.org/paleont/data/sk90"/>
+    <po:onBone rdf:resource="https://w3id.org/paleont/data/femur"/>
+    <po:usedTechnique rdf:resource="https://w3id.org/paleont/data/cvaas"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/tp292_obs_frontal">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Observation"/>
+    <rdfs:label xml:lang="en">Serpiginous cavitation on the frontal bone, continuing into the right orbit</rdfs:label>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:observedOn rdf:resource="https://w3id.org/paleont/data/tp292"/>
+    <po:observesLesionType rdf:resource="https://w3id.org/paleont/data/serpiginousCavitation"/>
+    <po:onBone rdf:resource="https://w3id.org/paleont/data/frontal"/>
+    <po:usedTechnique rdf:resource="https://w3id.org/paleont/data/macroscopic"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk90_claim_date_c14">
+    <rdf:type rdf:resource="https://w3id.org/paleont/DatingClaim"/>
+    <rdfs:label xml:lang="en">Radiocarbon date of Sk. 90, marine-corrected</rdfs:label>
+    <cito:updates rdf:resource="https://w3id.org/paleont/data/sk90_claim_date_armPosition"/>
+    <po:aboutSpecimen rdf:resource="https://w3id.org/paleont/data/sk90"/>
+    <po:appliedCorrection rdf:resource="https://w3id.org/paleont/data/marineCorrection"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/sk90_obs_isotopes"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/sk90_obs_radiocarbon"/>
+    <po:hasResult rdf:resource="https://w3id.org/paleont/data/sk90_interval_c14_corrected"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Certain"/>
+    <po:hedgeWording>the radiocarbon age for this individual can be considered to be completely reliable</po:hedgeWording>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/schwarzTeam"/>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk90_claim_treponematosis">
+    <rdf:type rdf:resource="https://w3id.org/paleont/DiagnosticClaim"/>
+    <rdfs:label xml:lang="en">Treponemal infection proposed for Sk. 90</rdfs:label>
+    <po:aboutSpecimen rdf:resource="https://w3id.org/paleont/data/sk90"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/sk90_obs_femur"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/sk90_obs_humerus"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/sk90_obs_parietal"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/sk90_obs_parietal_ct"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/sk90_obs_tibia"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Probable"/>
+    <po:hedgeWording>only those in skeleton 90 from St. Albani are indicative of treponemal infection</po:hedgeWording>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/schwarzTeam"/>
+    <po:proposesCondition rdf:resource="https://w3id.org/paleont/data/treponematosis"/>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b12">
+    <rdf:first rdf:resource="https://w3id.org/paleont/Claim"/>
+    <rdf:rest rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b13"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/Condition">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Condition</rdfs:label>
+    <rdfs:comment xml:lang="en">A disease or pathological condition. Individuals carry
+        skos:exactMatch links to MONDO. NOTE: there is no path from
+        po:Specimen to this class.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/aboutTechnique">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">about technique</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/paleont/MethodologicalClaim"/>
+    <rdfs:range rdf:resource="https://w3id.org/paleont/Technique"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/boldsen">
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    <foaf:name>Jesper L. Boldsen</foaf:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/tp292_claim_alt_yaws">
+    <rdf:type rdf:resource="https://w3id.org/paleont/DiagnosticClaim"/>
+    <rdfs:label xml:lang="en">Yaws left open as an alternative for Tirup 292, entertained and never rejected</rdfs:label>
+    <po:aboutSpecimen rdf:resource="https://w3id.org/paleont/data/tp292"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/tp292_obs_frontal"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Possible"/>
+    <po:hedgeWording>these changes are regarded as diagnostic for treponemal disease, but can also occur in bejel and yaws</po:hedgeWording>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/schwarzTeam"/>
+    <po:proposesCondition rdf:resource="https://w3id.org/paleont/data/yaws"/>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/rf130_claim_accordance">
+    <rdf:type rdf:resource="https://w3id.org/paleont/MethodologicalClaim"/>
+    <rdfs:label xml:lang="en">The paper claims complete accordance between the two dates for Refshale 130</rdfs:label>
+    <po:aboutTechnique rdf:resource="https://w3id.org/paleont/data/radiocarbon"/>
+    <po:appliedTo rdf:resource="https://w3id.org/paleont/data/rf130"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+    <po:hasDiscriminatingPower rdf:resource="https://w3id.org/paleont/Suggestive"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Probable"/>
+    <po:hedgeWording>only in the case of burial 130 from Refshale is seen a complete accordance</po:hedgeWording>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/schwarzTeam"/>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/observedOn">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:label xml:lang="en">observed on</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/paleont/Observation"/>
+    <rdfs:range rdf:resource="https://w3id.org/paleont/Specimen"/>
+    <rdfs:comment xml:lang="en">Functional: one observation concerns one specimen.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/hasErrorSource">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">has error source</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/paleont/Technique"/>
+    <rdfs:range rdf:resource="https://w3id.org/paleont/ErrorSource"/>
+    <rdfs:comment xml:lang="en">Domain is the technique: a known limitation holds always.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk90_reject_osteomyelitis">
+    <rdf:type rdf:resource="https://w3id.org/paleont/RejectionClaim"/>
+    <rdfs:label xml:lang="en">Pyogenic osteomyelitis rejected</rdfs:label>
+    <po:aboutSpecimen rdf:resource="https://w3id.org/paleont/data/sk90"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/sk90_obs_femur"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/sk90_obs_humerus"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/sk90_obs_tibia"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Probable"/>
+    <po:hedgeWording>changes caused by pyogenic osteomyelitis are characterized by cloacae and sequestrate, but usually do not involve multiple skeletal elements</po:hedgeWording>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/schwarzTeam"/>
+    <po:rejects rdf:resource="https://w3id.org/paleont/data/sk90_claim_alt_osteomyelitis"/>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/serpiginousCavitation">
+    <rdf:type rdf:resource="https://w3id.org/paleont/LesionType"/>
+    <rdfs:label xml:lang="en">serpiginous cavitation</rdfs:label>
+    <rdfs:comment xml:lang="en">Regarded by the source as diagnostic for treponemal disease (Hackett p. 45), while noting that it also occurs in bejel and yaws.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/discriminatesBetween">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">discriminates between</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/paleont/MethodologicalClaim"/>
+    <rdfs:range rdf:resource="https://w3id.org/paleont/Condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk94_claim_age">
+    <rdf:type rdf:resource="https://w3id.org/paleont/AgeClaim"/>
+    <rdfs:label xml:lang="en">Age at death of Sk. 94 estimated at 35-45 years</rdfs:label>
+    <po:aboutSpecimen rdf:resource="https://w3id.org/paleont/data/sk94"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/sk94_obs_pubicSymphysis"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Probable"/>
+    <po:hedgeWording>the changes on the pubic symphysis as well as on the auricular surface are consistent with an individual who was 35-45 years old when he died</po:hedgeWording>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/schwarzTeam"/>
+    <po:maxAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">45</po:maxAge>
+    <po:minAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">35</po:minAge>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk89_claim_age">
+    <rdf:type rdf:resource="https://w3id.org/paleont/AgeClaim"/>
+    <rdfs:label xml:lang="en">Age at death of Sk. 89 given only as adult; the bounds recorded here are the study's adult category, not a measured estimate</rdfs:label>
+    <po:aboutSpecimen rdf:resource="https://w3id.org/paleont/data/sk89"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/sk89_obs_tibia"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Tentative"/>
+    <po:hedgeWording>only the postcranial skeleton is present, which made ageing and sexing the individual difficult</po:hedgeWording>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/schwarzTeam"/>
+    <po:maxAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60</po:maxAge>
+    <po:minAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</po:minAge>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/hedgeWording">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">hedge wording</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/paleont/Claim"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment xml:lang="en">The source's EXACT words — 'cannot be excluded',
+        'consistent with'. po:hedge gives the normalised level for querying;
+        this keeps the original phrasing, so that our normalisation never
+        silently replaces the author's own hedging.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/tp292_claim_preColumbian">
+    <rdf:type rdf:resource="https://w3id.org/paleont/DiagnosticClaim"/>
+    <rdfs:label xml:lang="en">Tirup 292 asserted as a securely pre-Columbian case of treponemal infection</rdfs:label>
+    <po:aboutSpecimen rdf:resource="https://w3id.org/paleont/data/tp292"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/tp292_obs_armPosition"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Certain"/>
+    <po:hedgeWording>the results of our analyses show that those two, Tirup 292 and St. Albani 90, can be securely dated to pre-Columbian times</po:hedgeWording>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/schwarzTeam"/>
+    <po:proposesCondition rdf:resource="https://w3id.org/paleont/data/treponematosis"/>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/pagetsDisease">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Condition"/>
+    <rdfs:label xml:lang="en">Paget's disease of bone (osteitis deformans)</rdfs:label>
+    <skos:closeMatch rdf:resource="http://purl.obolibrary.org/obo/MONDO_0005382"/>
+    <rdfs:comment xml:lang="en">⚠ closeMatch until checked: 'Paget's disease' is ambiguous between the bone disease and Paget disease of the breast. The paper means the skeletal one.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/armPosition">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Technique"/>
+    <rdfs:label xml:lang="en">arm-position dating</rdfs:label>
+    <rdfs:comment xml:lang="en">Archaeological dating from burial arm position (Kieffer-Olsen).</rdfs:comment>
+    <po:hasErrorSource rdf:resource="https://w3id.org/paleont/data/unsubstantiatedMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk90_claim_harper">
+    <rdf:type rdf:resource="https://w3id.org/paleont/DiagnosticClaim"/>
+    <rdfs:label xml:lang="en">Harper et al.: most alleged pre-Columbian syphilis dates disproved</rdfs:label>
+    <po:aboutSpecimen rdf:resource="https://w3id.org/paleont/data/sk90"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/harper2008"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Probable"/>
+    <po:hedgeWording>disproved most of the alleged pre-Columbian dates of single findings of syphilis from the Old World</po:hedgeWording>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/harper"/>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/rf130_claim_boldsen">
+    <rdf:type rdf:resource="https://w3id.org/paleont/DiagnosticClaim"/>
+    <rdfs:label xml:lang="en">Boldsen's earlier analysis of Refshale for leprous bone changes</rdfs:label>
+    <po:aboutSpecimen rdf:resource="https://w3id.org/paleont/data/rf130"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/boldsen2007"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Probable"/>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/boldsen"/>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk90_claim_alt_venereal">
+    <rdf:type rdf:resource="https://w3id.org/paleont/DiagnosticClaim"/>
+    <rdfs:label xml:lang="en">Pre-Columbian venereal syphilis entertained</rdfs:label>
+    <po:aboutSpecimen rdf:resource="https://w3id.org/paleont/data/sk90"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Possible"/>
+    <po:hedgeWording>considering the climate and geography at the sites, venereal syphilis might be the treponemal disease causing the pathologies on the skeletal remains</po:hedgeWording>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/schwarzTeam"/>
+    <po:proposesCondition rdf:resource="https://w3id.org/paleont/data/venerealSyphilis"/>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b6">
+    <rdf:first rdf:resource="https://w3id.org/paleont/AgeClaim"/>
+    <rdf:rest rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b7"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/femur">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Bone"/>
+    <rdfs:label xml:lang="en">femur</rdfs:label>
+    <skos:exactMatch rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000981"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk90_reject_armPositionDate">
+    <rdf:type rdf:resource="https://w3id.org/paleont/RejectionClaim"/>
+    <rdfs:label xml:lang="en">The arm-position date for Sk. 90 is rejected in favour of the radiocarbon date</rdfs:label>
+    <po:aboutSpecimen rdf:resource="https://w3id.org/paleont/data/sk90"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/sk90_obs_isotopes"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Probable"/>
+    <po:hedgeWording>this fact points to an error in the archaeological date by arm position (AD 1250–1400) as compared to reliable radiocarbon date of calAD 1443–1466</po:hedgeWording>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/schwarzTeam"/>
+    <po:rejects rdf:resource="https://w3id.org/paleont/data/sk90_claim_date_armPosition"/>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://w3id.org/paleont/aboutSpecimen"/>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b3">
+    <rdf:first rdf:resource="https://w3id.org/paleont/DiagnosticClaim"/>
+    <rdf:rest rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b4"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/mercuryTreatment">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Treatment"/>
+    <rdfs:label xml:lang="en">treatment with Hg-containing medicine</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b3"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/radiocarbon">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Technique"/>
+    <rdfs:label xml:lang="en">radiocarbon dating</rdfs:label>
+    <rdfs:comment xml:lang="en">Leibniz Laboratory, Kiel. Calibrated with OxCal v4.1.7 and IntCal09.</rdfs:comment>
+    <po:hasErrorSource rdf:resource="https://w3id.org/paleont/data/marineReservoir"/>
+    <po:hasErrorSource rdf:resource="https://w3id.org/paleont/data/freshwaterReservoir"/>
+    <po:hasErrorSource rdf:resource="https://w3id.org/paleont/data/countingUncertainty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk94_claim_date_armPosition">
+    <rdf:type rdf:resource="https://w3id.org/paleont/DatingClaim"/>
+    <rdfs:label xml:lang="en">Archaeological date of Sk. 94 by arm position. Table 2 records 1250-1350 for the same burial; the body text value is the one modelled here, and the difference is in the source</rdfs:label>
+    <po:aboutSpecimen rdf:resource="https://w3id.org/paleont/data/sk94"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/sk94_obs_armPosition"/>
+    <po:hasResult rdf:resource="https://w3id.org/paleont/data/sk94_interval_armPosition"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Possible"/>
+    <po:hedgeWording>arm position B places the burial in between AD 1250-1400</po:hedgeWording>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/schwarzTeam"/>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk90_obs_transition">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Observation"/>
+    <rdfs:label xml:lang="en">Transition analysis on the auricular surface and pubic symphysis</rdfs:label>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:observedOn rdf:resource="https://w3id.org/paleont/data/sk90"/>
+    <po:usedTechnique rdf:resource="https://w3id.org/paleont/data/transitionAnalysis"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/meth_macroscopic">
+    <rdf:type rdf:resource="https://w3id.org/paleont/MethodologicalClaim"/>
+    <rdfs:label xml:lang="en">Macroscopic examination cannot separate the three treponematoses</rdfs:label>
+    <po:aboutTechnique rdf:resource="https://w3id.org/paleont/data/macroscopic"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:discriminatesBetween rdf:resource="https://w3id.org/paleont/data/treponematosis"/>
+    <po:discriminatesBetween rdf:resource="https://w3id.org/paleont/data/venerealSyphilis"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+    <po:hasDiscriminatingPower rdf:resource="https://w3id.org/paleont/Inconclusive"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Certain"/>
+    <po:hedgeWording>the bone lesions of the three treponematoses affecting the skeleton are not distinguishable from each other</po:hedgeWording>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/schwarzTeam"/>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/radius">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Bone"/>
+    <rdfs:label xml:lang="en">radius</rdfs:label>
+    <skos:exactMatch rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001423"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk89_obs_tibia_bowing">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Observation"/>
+    <rdfs:label xml:lang="en">The tibia shafts are slightly bowed</rdfs:label>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:observedOn rdf:resource="https://w3id.org/paleont/data/sk89"/>
+    <po:observesLesionType rdf:resource="https://w3id.org/paleont/data/diaphysealBowing"/>
+    <po:onBone rdf:resource="https://w3id.org/paleont/data/tibia"/>
+    <po:usedTechnique rdf:resource="https://w3id.org/paleont/data/macroscopic"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk90_claim_alt_osteomyelitis">
+    <rdf:type rdf:resource="https://w3id.org/paleont/DiagnosticClaim"/>
+    <rdfs:label xml:lang="en">Pyogenic osteomyelitis entertained as a differential diagnosis</rdfs:label>
+    <po:aboutSpecimen rdf:resource="https://w3id.org/paleont/data/sk90"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Possible"/>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/schwarzTeam"/>
+    <po:proposesCondition rdf:resource="https://w3id.org/paleont/data/pyogenicOsteomyelitis"/>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk94_obs_radiocarbon">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Observation"/>
+    <rdfs:label xml:lang="en">Uncalibrated radiocarbon age 425 +/- 20 BP; corrected for the marine component, 380 +/- 20 BP</rdfs:label>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:observedOn rdf:resource="https://w3id.org/paleont/data/sk94"/>
+    <po:usedTechnique rdf:resource="https://w3id.org/paleont/data/radiocarbon"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b16">
+    <rdf:first rdf:resource="https://w3id.org/paleont/Bone"/>
+    <rdf:rest rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b17"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk89_reject_leprosy">
+    <rdf:type rdf:resource="https://w3id.org/paleont/RejectionClaim"/>
+    <rdfs:label xml:lang="en">Leprosy rejected for sk89</rdfs:label>
+    <po:aboutSpecimen rdf:resource="https://w3id.org/paleont/data/sk89"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/sk89_obs_tibia"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Probable"/>
+    <po:hedgeWording>none of the five skeletons described in this paper shows any lesions diagnostic of leprosy</po:hedgeWording>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/schwarzTeam"/>
+    <po:rejects rdf:resource="https://w3id.org/paleont/data/sk89_claim_alt_leprosy"/>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/meth_freshwater">
+    <rdf:type rdf:resource="https://w3id.org/paleont/MethodologicalClaim"/>
+    <rdfs:label xml:lang="en">No freshwater reservoir correction could be calculated, so the radiocarbon ages of Sk. 89, Sk. 94 and Refshale 130 may be too old and those individuals may postdate 1493</rdfs:label>
+    <po:aboutTechnique rdf:resource="https://w3id.org/paleont/data/radiocarbon"/>
+    <po:appliedTo rdf:resource="https://w3id.org/paleont/data/rf130"/>
+    <po:appliedTo rdf:resource="https://w3id.org/paleont/data/sk89"/>
+    <po:appliedTo rdf:resource="https://w3id.org/paleont/data/sk94"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:discriminatesBetween rdf:resource="https://w3id.org/paleont/data/treponematosis"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+    <po:hasDiscriminatingPower rdf:resource="https://w3id.org/paleont/Inconclusive"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Possible"/>
+    <po:hedgeWording>the radiocarbon ages of all three individuals can therefore be younger than the ages quoted here, which is without a freshwater reservoir correction; it is therefore possible that all three individuals can have died after 1493</po:hedgeWording>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/schwarzTeam"/>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b4">
+    <rdf:first rdf:resource="https://w3id.org/paleont/RejectionClaim"/>
+    <rdf:rest rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b5"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk90_reject_tumour">
+    <rdf:type rdf:resource="https://w3id.org/paleont/RejectionClaim"/>
+    <rdfs:label xml:lang="en">Bone tumour rejected</rdfs:label>
+    <po:aboutSpecimen rdf:resource="https://w3id.org/paleont/data/sk90"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/sk90_obs_parietal_ct"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Probable"/>
+    <po:hedgeWording>changes associated with bone tumours are solitary, lytic lesions and periosteal reactions in the radiological image</po:hedgeWording>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/schwarzTeam"/>
+    <po:rejects rdf:resource="https://w3id.org/paleont/data/sk90_claim_alt_tumour"/>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk94_claim_alt_tuberculosis">
+    <rdf:type rdf:resource="https://w3id.org/paleont/DiagnosticClaim"/>
+    <rdfs:label xml:lang="en">Tuberculosis entertained as a differential diagnosis for sk94</rdfs:label>
+    <po:aboutSpecimen rdf:resource="https://w3id.org/paleont/data/sk94"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Possible"/>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/schwarzTeam"/>
+    <po:proposesCondition rdf:resource="https://w3id.org/paleont/data/tuberculosis"/>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/appliedCorrection">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">applied correction</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/paleont/DatingClaim"/>
+    <rdfs:range rdf:resource="https://w3id.org/paleont/Correction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/rf130_obs_tibia_ct">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Observation"/>
+    <rdfs:label xml:lang="en">CT: osteolytic changes within the cortex of the right tibia — described as non-specific</rdfs:label>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:observedOn rdf:resource="https://w3id.org/paleont/data/rf130"/>
+    <po:observesLesionType rdf:resource="https://w3id.org/paleont/data/osteolyticLesion"/>
+    <po:onBone rdf:resource="https://w3id.org/paleont/data/tibia"/>
+    <po:usedTechnique rdf:resource="https://w3id.org/paleont/data/ct"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/DiagnosticFramework">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Diagnostic framework</rdfs:label>
+    <rdfs:comment xml:lang="en">The standpoint from which a claim is made — modern
+        biomedical, medieval humoral. Two individuals carry the entire
+        perspectival argument: the same specimen seen through two
+        incommensurable lenses.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/confidenceInterval">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">confidence interval</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/paleont/CalibratedInterval"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment xml:lang="en">The statistical confidence at which the bounds are stated:
+        "1 sigma", "95% CI", or "archaeological" for an interval that carries
+        no statistical claim at all.
+
+        Decision D7. Without this, CQ4b compares two intervals as if their
+        endpoints were hard boundaries — which is the very reduction this
+        project argues against, committed by our own query. A calibrated
+        radiocarbon interval is not a fact with edges: it is a hedged
+        estimate, and the source says so ("the precision of the radiocarbon
+        dates of medieval samples are often better than ±25 to 30 years for
+        the 1 sigma statistical uncertainty").
+
+        Consequence: a disagreement computed from bare bounds is a claim about
+        the bounds, not about the individual. queries/cq04b_tolerant.rq applies
+        the source's OWN stated precision and reports a different — and, as it
+        turns out, more faithful — result.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/tp292_claim_date_armPosition">
+    <rdf:type rdf:resource="https://w3id.org/paleont/DatingClaim"/>
+    <rdfs:label xml:lang="en">Archaeological date of Tirup 292. No radiocarbon date exists for this cemetery, so this specimen carries no dating disagreement</rdfs:label>
+    <po:aboutSpecimen rdf:resource="https://w3id.org/paleont/data/tp292"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/tp292_obs_armPosition"/>
+    <po:hasResult rdf:resource="https://w3id.org/paleont/data/tp292_interval_armPosition"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Certain"/>
+    <po:hedgeWording>this cemetery has been studied extensively and has been archaeologically dated prior to 1493 with certainty</po:hedgeWording>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/schwarzTeam"/>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/tp292_claim_alt_tuberculosis">
+    <rdf:type rdf:resource="https://w3id.org/paleont/DiagnosticClaim"/>
+    <rdfs:label xml:lang="en">Tuberculosis entertained as a differential diagnosis for tp292</rdfs:label>
+    <po:aboutSpecimen rdf:resource="https://w3id.org/paleont/data/tp292"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Possible"/>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/schwarzTeam"/>
+    <po:proposesCondition rdf:resource="https://w3id.org/paleont/data/tuberculosis"/>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/tp292_claim_alt_bejel">
+    <rdf:type rdf:resource="https://w3id.org/paleont/DiagnosticClaim"/>
+    <rdfs:label xml:lang="en">Bejel left open as an alternative for Tirup 292, entertained and never rejected</rdfs:label>
+    <po:aboutSpecimen rdf:resource="https://w3id.org/paleont/data/tp292"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/tp292_obs_frontal"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Possible"/>
+    <po:hedgeWording>these changes are regarded as diagnostic for treponemal disease, but can also occur in bejel and yaws</po:hedgeWording>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/schwarzTeam"/>
+    <po:proposesCondition rdf:resource="https://w3id.org/paleont/data/bejel"/>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/isNegated">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:label xml:lang="en">is negated</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/paleont/Claim"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:comment xml:lang="en">Decision D6. The claim asserts the NEGATIVE of its content:
+        not "leprosy is proposed" but "leprosy is denied", not "treated with
+        mercury" but "not treated with mercury".
+
+        WHY IT WAS NEEDED. Every property in this model was affirmative, so a
+        source could be recorded only when it asserted something. Schwarz et
+        al. say of the Refshale and Tirup individuals that they "were not
+        exposed to high amounts of Hg during their life" — a claim, with an
+        agent, a ground and a hedge, that the model simply could not hold.
+        That asymmetry was itself a position: it made denial invisible while
+        assertion was fully represented.
+
+        PRECEDENT. The course slides use exactly this device in the Ferguson
+        unit tests — "who is refused to receive what?" is answered with
+        ?e :isNegated "true", and the affirmative queries carry
+        FILTER NOT EXISTS { ?e :isNegated "true" }. Ours is typed boolean
+        rather than a string, but the pattern is theirs.
+
+        NOT THE SAME AS po:rejects. A RejectionClaim refuses SOMEONE ELSE'S
+        CLAIM — layer 3, a claim about a claim. po:isNegated is layer 1: the
+        claim's own content is asserted negatively. "I reject your diagnosis"
+        and "I claim he was not treated" are different acts.
+
+        NO TENSION WITH NCQ3. A negated claim is still a claim: it carries an
+        agent, a framework and a hedge. The model still cannot say that an
+        individual WAS healthy; it can say that someone denied a particular
+        condition for them. Denials are perspectival too — which is the thesis
+        applied symmetrically rather than an exception to it.
+
+        ABSENCE MEANS AFFIRMATIVE. Claims without this property are positive.
+        Consequence: every query that reports what a source asserts must carry
+        FILTER NOT EXISTS { ?claim po:isNegated true }, or it will report a
+        denial as an assertion. All affected queries were updated.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/rf130_claim_date_c14">
+    <rdf:type rdf:resource="https://w3id.org/paleont/DatingClaim"/>
+    <rdfs:label xml:lang="en">Radiocarbon date of Refshale 130, marine-corrected (45 years, 13 % marine diet)</rdfs:label>
+    <po:aboutSpecimen rdf:resource="https://w3id.org/paleont/data/rf130"/>
+    <po:appliedCorrection rdf:resource="https://w3id.org/paleont/data/marineCorrection"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/rf130_obs_isotopes"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/rf130_obs_radiocarbon"/>
+    <po:hasResult rdf:resource="https://w3id.org/paleont/data/rf130_interval_c14"/>
+    <po:hasResult rdf:resource="https://w3id.org/paleont/data/rf130_interval_c14_95"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Probable"/>
+    <po:hedgeWording>the skeleton is radiocarbon dated to calAD 1160–1212 at ± 1 sigma</po:hedgeWording>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/schwarzTeam"/>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b36">
+    <rdf:first rdf:resource="https://w3id.org/paleont/MedievalHumoral"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk90_obs_humerus">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Observation"/>
+    <rdfs:label xml:lang="en">Periosteal reactions and cortical thickening, mainly in the distal end</rdfs:label>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:observedOn rdf:resource="https://w3id.org/paleont/data/sk90"/>
+    <po:observesLesionType rdf:resource="https://w3id.org/paleont/data/periostealReaction"/>
+    <po:onBone rdf:resource="https://w3id.org/paleont/data/humerus"/>
+    <po:usedTechnique rdf:resource="https://w3id.org/paleont/data/ct"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b34">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+    <owl:distinctMembers rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b35"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk94_claim_date_c14">
+    <rdf:type rdf:resource="https://w3id.org/paleont/DatingClaim"/>
+    <rdfs:label xml:lang="en">Radiocarbon date of Sk. 94, marine-corrected, with two calibration ranges two centuries apart</rdfs:label>
+    <cito:updates rdf:resource="https://w3id.org/paleont/data/sk94_claim_date_armPosition"/>
+    <po:aboutSpecimen rdf:resource="https://w3id.org/paleont/data/sk94"/>
+    <po:appliedCorrection rdf:resource="https://w3id.org/paleont/data/marineCorrection"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/sk94_obs_isotopes"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/sk94_obs_radiocarbon"/>
+    <po:hasResult rdf:resource="https://w3id.org/paleont/data/sk94_interval_c14"/>
+    <po:hasResult rdf:resource="https://w3id.org/paleont/data/sk94_interval_c14_late"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Possible"/>
+    <po:hedgeWording>radiocarbon age indicates a younger age, calAD 1453-1494 (1 sigma), but could also be as late as calAD 1602-1614</po:hedgeWording>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/schwarzTeam"/>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/rf130_obs_femur">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Observation"/>
+    <rdfs:label xml:lang="en">Femora with expanded diaphysis, rippling of the surface and coarse pitting</rdfs:label>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:observedOn rdf:resource="https://w3id.org/paleont/data/rf130"/>
+    <po:observesLesionType rdf:resource="https://w3id.org/paleont/data/coarsePitting"/>
+    <po:observesLesionType rdf:resource="https://w3id.org/paleont/data/rugoseExpansion"/>
+    <po:onBone rdf:resource="https://w3id.org/paleont/data/femur"/>
+    <po:usedTechnique rdf:resource="https://w3id.org/paleont/data/macroscopic"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk94">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Specimen"/>
+    <rdfs:label xml:lang="en">St. Albani, Skeleton 94</rdfs:label>
+    <rdfs:comment xml:lang="en">Burial 94, St. Albani churchyard, Odense (Funen). Urban site. Male, mid-adult.</rdfs:comment>
+    <po:specimenID>St. Albani-94</po:specimenID>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/schwarz">
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    <foaf:name>Susanne Schwarz</foaf:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/LesionType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Lesion type</rdfs:label>
+    <rdfs:comment xml:lang="en">The type of a skeletal lesion, shared across specimens.
+        The concrete occurrence is the po:Observation. This split is what
+        makes CQ10 (recurrence across specimens) answerable.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/parietal">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Bone"/>
+    <rdfs:label xml:lang="en">parietal bone</rdfs:label>
+    <skos:closeMatch rdf:resource="http://purl.obolibrary.org/obo/NCIT_C25312"/>
+    <rdfs:comment xml:lang="en">NCIT rather than UBERON, deliberately: neither UBERON nor
+        MONDO carried a term at the general level needed, so the NCI Thesaurus
+        was used as a fallback. Mixing alignment targets is acceptable when it
+        is declared — the README must say the same.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/rf130_claim_alt_tuberculosis">
+    <rdf:type rdf:resource="https://w3id.org/paleont/DiagnosticClaim"/>
+    <rdfs:label xml:lang="en">Tuberculosis entertained as a differential diagnosis for Refshale 130</rdfs:label>
+    <po:aboutSpecimen rdf:resource="https://w3id.org/paleont/data/rf130"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Possible"/>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/schwarzTeam"/>
+    <po:proposesCondition rdf:resource="https://w3id.org/paleont/data/tuberculosis"/>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/rasmussen">
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    <foaf:name>Kaare Lund Rasmussen</foaf:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/framesContent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">frames content</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/paleont/Claim"/>
+    <rdfs:range rdf:resource="https://w3id.org/paleont/DiagnosticFramework"/>
+    <rdfs:comment xml:lang="en">The system of thought TO WHICH the content of the claim
+        belongs. Distinct from po:underFramework, which records where the
+        claimant stands.
+
+        Decision D4. A modern study asserting that an individual was treated
+        with an Hg-containing medicine makes a MODERN claim whose content
+        belongs to the MEDIEVAL humoral frame: mercury counted as a medicine
+        because medieval medicine said so. Collapsing the two into one
+        property forced a choice between a false uniformity (everything
+        modern, CQ8b empty) and an equivocation (the property meaning two
+        different things depending on the claim).
+
+        Deliberately NOT functional: a claim may frame content belonging to
+        more than one system — the mercury case arguably frames both a modern
+        chemical measurement and a medieval therapeutic act — and closing that
+        off buys nothing.
+
+        The consequence is sharper than the version it replaces: the two
+        frames do NOT coexist as equals. One contains the other. The paper
+        does not look at Sk. 90 from inside the medieval frame; it looks from
+        outside and REPRESENTS that frame. There is no standpoint from which
+        both can be seen externally.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/rf130_interval_c14">
+    <rdf:type rdf:resource="https://w3id.org/paleont/CalibratedInterval"/>
+    <rdfs:label xml:lang="en">calAD 1160–1212 at ±1 sigma</rdfs:label>
+    <po:confidenceInterval>1 sigma</po:confidenceInterval>
+    <po:endYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1212</po:endYear>
+    <po:startYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1160</po:startYear>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk94_obs_mercury">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Observation"/>
+    <rdfs:label xml:lang="en">Hg concentration of 390 +/- 6 ng/g in the femur, against a 10 to 100 ng/g range normal for non-exposed medieval Danish individuals</rdfs:label>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:observedOn rdf:resource="https://w3id.org/paleont/data/sk94"/>
+    <po:onBone rdf:resource="https://w3id.org/paleont/data/femur"/>
+    <po:usedTechnique rdf:resource="https://w3id.org/paleont/data/cvaas"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk90_claim_preColumbian">
+    <rdf:type rdf:resource="https://w3id.org/paleont/DiagnosticClaim"/>
+    <rdfs:label xml:lang="en">Sk. 90 asserted as a pre-Columbian case of treponemal infection</rdfs:label>
+    <cito:agreesWith rdf:resource="https://w3id.org/paleont/data/sk90_claim_harper"/>
+    <cito:disagreesWith rdf:resource="https://w3id.org/paleont/data/sk90_claim_ortner"/>
+    <po:aboutSpecimen rdf:resource="https://w3id.org/paleont/data/sk90"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/sk90_obs_isotopes"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/sk90_obs_radiocarbon"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Certain"/>
+    <po:hedgeWording>St. Albani 90 is for sure pre-Columbian, and has therefore full potential to be a pre-Columbian case of treponemal infection</po:hedgeWording>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/schwarzTeam"/>
+    <po:proposesCondition rdf:resource="https://w3id.org/paleont/data/treponematosis"/>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk90_interval_c14_uncorrected">
+    <rdf:type rdf:resource="https://w3id.org/paleont/CalibratedInterval"/>
+    <rdfs:label xml:lang="en">calAD 1435–1488, 95% CI, uncorrected for marine signature</rdfs:label>
+    <po:confidenceInterval>95% CI, uncorrected for marine signature</po:confidenceInterval>
+    <po:endYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1488</po:endYear>
+    <po:startYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1435</po:startYear>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/startYear">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">start year</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/paleont/CalibratedInterval"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:comment xml:lang="en">xsd:integer, NOT xsd:gYear. Two reasons. (1) xsd:gYear is
+        not part of the OWL 2 datatype map, so HermiT refuses to load an
+        ontology that uses it — the reasoner step fails before it starts.
+        (2) integers compare arithmetically, which CQ4b needs, and negative
+        values express BCE without special handling.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/tp292_reject_leprosy">
+    <rdf:type rdf:resource="https://w3id.org/paleont/RejectionClaim"/>
+    <rdfs:label xml:lang="en">Leprosy rejected for tp292</rdfs:label>
+    <po:aboutSpecimen rdf:resource="https://w3id.org/paleont/data/tp292"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/tp292_obs_frontal"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Probable"/>
+    <po:hedgeWording>none of the five skeletons described in this paper shows any lesions diagnostic of leprosy</po:hedgeWording>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/schwarzTeam"/>
+    <po:rejects rdf:resource="https://w3id.org/paleont/data/tp292_claim_alt_leprosy"/>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/rf130_obs_sex">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Observation"/>
+    <rdfs:label xml:lang="en">Pelvic morphology consistent with a female individual</rdfs:label>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:observedOn rdf:resource="https://w3id.org/paleont/data/rf130"/>
+    <po:usedTechnique rdf:resource="https://w3id.org/paleont/data/pelvicMorphology"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk90_claim_age">
+    <rdf:type rdf:resource="https://w3id.org/paleont/AgeClaim"/>
+    <rdfs:label xml:lang="en">Age at death of Sk. 90 estimated at 15–22.7 years (late-juvenile to early-adult)</rdfs:label>
+    <po:aboutSpecimen rdf:resource="https://w3id.org/paleont/data/sk90"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/sk90_obs_epiphyses"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/sk90_obs_transition"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Probable"/>
+    <po:hedgeWording>the lowest possible age was 15 years while the upper end estimate was 22.7 years at a level of 95% confidence</po:hedgeWording>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/schwarzTeam"/>
+    <po:maxAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">23</po:maxAge>
+    <po:minAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15</po:minAge>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk89_interval_c14_95">
+    <rdf:type rdf:resource="https://w3id.org/paleont/CalibratedInterval"/>
+    <rdfs:label xml:lang="en">calAD 1425-1482, 95% CI corrected for marine component</rdfs:label>
+    <po:confidenceInterval>95% CI, corrected for marine component</po:confidenceInterval>
+    <po:endYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1482</po:endYear>
+    <po:startYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1425</po:startYear>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk89_claim_date_c14">
+    <rdf:type rdf:resource="https://w3id.org/paleont/DatingClaim"/>
+    <rdfs:label xml:lang="en">Radiocarbon date of Sk. 89, marine-corrected; no archaeological date exists for this burial</rdfs:label>
+    <po:aboutSpecimen rdf:resource="https://w3id.org/paleont/data/sk89"/>
+    <po:appliedCorrection rdf:resource="https://w3id.org/paleont/data/marineCorrection"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/sk89_obs_isotopes"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/sk89_obs_radiocarbon"/>
+    <po:hasResult rdf:resource="https://w3id.org/paleont/data/sk89_interval_c14"/>
+    <po:hasResult rdf:resource="https://w3id.org/paleont/data/sk89_interval_c14_95"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Probable"/>
+    <po:hedgeWording>no arm position was observed, but radiocarbon dating gave a calibrated age interval of AD 1435-1456 (1 sigma), which is an accurate radiocarbon date</po:hedgeWording>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/schwarzTeam"/>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk90_claim_date_armPosition">
+    <rdf:type rdf:resource="https://w3id.org/paleont/DatingClaim"/>
+    <rdfs:label xml:lang="en">Archaeological date of Sk. 90 by arm position</rdfs:label>
+    <po:aboutSpecimen rdf:resource="https://w3id.org/paleont/data/sk90"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/sk90_obs_armPosition"/>
+    <po:hasResult rdf:resource="https://w3id.org/paleont/data/sk90_interval_armPosition"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Possible"/>
+    <po:hedgeWording>the observed arm position dates the individual to between AD 1250–1400</po:hedgeWording>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/schwarzTeam"/>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/rf130_obs_radius">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Observation"/>
+    <rdfs:label xml:lang="en">Left radius: coarse striations on the lateral distal side, coarse pitting and moderate rugose new bone on the medial distal end; right radius the same, with small round and oval depressions</rdfs:label>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:observedOn rdf:resource="https://w3id.org/paleont/data/rf130"/>
+    <po:observesLesionType rdf:resource="https://w3id.org/paleont/data/coarsePitting"/>
+    <po:observesLesionType rdf:resource="https://w3id.org/paleont/data/linearStriation"/>
+    <po:observesLesionType rdf:resource="https://w3id.org/paleont/data/rugoseExpansion"/>
+    <po:onBone rdf:resource="https://w3id.org/paleont/data/radius"/>
+    <po:usedTechnique rdf:resource="https://w3id.org/paleont/data/macroscopic"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk94_reject_leprosy">
+    <rdf:type rdf:resource="https://w3id.org/paleont/RejectionClaim"/>
+    <rdfs:label xml:lang="en">Leprosy rejected for sk94</rdfs:label>
+    <po:aboutSpecimen rdf:resource="https://w3id.org/paleont/data/sk94"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/sk94_obs_tibia"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Probable"/>
+    <po:hedgeWording>none of the five skeletons described in this paper shows any lesions diagnostic of leprosy</po:hedgeWording>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/schwarzTeam"/>
+    <po:rejects rdf:resource="https://w3id.org/paleont/data/sk94_claim_alt_leprosy"/>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/pyogenicOsteomyelitis">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Condition"/>
+    <rdfs:label xml:lang="en">pyogenic osteomyelitis</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b35">
+    <rdf:first rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+    <rdf:rest rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b36"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b8">
+    <rdf:first rdf:resource="https://w3id.org/paleont/MethodologicalClaim"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk94_claim_mercuryTreatment">
+    <rdf:type rdf:resource="https://w3id.org/paleont/TreatmentClaim"/>
+    <rdfs:label xml:lang="en">Treatment with Hg-containing medicine proposed for Sk. 94</rdfs:label>
+    <po:aboutSpecimen rdf:resource="https://w3id.org/paleont/data/sk94"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/MedievalHumoral"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/sk94_obs_mercury"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Probable"/>
+    <po:hedgeWording>they have apparently been treated with Hg-containing medicine</po:hedgeWording>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/schwarzTeam"/>
+    <po:proposesTreatment rdf:resource="https://w3id.org/paleont/data/mercuryTreatment"/>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/Specimen">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Specimen</rdfs:label>
+    <rdfs:comment xml:lang="en">A set of skeletal remains attributed to one individual.
+        The anchor of the graph. Deliberately poor in properties: almost
+        nothing is said ABOUT a specimen, because almost everything one might
+        want to say is in fact a claim someone made.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/meth_ct">
+    <rdf:type rdf:resource="https://w3id.org/paleont/MethodologicalClaim"/>
+    <rdfs:label xml:lang="en">CT cannot separate the causative agents of treponemal infection</rdfs:label>
+    <po:aboutTechnique rdf:resource="https://w3id.org/paleont/data/ct"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:discriminatesBetween rdf:resource="https://w3id.org/paleont/data/treponematosis"/>
+    <po:discriminatesBetween rdf:resource="https://w3id.org/paleont/data/venerealSyphilis"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+    <po:hasDiscriminatingPower rdf:resource="https://w3id.org/paleont/Inconclusive"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Certain"/>
+    <po:hedgeWording>neither X-ray nor CT-scanning can distinguish between the different causative agents of treponemal infection</po:hedgeWording>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/schwarzTeam"/>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/tp292_obs_frontal_ct">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Observation"/>
+    <rdfs:label xml:lang="en">CT: the changes on the frontal and nasal bones are visible as translucent areas</rdfs:label>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:observedOn rdf:resource="https://w3id.org/paleont/data/tp292"/>
+    <po:observesLesionType rdf:resource="https://w3id.org/paleont/data/osteolyticLesion"/>
+    <po:onBone rdf:resource="https://w3id.org/paleont/data/frontal"/>
+    <po:usedTechnique rdf:resource="https://w3id.org/paleont/data/ct"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk94_obs_sex">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Observation"/>
+    <rdfs:label xml:lang="en">Skeletal indicators consistent with a male individual</rdfs:label>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:observedOn rdf:resource="https://w3id.org/paleont/data/sk94"/>
+    <po:usedTechnique rdf:resource="https://w3id.org/paleont/data/pelvicMorphology"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/ModernBiomedical">
+    <rdf:type rdf:resource="https://w3id.org/paleont/DiagnosticFramework"/>
+    <rdfs:label xml:lang="en">modern biomedical framework</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk89_claim_alt_tuberculosis">
+    <rdf:type rdf:resource="https://w3id.org/paleont/DiagnosticClaim"/>
+    <rdfs:label xml:lang="en">Tuberculosis entertained as a differential diagnosis for sk89</rdfs:label>
+    <po:aboutSpecimen rdf:resource="https://w3id.org/paleont/data/sk89"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Possible"/>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/schwarzTeam"/>
+    <po:proposesCondition rdf:resource="https://w3id.org/paleont/data/tuberculosis"/>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/irms">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Technique"/>
+    <rdfs:label xml:lang="en">isotope-ratio mass spectrometry (IRMS)</rdfs:label>
+    <rdfs:comment xml:lang="en">δ13C and δ15N on bone collagen, Museum für Naturkunde, Berlin.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/declaredIn">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">declared in</rdfs:label>
+    <rdfs:range rdf:resource="https://w3id.org/paleont/Source"/>
+    <rdfs:comment xml:lang="en">NO rdfs:domain, deliberately. Observations are published in
+        a source just as claims are, and an observation is not a claim — the
+        two classes are disjoint. Declaring the domain as po:Claim made every
+        observation carrying this property inferred to be a Claim, and the
+        ontology inconsistent. HermiT caught it. Either the domain goes, or a
+        union class is introduced; the union buys nothing here, so it goes.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/tp292">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Specimen"/>
+    <rdfs:label xml:lang="en">Tirup, Skeleton 292</rdfs:label>
+    <rdfs:comment xml:lang="en">Burial 292, Tirup cemetery, near Horsens (Jutland). Rural site. Female, early adult. One of only 79 individuals examined at Tirup and the only one selected for this study.</rdfs:comment>
+    <po:specimenID>Tirup-292</po:specimenID>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk90_obs_femur">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Observation"/>
+    <rdfs:label xml:lang="en">Osteolytic lesion of around 3.5 cm in the trabeculae of the trochanter major; high radiodensity in the proximal diaphysis</rdfs:label>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:observedOn rdf:resource="https://w3id.org/paleont/data/sk90"/>
+    <po:observesLesionType rdf:resource="https://w3id.org/paleont/data/osteolyticLesion"/>
+    <po:onBone rdf:resource="https://w3id.org/paleont/data/femur"/>
+    <po:usedTechnique rdf:resource="https://w3id.org/paleont/data/ct"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk90_obs_parietal">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Observation"/>
+    <rdfs:label xml:lang="en">Focal superficial cavitation and clustered pits on the right parietal</rdfs:label>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:observedOn rdf:resource="https://w3id.org/paleont/data/sk90"/>
+    <po:observesLesionType rdf:resource="https://w3id.org/paleont/data/clusteredPitting"/>
+    <po:observesLesionType rdf:resource="https://w3id.org/paleont/data/focalSuperficialCavitation"/>
+    <po:onBone rdf:resource="https://w3id.org/paleont/data/parietal"/>
+    <po:usedTechnique rdf:resource="https://w3id.org/paleont/data/macroscopic"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/tp292_claim_treponematosis">
+    <rdf:type rdf:resource="https://w3id.org/paleont/DiagnosticClaim"/>
+    <rdfs:label xml:lang="en">Treponemal disease proposed for Tirup 292 on diagnostic, not on-trial, criteria</rdfs:label>
+    <po:aboutSpecimen rdf:resource="https://w3id.org/paleont/data/tp292"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/tp292_obs_frontal"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/tp292_obs_frontal_ct"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/tp292_obs_nasal"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Probable"/>
+    <po:hedgeWording>the changes on the frontal as well as the nasal bones are regarded as diagnostic for treponemal disease</po:hedgeWording>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/schwarzTeam"/>
+    <po:proposesCondition rdf:resource="https://w3id.org/paleont/data/treponematosis"/>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk90_reject_fungal">
+    <rdf:type rdf:resource="https://w3id.org/paleont/RejectionClaim"/>
+    <rdfs:label xml:lang="en">Fungal infection rejected</rdfs:label>
+    <po:aboutSpecimen rdf:resource="https://w3id.org/paleont/data/sk90"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/sk90_obs_humerus"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Possible"/>
+    <po:hedgeWording>hypertrophic lesions are also unlikely for a fungal infection</po:hedgeWording>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/schwarzTeam"/>
+    <po:rejects rdf:resource="https://w3id.org/paleont/data/sk90_claim_alt_fungal"/>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk89_obs_isotopes">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Observation"/>
+    <rdfs:label xml:lang="en">delta13C -18.64 per mil, delta15N 12.53 per mil, C:N 3.4, estimated marine diet 13 per cent</rdfs:label>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:observedOn rdf:resource="https://w3id.org/paleont/data/sk89"/>
+    <po:usedTechnique rdf:resource="https://w3id.org/paleont/data/irms"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk90_obs_radiocarbon">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Observation"/>
+    <rdfs:label xml:lang="en">Uncalibrated radiocarbon age 420 ± 20 BP on bone collagen</rdfs:label>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:observedOn rdf:resource="https://w3id.org/paleont/data/sk90"/>
+    <po:usedTechnique rdf:resource="https://w3id.org/paleont/data/radiocarbon"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/marineReservoir">
+    <rdf:type rdf:resource="https://w3id.org/paleont/ErrorSource"/>
+    <rdfs:label xml:lang="en">marine reservoir effect</rdfs:label>
+    <po:hasEffect>Skeletal remains of individuals consuming a diet rich in marine proteins give radiocarbon dates that appear older than they actually are. The reservoir age for open waters in the North Atlantic and the open inner Danish waters is around 410 years.</po:hasEffect>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/rf130_obs_radiocarbon">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Observation"/>
+    <rdfs:label xml:lang="en">Uncalibrated radiocarbon age 925 ± 25 BP; corrected 870 ± 25 BP</rdfs:label>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:observedOn rdf:resource="https://w3id.org/paleont/data/rf130"/>
+    <po:usedTechnique rdf:resource="https://w3id.org/paleont/data/radiocarbon"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/MethodologicalClaim">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/paleont/Claim"/>
+    <rdfs:subClassOf rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b1"/>
+    <rdfs:label xml:lang="en">Methodological claim</rdfs:label>
+    <rdfs:comment xml:lang="en">A claim about what a technique can or cannot establish.
+        The meta level. Note that it has NO po:aboutSpecimen: its subject
+        matter is a technique, not a skeleton. That absence is how the model
+        distinguishes 'this individual had leprosy' from 'this method cannot
+        tell leprosy from syphilis'.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk94_obs_tibia_ct">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Observation"/>
+    <rdfs:label xml:lang="en">CT: thickened diaphysis with several osteolytic foci in the cortical bone, destruction of the cortical structure and bone expansions; increased signal intensity in the remaining compact bone, consistent with inflammatory involvement</rdfs:label>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:observedOn rdf:resource="https://w3id.org/paleont/data/sk94"/>
+    <po:observesLesionType rdf:resource="https://w3id.org/paleont/data/osteolyticLesion"/>
+    <po:observesLesionType rdf:resource="https://w3id.org/paleont/data/periostealReaction"/>
+    <po:onBone rdf:resource="https://w3id.org/paleont/data/tibia"/>
+    <po:usedTechnique rdf:resource="https://w3id.org/paleont/data/ct"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk94_claim_treponematosis">
+    <rdf:type rdf:resource="https://w3id.org/paleont/DiagnosticClaim"/>
+    <rdfs:label xml:lang="en">Treponemal disease entertained for Sk. 94 on on-trial criteria only</rdfs:label>
+    <po:aboutSpecimen rdf:resource="https://w3id.org/paleont/data/sk94"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/sk94_obs_femur_ct"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/sk94_obs_tibia"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/sk94_obs_tibia_ct"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Possible"/>
+    <po:hedgeWording>the documented lesions of three of them only meet the descriptions of Hackett's on-trial criteria</po:hedgeWording>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/schwarzTeam"/>
+    <po:proposesCondition rdf:resource="https://w3id.org/paleont/data/treponematosis"/>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk90_obs_parietal_ct">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Observation"/>
+    <rdfs:label xml:lang="en">CT: increased density of the diploë, thickening of the tables, outer table interrupted by round notches, focal radiolucent areas</rdfs:label>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:observedOn rdf:resource="https://w3id.org/paleont/data/sk90"/>
+    <po:observesLesionType rdf:resource="https://w3id.org/paleont/data/osteolyticLesion"/>
+    <po:onBone rdf:resource="https://w3id.org/paleont/data/parietal"/>
+    <po:usedTechnique rdf:resource="https://w3id.org/paleont/data/ct"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/tp292_obs_armPosition">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Observation"/>
+    <rdfs:label xml:lang="en">Burial arm position A recorded, placing the burial between AD 1100 and 1250</rdfs:label>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:observedOn rdf:resource="https://w3id.org/paleont/data/tp292"/>
+    <po:usedTechnique rdf:resource="https://w3id.org/paleont/data/armPosition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/countingUncertainty">
+    <rdf:type rdf:resource="https://w3id.org/paleont/ErrorSource"/>
+    <rdfs:label xml:lang="en">statistical uncertainty of the calibrated age interval</rdfs:label>
+    <po:hasEffect>The precision of the radiocarbon dates of medieval samples is often better than ±25 to 30 years for the 1 sigma statistical uncertainty of the calibrated age interval; reservoir effects, where present, introduce an offset and an added uncertainty.</po:hasEffect>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b33">
+    <rdf:first rdf:resource="https://w3id.org/paleont/Inconclusive"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/tp292_interval_armPosition">
+    <rdf:type rdf:resource="https://w3id.org/paleont/CalibratedInterval"/>
+    <rdfs:label xml:lang="en">AD 1100-1250 (archaeological, arm position A)</rdfs:label>
+    <po:confidenceInterval>archaeological, no statistical confidence stated</po:confidenceInterval>
+    <po:endYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1250</po:endYear>
+    <po:startYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1100</po:startYear>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk89_obs_tibia_cavitation">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Observation"/>
+    <rdfs:label xml:lang="en">One of the nodes on the right tibia shows superficial cavitation, a diagnostic criterion after Hackett</rdfs:label>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:observedOn rdf:resource="https://w3id.org/paleont/data/sk89"/>
+    <po:observesLesionType rdf:resource="https://w3id.org/paleont/data/focalSuperficialCavitation"/>
+    <po:onBone rdf:resource="https://w3id.org/paleont/data/tibia"/>
+    <po:usedTechnique rdf:resource="https://w3id.org/paleont/data/macroscopic"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk90_claim_alt_tuberculosis">
+    <rdf:type rdf:resource="https://w3id.org/paleont/DiagnosticClaim"/>
+    <rdfs:label xml:lang="en">Tuberculosis entertained as a differential diagnosis</rdfs:label>
+    <po:aboutSpecimen rdf:resource="https://w3id.org/paleont/data/sk90"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Possible"/>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/schwarzTeam"/>
+    <po:proposesCondition rdf:resource="https://w3id.org/paleont/data/tuberculosis"/>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b7">
+    <rdf:first rdf:resource="https://w3id.org/paleont/TreatmentClaim"/>
+    <rdf:rest rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b8"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/meth_armPosition">
+    <rdf:type rdf:resource="https://w3id.org/paleont/MethodologicalClaim"/>
+    <rdfs:label xml:lang="en">Arm-position dating is not substantiated by scientific dating methods</rdfs:label>
+    <po:aboutTechnique rdf:resource="https://w3id.org/paleont/data/armPosition"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+    <po:hasDiscriminatingPower rdf:resource="https://w3id.org/paleont/Suggestive"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Probable"/>
+    <po:hedgeWording>the arm position methodology has not been substantiated by scientific dating methods such as radiocarbon dating, dendrochronology or thermoluminescence</po:hedgeWording>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/schwarzTeam"/>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/proposes">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">proposes</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/paleont/Claim"/>
+    <rdfs:comment xml:lang="en">Superproperty. Never asserted directly; always inferred.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/groundedIn">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">grounded in</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/paleont/Claim"/>
+    <rdfs:range rdf:resource="https://w3id.org/paleont/Observation"/>
+    <rdfs:comment xml:lang="en">THE boundary property. Everything on the left is evidence,
+        everything on the right is interpretation. Not functional: one claim
+        may rest on several observations. See decision D1 on whether the
+        range should widen to include po:Claim.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk89_claim_mercuryTreatment">
+    <rdf:type rdf:resource="https://w3id.org/paleont/TreatmentClaim"/>
+    <rdfs:label xml:lang="en">Treatment with Hg-containing medicine proposed for Sk. 89</rdfs:label>
+    <po:aboutSpecimen rdf:resource="https://w3id.org/paleont/data/sk89"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/MedievalHumoral"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/sk89_obs_mercury"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Probable"/>
+    <po:hedgeWording>they have apparently been treated with Hg-containing medicine</po:hedgeWording>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/schwarzTeam"/>
+    <po:proposesTreatment rdf:resource="https://w3id.org/paleont/data/mercuryTreatment"/>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk89_obs_tibia_ct">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Observation"/>
+    <rdfs:label xml:lang="en">CT: an osteolytic lesion in the new bone on the anterior part of the right tibia, with very low density of the original bone; periosteal reactions on the anteriorly bowed cortex</rdfs:label>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:observedOn rdf:resource="https://w3id.org/paleont/data/sk89"/>
+    <po:observesLesionType rdf:resource="https://w3id.org/paleont/data/osteolyticLesion"/>
+    <po:observesLesionType rdf:resource="https://w3id.org/paleont/data/periostealReaction"/>
+    <po:onBone rdf:resource="https://w3id.org/paleont/data/tibia"/>
+    <po:usedTechnique rdf:resource="https://w3id.org/paleont/data/ct"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/heldBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">held by</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/paleont/Claim"/>
+    <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/nodesWithStriation">
+    <rdf:type rdf:resource="https://w3id.org/paleont/LesionType"/>
+    <rdfs:label xml:lang="en">nodes with striation</rdfs:label>
+    <rdfs:comment xml:lang="en">An on-trial criterion after Hackett (1976), p. 78.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk90_claim_ortner">
+    <rdf:type rdf:resource="https://w3id.org/paleont/DiagnosticClaim"/>
+    <rdfs:label xml:lang="en">Ortner: pre-1500 Old World syphilis remains contentious</rdfs:label>
+    <po:aboutSpecimen rdf:resource="https://w3id.org/paleont/data/sk90"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/ortner2011"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Tentative"/>
+    <po:hedgeWording>the presence of syphilis in the Old World before 1500 A.D. remains a very contentious issue</po:hedgeWording>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/ortner"/>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/Tentative">
+    <rdf:type rdf:resource="https://w3id.org/paleont/ConfidenceLevel"/>
+    <rdfs:label xml:lang="en">tentative</rdfs:label>
+    <po:weakerThan rdf:resource="https://w3id.org/paleont/Possible"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk90_obs_tibia">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Observation"/>
+    <rdfs:label xml:lang="en">Thickened cortex, diffuse changes on the anterior surface, diffuse clustered pitting</rdfs:label>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:observedOn rdf:resource="https://w3id.org/paleont/data/sk90"/>
+    <po:observesLesionType rdf:resource="https://w3id.org/paleont/data/clusteredPitting"/>
+    <po:observesLesionType rdf:resource="https://w3id.org/paleont/data/periostealReaction"/>
+    <po:onBone rdf:resource="https://w3id.org/paleont/data/tibia"/>
+    <po:usedTechnique rdf:resource="https://w3id.org/paleont/data/ct"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/onBone">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">on bone</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/paleont/Observation"/>
+    <rdfs:range rdf:resource="https://w3id.org/paleont/Bone"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/rf130_obs_femur_ct">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Observation"/>
+    <rdfs:label xml:lang="en">CT: increased radiodensity in the right femur — described as non-specific, and possibly normal variation</rdfs:label>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:observedOn rdf:resource="https://w3id.org/paleont/data/rf130"/>
+    <po:observesLesionType rdf:resource="https://w3id.org/paleont/data/increasedRadiodensity"/>
+    <po:onBone rdf:resource="https://w3id.org/paleont/data/femur"/>
+    <po:usedTechnique rdf:resource="https://w3id.org/paleont/data/ct"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk90_obs_pelvis">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Observation"/>
+    <rdfs:label xml:lang="en">Pelvic morphology and general robust appearance of the skeletal elements</rdfs:label>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:observedOn rdf:resource="https://w3id.org/paleont/data/sk90"/>
+    <po:usedTechnique rdf:resource="https://w3id.org/paleont/data/macroscopic"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/tp292_obs_mercury">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Observation"/>
+    <rdfs:label xml:lang="en">Hg concentration of 25 +/- 3 ng/g, within the 10 to 100 ng/g range normal for non-exposed medieval Danish individuals</rdfs:label>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:observedOn rdf:resource="https://w3id.org/paleont/data/tp292"/>
+    <po:usedTechnique rdf:resource="https://w3id.org/paleont/data/cvaas"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/tp292_claim_age">
+    <rdf:type rdf:resource="https://w3id.org/paleont/AgeClaim"/>
+    <rdfs:label xml:lang="en">Age at death of Tirup 292 estimated at 20-24 years</rdfs:label>
+    <po:aboutSpecimen rdf:resource="https://w3id.org/paleont/data/tp292"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Probable"/>
+    <po:hedgeWording>the individual from burial 292 from Tirup cemetery was most likely a female around 20-24 years</po:hedgeWording>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/schwarzTeam"/>
+    <po:maxAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">24</po:maxAge>
+    <po:minAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</po:minAge>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/rf130_reject_tuberculosis">
+    <rdf:type rdf:resource="https://w3id.org/paleont/RejectionClaim"/>
+    <rdfs:label xml:lang="en">Tuberculosis rejected for Refshale 130</rdfs:label>
+    <po:aboutSpecimen rdf:resource="https://w3id.org/paleont/data/rf130"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/rf130_obs_femur"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/rf130_obs_humerus"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Probable"/>
+    <po:hedgeWording>tuberculosis is usually affecting the spine and the inner table of the cranium while hypertrophic expansion of the long bones is described as unusual</po:hedgeWording>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/schwarzTeam"/>
+    <po:rejects rdf:resource="https://w3id.org/paleont/data/rf130_claim_alt_tuberculosis"/>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/Certain">
+    <rdf:type rdf:resource="https://w3id.org/paleont/ConfidenceLevel"/>
+    <rdfs:label xml:lang="en">certain</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b23">
+    <rdf:first rdf:resource="https://w3id.org/paleont/Treatment"/>
+    <rdf:rest rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b24"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/rf130_claim_date_armPosition">
+    <rdf:type rdf:resource="https://w3id.org/paleont/DatingClaim"/>
+    <rdfs:label xml:lang="en">Archaeological date of Refshale 130 by arm position</rdfs:label>
+    <po:aboutSpecimen rdf:resource="https://w3id.org/paleont/data/rf130"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/rf130_obs_armPosition"/>
+    <po:hasResult rdf:resource="https://w3id.org/paleont/data/rf130_interval_armPosition"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Possible"/>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/schwarzTeam"/>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/rejects">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/paleont/engagesWith"/>
+    <rdfs:label xml:lang="en">rejects</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/paleont/RejectionClaim"/>
+    <rdfs:range rdf:resource="https://w3id.org/paleont/Claim"/>
+    <rdfs:comment xml:lang="en">RANGE IS po:Claim, NOT po:Condition. This single line is
+        the thesis expressed as an axiom: one rejects an assertion, not a
+        disease. A rejection says nothing about whether the individual was
+        ill.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/rf130_claim_systemic">
+    <rdf:type rdf:resource="https://w3id.org/paleont/DiagnosticClaim"/>
+    <rdfs:label xml:lang="en">A systemic disease proposed for Refshale 130</rdfs:label>
+    <po:aboutSpecimen rdf:resource="https://w3id.org/paleont/data/rf130"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/rf130_obs_femur"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/rf130_obs_fibula"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/rf130_obs_humerus"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/rf130_obs_radius"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/rf130_obs_tibia"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Probable"/>
+    <po:hedgeWording>changes observed on nearly all the long bones indicate a systemic disease</po:hedgeWording>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/schwarzTeam"/>
+    <po:proposesCondition rdf:resource="https://w3id.org/paleont/data/systemicDisease"/>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk89_obs_tibia">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Observation"/>
+    <rdfs:label xml:lang="en">Both tibiae display nodes with striation on the medial side of the diaphysis; the surfaces appear very uneven and rugose, with bone deposits merging into the surrounding bone with diffuse borders</rdfs:label>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:observedOn rdf:resource="https://w3id.org/paleont/data/sk89"/>
+    <po:observesLesionType rdf:resource="https://w3id.org/paleont/data/boneDeposits"/>
+    <po:observesLesionType rdf:resource="https://w3id.org/paleont/data/nodesWithStriation"/>
+    <po:onBone rdf:resource="https://w3id.org/paleont/data/tibia"/>
+    <po:usedTechnique rdf:resource="https://w3id.org/paleont/data/macroscopic"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b20">
+    <rdf:first rdf:resource="https://w3id.org/paleont/Source"/>
+    <rdf:rest rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b21"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <dcterms:title xml:lang="en">PaleONT — an ontology of palaeopathological claims</dcterms:title>
+    <dcterms:description xml:lang="en">Models the epistemic structure of palaeopathological
+        reporting: observations, the claims grounded in them, the frameworks
+        under which those claims are made, and the adjudication between
+        competing claims.</dcterms:description>
+    <owl:versionInfo>0.1.0</owl:versionInfo>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/marineCorrection">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Correction"/>
+    <rdfs:label xml:lang="en">marine reservoir correction</rdfs:label>
+    <rdfs:comment xml:lang="en">K_reservoir = 410 * (19.8 + δ13C_sample) / 8.9 14C-years (Rasmussen et al. 2008). The magnitude depends on the estimated marine diet: 4 years for Sk. 90 (1% marine), 45 years for Refshale 130 (13% marine).</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/AgeClaim">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/paleont/Claim"/>
+    <rdfs:label xml:lang="en">Age claim</rdfs:label>
+    <rdfs:comment xml:lang="en">Proposes an age-at-death range. Age is a claim, not a
+        property of the specimen — deliberately the same shape as a
+        diagnosis.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/venerealSyphilis">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Condition"/>
+    <rdfs:label xml:lang="en">venereal syphilis (Treponema pallidum pallidum)</rdfs:label>
+    <skos:closeMatch rdf:resource="http://purl.obolibrary.org/obo/MONDO_0005976"/>
+    <rdfs:comment xml:lang="en">⚠ closeMatch until checked: MONDO:0005976 is 'Syphilis'; the paper's term is specifically VENEREAL syphilis, opposed throughout to the non-venereal treponematoses.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk89_claim_treponematosis">
+    <rdf:type rdf:resource="https://w3id.org/paleont/DiagnosticClaim"/>
+    <rdfs:label xml:lang="en">Treponemal disease entertained for Sk. 89, below the confidence granted to Sk. 90</rdfs:label>
+    <po:aboutSpecimen rdf:resource="https://w3id.org/paleont/data/sk89"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/sk89_obs_tibia"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/sk89_obs_tibia_cavitation"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/sk89_obs_tibia_ct"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Possible"/>
+    <po:hedgeWording>lesions consistent with treponemal disease are found on several long bones, but only those in skeleton 90 from St. Albani are indicative of treponemal infection</po:hedgeWording>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/schwarzTeam"/>
+    <po:proposesCondition rdf:resource="https://w3id.org/paleont/data/treponematosis"/>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/boldsen2007">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Source"/>
+    <rdfs:label xml:lang="en">Boldsen 2007, Leprosy in medieval Denmark: a comprehensive analysis</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk90_claim_alt_leprosy">
+    <rdf:type rdf:resource="https://w3id.org/paleont/DiagnosticClaim"/>
+    <rdfs:label xml:lang="en">Leprosy entertained as a differential diagnosis</rdfs:label>
+    <po:aboutSpecimen rdf:resource="https://w3id.org/paleont/data/sk90"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Possible"/>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/schwarzTeam"/>
+    <po:proposesCondition rdf:resource="https://w3id.org/paleont/data/leprosy"/>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/spar/cito/agreesWith">
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/paleont/engagesWith"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/hackett1976">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Source"/>
+    <rdfs:label xml:lang="en">Hackett 1976, Diagnostic criteria of syphilis, yaws and treponarid</rdfs:label>
+    <rdfs:comment xml:lang="en">The source of the on-trial and diagnostic criteria the study scores its lesions against.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/freshwaterReservoir">
+    <rdf:type rdf:resource="https://w3id.org/paleont/ErrorSource"/>
+    <rdfs:label xml:lang="en">freshwater reservoir effect</rdfs:label>
+    <po:hasEffect>The intake of freshwater fish protein can make radiocarbon ages appear as much as 100 to 1000 years too old; no reliable correction can presently be calculated for it.</po:hasEffect>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/meth_mercury">
+    <rdf:type rdf:resource="https://w3id.org/paleont/MethodologicalClaim"/>
+    <rdfs:label xml:lang="en">Mercury analysis is a helpful but not decisive tool</rdfs:label>
+    <po:aboutTechnique rdf:resource="https://w3id.org/paleont/data/cvaas"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+    <po:hasDiscriminatingPower rdf:resource="https://w3id.org/paleont/Suggestive"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Probable"/>
+    <po:hedgeWording>the Hg analysis is found to be a helpful tool when analysing skeletal remains from the medieval times for pathologies</po:hedgeWording>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/schwarzTeam"/>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/ConfidenceLevel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Confidence level</rdfs:label>
+    <rdfs:comment xml:lang="en">The hedge attached to a claim, as an individual rather
+        than a string or a number. A number would invent precision the source
+        never produced; a string cannot be counted, grouped or ordered.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/rf130_obs_tibia">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Observation"/>
+    <rdfs:label xml:lang="en">Tibiae: multiple channelled vascular impressions posteriorly; periostitis and linear striations dominating the anterior and medial diaphysis; shaft slightly bowed anteriorly</rdfs:label>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:observedOn rdf:resource="https://w3id.org/paleont/data/rf130"/>
+    <po:observesLesionType rdf:resource="https://w3id.org/paleont/data/linearStriation"/>
+    <po:observesLesionType rdf:resource="https://w3id.org/paleont/data/periostealReaction"/>
+    <po:onBone rdf:resource="https://w3id.org/paleont/data/tibia"/>
+    <po:usedTechnique rdf:resource="https://w3id.org/paleont/data/macroscopic"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/RejectionClaim">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/paleont/Claim"/>
+    <rdfs:label xml:lang="en">Rejection claim</rdfs:label>
+    <rdfs:comment xml:lang="en">Rejects another claim. Note the range of po:rejects: a
+        rejection is an act against an ASSERTION, never a verdict on the
+        truth of a disease. Acquittal is not innocence.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk89_reject_tuberculosis">
+    <rdf:type rdf:resource="https://w3id.org/paleont/RejectionClaim"/>
+    <rdfs:label xml:lang="en">Tuberculosis rejected for sk89</rdfs:label>
+    <po:aboutSpecimen rdf:resource="https://w3id.org/paleont/data/sk89"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/sk89_obs_tibia"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Probable"/>
+    <po:hedgeWording>tuberculosis is usually affecting the spine and the inner table of the cranium while hypertrophic expansion of the long bones is described as unusual</po:hedgeWording>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/schwarzTeam"/>
+    <po:rejects rdf:resource="https://w3id.org/paleont/data/sk89_claim_alt_tuberculosis"/>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk94_obs_armPosition">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Observation"/>
+    <rdfs:label xml:lang="en">Burial arm position B recorded</rdfs:label>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:observedOn rdf:resource="https://w3id.org/paleont/data/sk94"/>
+    <po:usedTechnique rdf:resource="https://w3id.org/paleont/data/armPosition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/harper2008">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Source"/>
+    <rdfs:label xml:lang="en">Harper et al. 2008, PLoS Negl Trop Dis 2(1):e148</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk94_reject_tuberculosis">
+    <rdf:type rdf:resource="https://w3id.org/paleont/RejectionClaim"/>
+    <rdfs:label xml:lang="en">Tuberculosis rejected for sk94</rdfs:label>
+    <po:aboutSpecimen rdf:resource="https://w3id.org/paleont/data/sk94"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/sk94_obs_tibia"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Probable"/>
+    <po:hedgeWording>tuberculosis is usually affecting the spine and the inner table of the cranium while hypertrophic expansion of the long bones is described as unusual</po:hedgeWording>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/schwarzTeam"/>
+    <po:rejects rdf:resource="https://w3id.org/paleont/data/sk94_claim_alt_tuberculosis"/>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk94_claim_alt_leprosy">
+    <rdf:type rdf:resource="https://w3id.org/paleont/DiagnosticClaim"/>
+    <rdfs:label xml:lang="en">Leprosy entertained as a differential diagnosis for sk94</rdfs:label>
+    <po:aboutSpecimen rdf:resource="https://w3id.org/paleont/data/sk94"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Possible"/>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/schwarzTeam"/>
+    <po:proposesCondition rdf:resource="https://w3id.org/paleont/data/leprosy"/>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/specimenID">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">specimen ID</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/paleont/Specimen"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/DatingClaim">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/paleont/Claim"/>
+    <rdfs:label xml:lang="en">Dating claim</rdfs:label>
+    <rdfs:comment xml:lang="en">Proposes a calibrated interval for a specimen.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/Observation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Observation</rdfs:label>
+    <rdfs:comment xml:lang="en">One act of examining a specimen with a technique, yielding
+        one datum. Carries what was seen, on which bone, by which technique.
+        This is the concrete occurrence: the lesion TYPE is shared across
+        specimens, the observation is not.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/tp292_reject_tuberculosis">
+    <rdf:type rdf:resource="https://w3id.org/paleont/RejectionClaim"/>
+    <rdfs:label xml:lang="en">Tuberculosis rejected for tp292</rdfs:label>
+    <po:aboutSpecimen rdf:resource="https://w3id.org/paleont/data/tp292"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/tp292_obs_frontal"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Probable"/>
+    <po:hedgeWording>tuberculosis is usually affecting the spine and the inner table of the cranium while hypertrophic expansion of the long bones is described as unusual</po:hedgeWording>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/schwarzTeam"/>
+    <po:rejects rdf:resource="https://w3id.org/paleont/data/tp292_claim_alt_tuberculosis"/>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk90_claim_mercuryTreatment">
+    <rdf:type rdf:resource="https://w3id.org/paleont/TreatmentClaim"/>
+    <rdfs:label xml:lang="en">Treatment with Hg-containing medicine proposed for Sk. 90</rdfs:label>
+    <po:aboutSpecimen rdf:resource="https://w3id.org/paleont/data/sk90"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/MedievalHumoral"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/sk90_obs_mercury"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Probable"/>
+    <po:hedgeWording>they have apparently been treated with Hg-containing medicine</po:hedgeWording>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/schwarzTeam"/>
+    <po:proposesTreatment rdf:resource="https://w3id.org/paleont/data/mercuryTreatment"/>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk90_claim_alt_fungal">
+    <rdf:type rdf:resource="https://w3id.org/paleont/DiagnosticClaim"/>
+    <rdfs:label xml:lang="en">Fungal infection entertained as a differential diagnosis</rdfs:label>
+    <po:aboutSpecimen rdf:resource="https://w3id.org/paleont/data/sk90"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Possible"/>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/schwarzTeam"/>
+    <po:proposesCondition rdf:resource="https://w3id.org/paleont/data/fungalInfection"/>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/hasEffect">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">has effect</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/paleont/ErrorSource"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk94_obs_isotopes">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Observation"/>
+    <rdfs:label xml:lang="en">delta13C -18.82 per mil, delta15N 11.73 per mil, C:N 3.4, estimated marine diet 11 per cent</rdfs:label>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:observedOn rdf:resource="https://w3id.org/paleont/data/sk94"/>
+    <po:usedTechnique rdf:resource="https://w3id.org/paleont/data/irms"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/CalibratedInterval">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Calibrated interval</rdfs:label>
+    <rdfs:comment xml:lang="en">A dated range with numeric bounds. A class rather than a
+        literal because CQ4b must COMPUTE disagreement by comparing two
+        intervals, which a label cannot support.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk90_claim_alt_tumour">
+    <rdf:type rdf:resource="https://w3id.org/paleont/DiagnosticClaim"/>
+    <rdfs:label xml:lang="en">Bone tumour entertained as a differential diagnosis</rdfs:label>
+    <po:aboutSpecimen rdf:resource="https://w3id.org/paleont/data/sk90"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Possible"/>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/schwarzTeam"/>
+    <po:proposesCondition rdf:resource="https://w3id.org/paleont/data/boneTumour"/>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/rf130_claim_noMercuryTreatment">
+    <rdf:type rdf:resource="https://w3id.org/paleont/TreatmentClaim"/>
+    <rdfs:label xml:lang="en">Treatment with Hg-containing medicine DENIED for Refshale 130</rdfs:label>
+    <po:aboutSpecimen rdf:resource="https://w3id.org/paleont/data/rf130"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/MedievalHumoral"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/rf130_obs_mercury"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Probable"/>
+    <po:hedgeWording>these individuals were not exposed to high amounts of Hg during their life, but exhibit Hg concentrations typical for the non-exposed individuals</po:hedgeWording>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/schwarzTeam"/>
+    <po:isNegated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</po:isNegated>
+    <po:proposesTreatment rdf:resource="https://w3id.org/paleont/data/mercuryTreatment"/>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/aboutSpecimen">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">about specimen</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/paleont/Claim"/>
+    <rdfs:range rdf:resource="https://w3id.org/paleont/Specimen"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/ortner">
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    <foaf:name>Donald J. Ortner</foaf:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/treponematosis">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Condition"/>
+    <rdfs:label xml:lang="en">treponemal infection (treponematosis)</rdfs:label>
+    <skos:exactMatch rdf:resource="http://purl.obolibrary.org/obo/MONDO_0007000"/>
+    <rdfs:comment xml:lang="en">MONDO:0007000 'Treponema infectious disease' — the family covering syphilis, yaws, bejel and pinta, which is the sense the paper uses.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b18">
+    <rdf:first rdf:resource="https://w3id.org/paleont/DiagnosticFramework"/>
+    <rdf:rest rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b19"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/bejel">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Condition"/>
+    <rdfs:label xml:lang="en">bejel (endemic syphilis, T. pallidum endemicum)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/rf130_obs_fibula">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Observation"/>
+    <rdfs:label xml:lang="en">Both fibulae thickened, with areas of new bone layers at the distal end</rdfs:label>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:observedOn rdf:resource="https://w3id.org/paleont/data/rf130"/>
+    <po:observesLesionType rdf:resource="https://w3id.org/paleont/data/periostealReaction"/>
+    <po:onBone rdf:resource="https://w3id.org/paleont/data/fibula"/>
+    <po:usedTechnique rdf:resource="https://w3id.org/paleont/data/macroscopic"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/periostealReaction">
+    <rdf:type rdf:resource="https://w3id.org/paleont/LesionType"/>
+    <rdfs:label xml:lang="en">periosteal reaction with cortical thickening</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/boneRemodelling">
+    <rdf:type rdf:resource="https://w3id.org/paleont/LesionType"/>
+    <rdfs:label xml:lang="en">remodelling</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/Correction">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Correction</rdfs:label>
+    <rdfs:comment xml:lang="en">An adjustment applied to one particular dating. A property
+        of THIS dating: it holds here. Recording it is what turns an apparent
+        contradiction between two dates into two declared treatments of one
+        measurement — and prevents CQ4b from reporting false positives.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk90_reject_pagets">
+    <rdf:type rdf:resource="https://w3id.org/paleont/RejectionClaim"/>
+    <rdfs:label xml:lang="en">Paget's disease rejected</rdfs:label>
+    <po:aboutSpecimen rdf:resource="https://w3id.org/paleont/data/sk90"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/sk90_obs_parietal_ct"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Probable"/>
+    <po:hedgeWording>Paget's disease is excluded for the cases described here, because no marble-like bone thickening was present on the CT scans</po:hedgeWording>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/schwarzTeam"/>
+    <po:rejects rdf:resource="https://w3id.org/paleont/data/sk90_claim_alt_pagets"/>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk94_obs_femur_ct">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Observation"/>
+    <rdfs:label xml:lang="en">CT: parts of the femur show high radiodensity, indicating an inflammatory process</rdfs:label>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:observedOn rdf:resource="https://w3id.org/paleont/data/sk94"/>
+    <po:observesLesionType rdf:resource="https://w3id.org/paleont/data/increasedRadiodensity"/>
+    <po:onBone rdf:resource="https://w3id.org/paleont/data/femur"/>
+    <po:usedTechnique rdf:resource="https://w3id.org/paleont/data/ct"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/adultAgeingError">
+    <rdf:type rdf:resource="https://w3id.org/paleont/ErrorSource"/>
+    <rdfs:label xml:lang="en">inaccuracy of adult age estimation</rdfs:label>
+    <po:hasEffect>The adult skeleton changes little during life, so age is given with an inaccuracy of 10–20 years.</po:hasEffect>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/minAge">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">minimum age</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/paleont/AgeClaim"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk90_reject_leprosy">
+    <rdf:type rdf:resource="https://w3id.org/paleont/RejectionClaim"/>
+    <rdfs:label xml:lang="en">Leprosy rejected</rdfs:label>
+    <po:aboutSpecimen rdf:resource="https://w3id.org/paleont/data/sk90"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/sk90_obs_parietal"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/sk90_obs_tibia"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Probable"/>
+    <po:hedgeWording>none of the five skeletons described in this paper shows any lesions diagnostic of leprosy</po:hedgeWording>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/schwarzTeam"/>
+    <po:rejects rdf:resource="https://w3id.org/paleont/data/sk90_claim_alt_leprosy"/>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/rf130_interval_armPosition">
+    <rdf:type rdf:resource="https://w3id.org/paleont/CalibratedInterval"/>
+    <rdfs:label xml:lang="en">AD 1250–1400 (archaeological, arm position)</rdfs:label>
+    <po:confidenceInterval>archaeological — no statistical confidence stated</po:confidenceInterval>
+    <po:endYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1400</po:endYear>
+    <po:startYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1250</po:startYear>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk90_obs_armPosition">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Observation"/>
+    <rdfs:label xml:lang="en">Burial arm position recorded</rdfs:label>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:observedOn rdf:resource="https://w3id.org/paleont/data/sk90"/>
+    <po:usedTechnique rdf:resource="https://w3id.org/paleont/data/armPosition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/fungalInfection">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Condition"/>
+    <rdfs:label xml:lang="en">fungal infection</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/cvaas">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Technique"/>
+    <rdfs:label xml:lang="en">cold vapour atomic absorption spectroscopy (CV-AAS)</rdfs:label>
+    <rdfs:comment xml:lang="en">Flow Injection Mercury System 400, PerkinElmer.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/rf130_interval_c14_95">
+    <rdf:type rdf:resource="https://w3id.org/paleont/CalibratedInterval"/>
+    <rdfs:label xml:lang="en">calAD 1149–1224, 95% CI corrected for marine component</rdfs:label>
+    <po:confidenceInterval>95% CI, corrected for marine component</po:confidenceInterval>
+    <po:endYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1224</po:endYear>
+    <po:startYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1149</po:startYear>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/endYear">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">end year</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/paleont/CalibratedInterval"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/rf130_obs_armPosition">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Observation"/>
+    <rdfs:label xml:lang="en">Burial arm position recorded</rdfs:label>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:observedOn rdf:resource="https://w3id.org/paleont/data/rf130"/>
+    <po:usedTechnique rdf:resource="https://w3id.org/paleont/data/armPosition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/observesLesionType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">observes lesion type</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/paleont/Observation"/>
+    <rdfs:range rdf:resource="https://w3id.org/paleont/LesionType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/rf130_obs_isotopes">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Observation"/>
+    <rdfs:label xml:lang="en">δ13C −18.61 ‰, δ15N 12.18 ‰, C:N 3.4 — estimated marine diet 13 %</rdfs:label>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:observedOn rdf:resource="https://w3id.org/paleont/data/rf130"/>
+    <po:usedTechnique rdf:resource="https://w3id.org/paleont/data/irms"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk94_interval_armPosition">
+    <rdf:type rdf:resource="https://w3id.org/paleont/CalibratedInterval"/>
+    <rdfs:label xml:lang="en">AD 1250-1400 (archaeological, arm position B)</rdfs:label>
+    <po:confidenceInterval>archaeological, no statistical confidence stated</po:confidenceInterval>
+    <po:endYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1400</po:endYear>
+    <po:startYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1250</po:startYear>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b21">
+    <rdf:first rdf:resource="https://w3id.org/paleont/ErrorSource"/>
+    <rdf:rest rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b22"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/increasedRadiodensity">
+    <rdf:type rdf:resource="https://w3id.org/paleont/LesionType"/>
+    <rdfs:label xml:lang="en">increased radiodensity</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk90">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Specimen"/>
+    <rdfs:label xml:lang="en">St. Albani, Skeleton 90</rdfs:label>
+    <rdfs:comment xml:lang="en">Burial 90, St. Albani churchyard, Odense (Funen), urban site. Male, good state of preservation.</rdfs:comment>
+    <po:specimenID>St. Albani-90</po:specimenID>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/rf130">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Specimen"/>
+    <rdfs:label xml:lang="en">Refshale, Skeleton 130</rdfs:label>
+    <rdfs:comment xml:lang="en">Burial 130, Refshale graveyard, Maribo district, Lolland. Rural site. Completely preserved adult female.</rdfs:comment>
+    <po:specimenID>Refshale-130</po:specimenID>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/tibia">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Bone"/>
+    <rdfs:label xml:lang="en">tibia</rdfs:label>
+    <skos:exactMatch rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000979"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/hedge">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:label xml:lang="en">hedge</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/paleont/Claim"/>
+    <rdfs:range rdf:resource="https://w3id.org/paleont/ConfidenceLevel"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/tp292_obs_nasal">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Observation"/>
+    <rdfs:label xml:lang="en">Remodelling of the nasal aperture and of the inferior nasal conchae</rdfs:label>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:observedOn rdf:resource="https://w3id.org/paleont/data/tp292"/>
+    <po:observesLesionType rdf:resource="https://w3id.org/paleont/data/boneRemodelling"/>
+    <po:onBone rdf:resource="https://w3id.org/paleont/data/nasalAperture"/>
+    <po:usedTechnique rdf:resource="https://w3id.org/paleont/data/macroscopic"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk90_reject_tuberculosis">
+    <rdf:type rdf:resource="https://w3id.org/paleont/RejectionClaim"/>
+    <rdfs:label xml:lang="en">Tuberculosis rejected</rdfs:label>
+    <po:aboutSpecimen rdf:resource="https://w3id.org/paleont/data/sk90"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/sk90_obs_femur"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/sk90_obs_humerus"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Probable"/>
+    <po:hedgeWording>tuberculosis is usually affecting the spine and the inner table of the cranium while hypertrophic expansion of the long bones is described as unusual</po:hedgeWording>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/schwarzTeam"/>
+    <po:rejects rdf:resource="https://w3id.org/paleont/data/sk90_claim_alt_tuberculosis"/>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/tuberculosis">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Condition"/>
+    <rdfs:label xml:lang="en">tuberculosis</rdfs:label>
+    <skos:exactMatch rdf:resource="http://purl.obolibrary.org/obo/MONDO_0018076"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/ErrorSource">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Error source</rdfs:label>
+    <rdfs:comment xml:lang="en">A known limitation of a technique — e.g. the marine
+        reservoir effect. A property of the TECHNIQUE: it holds always.
+        Contrast po:Correction.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/proposesTreatment">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/paleont/proposes"/>
+    <rdfs:label xml:lang="en">proposes treatment</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/paleont/TreatmentClaim"/>
+    <rdfs:range rdf:resource="https://w3id.org/paleont/Treatment"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/ct">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Technique"/>
+    <rdfs:label xml:lang="en">computed tomography (CT) scanning</rdfs:label>
+    <rdfs:comment xml:lang="en">SOMATOM Sensation 64 (Kiel) and SOMATOM Spirit (Odense), Siemens.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b17">
+    <rdf:first rdf:resource="https://w3id.org/paleont/Condition"/>
+    <rdf:rest rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b18"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/leprosy">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Condition"/>
+    <rdfs:label xml:lang="en">leprosy</rdfs:label>
+    <skos:exactMatch rdf:resource="http://purl.obolibrary.org/obo/MONDO_0005124"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk90_interval_c14_corrected">
+    <rdf:type rdf:resource="https://w3id.org/paleont/CalibratedInterval"/>
+    <rdfs:label xml:lang="en">calAD 1443–1466 at 1 sigma</rdfs:label>
+    <po:confidenceInterval>1 sigma</po:confidenceInterval>
+    <po:endYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1466</po:endYear>
+    <po:startYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1443</po:startYear>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/underFramework">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:label xml:lang="en">under framework</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/paleont/Claim"/>
+    <rdfs:range rdf:resource="https://w3id.org/paleont/DiagnosticFramework"/>
+    <rdfs:comment xml:lang="en">The standpoint FROM WHICH the claim is made — the frame the
+        claimant occupies. Functional: a claim is made from one position. Two
+        positions on the same content are two claims.
+        For a single modern source every claim is ModernBiomedical, and that
+        uniformity is a finding, not a defect: the paper never leaves the
+        modern frame. What varies is po:framesContent.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk94_interval_c14">
+    <rdf:type rdf:resource="https://w3id.org/paleont/CalibratedInterval"/>
+    <rdfs:label xml:lang="en">calAD 1453-1494 at 1 sigma</rdfs:label>
+    <po:confidenceInterval>1 sigma</po:confidenceInterval>
+    <po:endYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1494</po:endYear>
+    <po:startYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1453</po:startYear>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/transitionAnalysis">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Technique"/>
+    <rdfs:label xml:lang="en">transition analysis</rdfs:label>
+    <rdfs:comment xml:lang="en">Age-at-death estimation after Boldsen et al.</rdfs:comment>
+    <po:hasErrorSource rdf:resource="https://w3id.org/paleont/data/adultAgeingError"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b30">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+    <owl:distinctMembers rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b31"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/schwarz2013">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Source"/>
+    <rdfs:label xml:lang="en">Schwarz, Skytte &amp; Rasmussen 2013, Heritage Science 1:19</rdfs:label>
+    <dcterms:title xml:lang="en">Pre-Columbian treponemal infection in Denmark? — a paleopathological and archaeometric approach</dcterms:title>
+    <dcterms:identifier>doi:10.1186/2050-7445-1-19</dcterms:identifier>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/Bone">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Bone</rdfs:label>
+    <rdfs:comment xml:lang="en">Skeletal element. Individuals carry skos:exactMatch links
+        to UBERON rather than using UBERON classes directly as values, which
+        avoids punning.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/macroscopic">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Technique"/>
+    <rdfs:label xml:lang="en">macroscopic examination</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b13">
+    <rdf:first rdf:resource="https://w3id.org/paleont/CalibratedInterval"/>
+    <rdf:rest rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b14"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/Treatment">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Treatment</rdfs:label>
+    <rdfs:comment xml:lang="en">A therapeutic intervention received in life.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b28">
+    <rdf:first rdf:resource="https://w3id.org/paleont/Possible"/>
+    <rdf:rest rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b29"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk89_obs_radiocarbon">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Observation"/>
+    <rdfs:label xml:lang="en">Uncalibrated radiocarbon age 490 +/- 25 BP; corrected for the marine component, 437 +/- 20 BP</rdfs:label>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:observedOn rdf:resource="https://w3id.org/paleont/data/sk89"/>
+    <po:usedTechnique rdf:resource="https://w3id.org/paleont/data/radiocarbon"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/usedTechnique">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">used technique</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/paleont/Observation"/>
+    <rdfs:range rdf:resource="https://w3id.org/paleont/Technique"/>
+    <rdfs:comment xml:lang="en">Domain is Observation, not Claim. A dating claim therefore
+        reaches its technique through groundedIn/usedTechnique. This enforces
+        that every use of a technique is an observation — see decision D2.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/tp292_claim_alt_leprosy">
+    <rdf:type rdf:resource="https://w3id.org/paleont/DiagnosticClaim"/>
+    <rdfs:label xml:lang="en">Leprosy entertained as a differential diagnosis for tp292</rdfs:label>
+    <po:aboutSpecimen rdf:resource="https://w3id.org/paleont/data/tp292"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Possible"/>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/schwarzTeam"/>
+    <po:proposesCondition rdf:resource="https://w3id.org/paleont/data/leprosy"/>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b11">
+    <rdf:first rdf:resource="https://w3id.org/paleont/Observation"/>
+    <rdf:rest rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b12"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/DiagnosticClaim">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/paleont/Claim"/>
+    <rdfs:label xml:lang="en">Diagnostic claim</rdfs:label>
+    <rdfs:comment xml:lang="en">Proposes a condition for a specimen.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/maxAge">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">maximum age</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/paleont/AgeClaim"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/meth_archaeometry">
+    <rdf:type rdf:resource="https://w3id.org/paleont/MethodologicalClaim"/>
+    <rdfs:label xml:lang="en">Archaeometric analysis cannot establish the origin of the lesions</rdfs:label>
+    <po:aboutTechnique rdf:resource="https://w3id.org/paleont/data/radiocarbon"/>
+    <po:appliedTo rdf:resource="https://w3id.org/paleont/data/rf130"/>
+    <po:appliedTo rdf:resource="https://w3id.org/paleont/data/sk90"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:discriminatesBetween rdf:resource="https://w3id.org/paleont/data/treponematosis"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+    <po:hasDiscriminatingPower rdf:resource="https://w3id.org/paleont/Inconclusive"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Certain"/>
+    <po:hedgeWording>the results of the archaeometric analyses applied here cannot elucidate the origin of the probable treponemal bone lesions</po:hedgeWording>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/schwarzTeam"/>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/epiphysealFusion">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Technique"/>
+    <rdfs:label xml:lang="en">epiphyseal fusion and dental development assessment</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk94_obs_tibia">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Observation"/>
+    <rdfs:label xml:lang="en">Bone changes of the right tibia fit Hackett's on-trial criteria of rugose nodes and expansions</rdfs:label>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:observedOn rdf:resource="https://w3id.org/paleont/data/sk94"/>
+    <po:observesLesionType rdf:resource="https://w3id.org/paleont/data/nodesWithStriation"/>
+    <po:observesLesionType rdf:resource="https://w3id.org/paleont/data/rugoseExpansion"/>
+    <po:onBone rdf:resource="https://w3id.org/paleont/data/tibia"/>
+    <po:usedTechnique rdf:resource="https://w3id.org/paleont/data/macroscopic"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/rf130_claim_treponematosis">
+    <rdf:type rdf:resource="https://w3id.org/paleont/DiagnosticClaim"/>
+    <rdfs:label xml:lang="en">Treponemal disease entertained for Refshale 130, at a lower confidence than Sk. 90</rdfs:label>
+    <po:aboutSpecimen rdf:resource="https://w3id.org/paleont/data/rf130"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/rf130_obs_femur"/>
+    <po:groundedIn rdf:resource="https://w3id.org/paleont/data/rf130_obs_tibia"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Possible"/>
+    <po:hedgeWording>lesions consistent with treponemal disease are found on several long bones, but only those in skeleton 90 from St. Albani are indicative of treponemal infection</po:hedgeWording>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/schwarzTeam"/>
+    <po:proposesCondition rdf:resource="https://w3id.org/paleont/data/treponematosis"/>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/TreatmentClaim">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/paleont/Claim"/>
+    <rdfs:label xml:lang="en">Treatment claim</rdfs:label>
+    <rdfs:comment xml:lang="en">Proposes a treatment received in life. Typically made
+        under a historical framework, and typically grounded in a chemical
+        observation such as mercury.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/proposesCondition">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/paleont/proposes"/>
+    <rdfs:label xml:lang="en">proposes condition</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/paleont/DiagnosticClaim"/>
+    <rdfs:range rdf:resource="https://w3id.org/paleont/Condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk89">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Specimen"/>
+    <rdfs:label xml:lang="en">St. Albani, Skeleton 89</rdfs:label>
+    <rdfs:comment xml:lang="en">Burial 89, St. Albani churchyard, Odense (Funen). Urban site. Postcranial skeleton only, which made ageing and sexing difficult; most likely an adult female.</rdfs:comment>
+    <po:specimenID>St. Albani-89</po:specimenID>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/rugoseExpansion">
+    <rdf:type rdf:resource="https://w3id.org/paleont/LesionType"/>
+    <rdfs:label xml:lang="en">rugose new bone and diaphyseal expansion</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk90_obs_epiphyses">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Observation"/>
+    <rdfs:label xml:lang="en">Epiphyseal fusion and dental development</rdfs:label>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:observedOn rdf:resource="https://w3id.org/paleont/data/sk90"/>
+    <po:usedTechnique rdf:resource="https://w3id.org/paleont/data/epiphysealFusion"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/osteolyticLesion">
+    <rdf:type rdf:resource="https://w3id.org/paleont/LesionType"/>
+    <rdfs:label xml:lang="en">osteolytic lesion</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b31">
+    <rdf:first rdf:resource="https://w3id.org/paleont/Discriminating"/>
+    <rdf:rest rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b32"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/rf130_claim_alt_leprosy">
+    <rdf:type rdf:resource="https://w3id.org/paleont/DiagnosticClaim"/>
+    <rdfs:label xml:lang="en">Leprosy entertained as a differential diagnosis for Refshale 130</rdfs:label>
+    <po:aboutSpecimen rdf:resource="https://w3id.org/paleont/data/rf130"/>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:framesContent rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+    <po:hedge rdf:resource="https://w3id.org/paleont/Possible"/>
+    <po:heldBy rdf:resource="https://w3id.org/paleont/data/schwarzTeam"/>
+    <po:proposesCondition rdf:resource="https://w3id.org/paleont/data/leprosy"/>
+    <po:underFramework rdf:resource="https://w3id.org/paleont/ModernBiomedical"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/Technique">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Technique</rdfs:label>
+    <rdfs:comment xml:lang="en">Any means by which an observation is produced: naked-eye
+        examination, radiography, radiocarbon dating, atomic absorption
+        spectrometry. ONE class, no hierarchy. Ranking techniques by
+        reliability is what the sources ARGUE about, so it must live in
+        po:MethodologicalClaim, never in the schema.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/Possible">
+    <rdf:type rdf:resource="https://w3id.org/paleont/ConfidenceLevel"/>
+    <rdfs:label xml:lang="en">possible</rdfs:label>
+    <po:weakerThan rdf:resource="https://w3id.org/paleont/Probable"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/rf130_obs_mercury">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Observation"/>
+    <rdfs:label xml:lang="en">Hg concentration of 22 ± 3 ng/g — within the 10–100 ng/g range normal for non-exposed medieval Danish individuals</rdfs:label>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:observedOn rdf:resource="https://w3id.org/paleont/data/rf130"/>
+    <po:usedTechnique rdf:resource="https://w3id.org/paleont/data/cvaas"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b25">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+    <owl:distinctMembers rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b26"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/unsubstantiatedMethod">
+    <rdf:type rdf:resource="https://w3id.org/paleont/ErrorSource"/>
+    <rdfs:label xml:lang="en">arm-position method not substantiated by scientific dating</rdfs:label>
+    <po:hasEffect>The arm position methodology has not been substantiated by scientific dating methods such as radiocarbon dating, dendrochronology or thermoluminescence.</po:hasEffect>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b32">
+    <rdf:first rdf:resource="https://w3id.org/paleont/Suggestive"/>
+    <rdf:rest rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b33"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/hasResult">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/paleont/proposes"/>
+    <rdfs:label xml:lang="en">has result</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/paleont/DatingClaim"/>
+    <rdfs:range rdf:resource="https://w3id.org/paleont/CalibratedInterval"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk90_interval_armPosition">
+    <rdf:type rdf:resource="https://w3id.org/paleont/CalibratedInterval"/>
+    <rdfs:label xml:lang="en">AD 1250–1400</rdfs:label>
+    <po:confidenceInterval>archaeological — no statistical confidence stated</po:confidenceInterval>
+    <po:endYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1400</po:endYear>
+    <po:startYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1250</po:startYear>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/weakerThan">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    <rdfs:label xml:lang="en">weaker than</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/paleont/ConfidenceLevel"/>
+    <rdfs:range rdf:resource="https://w3id.org/paleont/ConfidenceLevel"/>
+    <rdfs:comment xml:lang="en">Orders the confidence levels. This ordering is OURS, not
+        the source's, and must be declared as such in the documentation.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/Source">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Source</rdfs:label>
+    <rdfs:comment xml:lang="en">A publication in which claims are declared.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/Inconclusive">
+    <rdf:type rdf:resource="https://w3id.org/paleont/DiscriminatingPower"/>
+    <rdfs:label xml:lang="en">inconclusive</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/schwarzTeam">
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+    <foaf:name>Schwarz, Skytte &amp; Rasmussen (2013 study team)</foaf:name>
+    <rdfs:comment xml:lang="en">Holder of the claims the present study makes collectively, so that individual attribution is never invented.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/Suggestive">
+    <rdf:type rdf:resource="https://w3id.org/paleont/DiscriminatingPower"/>
+    <rdfs:label xml:lang="en">suggestive</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/rf130_obs_humerus">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Observation"/>
+    <rdfs:label xml:lang="en">Distal ends of both humeri display clustered pitting</rdfs:label>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:observedOn rdf:resource="https://w3id.org/paleont/data/rf130"/>
+    <po:observesLesionType rdf:resource="https://w3id.org/paleont/data/clusteredPitting"/>
+    <po:onBone rdf:resource="https://w3id.org/paleont/data/humerus"/>
+    <po:usedTechnique rdf:resource="https://w3id.org/paleont/data/macroscopic"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/diaphysealBowing">
+    <rdf:type rdf:resource="https://w3id.org/paleont/LesionType"/>
+    <rdfs:label xml:lang="en">anterior bowing of the diaphysis (sabre shin)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/coarsePitting">
+    <rdf:type rdf:resource="https://w3id.org/paleont/LesionType"/>
+    <rdfs:label xml:lang="en">coarse pitting</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b9">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b10"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b29">
+    <rdf:first rdf:resource="https://w3id.org/paleont/Tentative"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b5">
+    <rdf:first rdf:resource="https://w3id.org/paleont/DatingClaim"/>
+    <rdf:rest rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b6"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/skytte">
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    <foaf:name>Lilian Skytte</foaf:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/boneTumour">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Condition"/>
+    <rdfs:label xml:lang="en">bone tumour</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b22">
+    <rdf:first rdf:resource="https://w3id.org/paleont/Correction"/>
+    <rdf:rest rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b23"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/systemicDisease">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Condition"/>
+    <rdfs:label xml:lang="en">systemic disease (unspecified)</rdfs:label>
+    <rdfs:comment xml:lang="en">The paper's own level of specificity for Refshale 130: 'changes observed on nearly all the long bones indicate a systemic disease'. Kept as stated rather than sharpened.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b15">
+    <rdf:first rdf:resource="https://w3id.org/paleont/LesionType"/>
+    <rdf:rest rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b16"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk89_interval_c14">
+    <rdf:type rdf:resource="https://w3id.org/paleont/CalibratedInterval"/>
+    <rdfs:label xml:lang="en">calAD 1435-1456 at 1 sigma</rdfs:label>
+    <po:confidenceInterval>1 sigma</po:confidenceInterval>
+    <po:endYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1456</po:endYear>
+    <po:startYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1435</po:startYear>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/fibula">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Bone"/>
+    <rdfs:label xml:lang="en">fibula</rdfs:label>
+    <skos:exactMatch rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001446"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b19">
+    <rdf:first rdf:resource="https://w3id.org/paleont/ConfidenceLevel"/>
+    <rdf:rest rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b20"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/engagesWith">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">engages with</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/paleont/Claim"/>
+    <rdfs:range rdf:resource="https://w3id.org/paleont/Claim"/>
+    <rdfs:comment xml:lang="en">Superproperty. Never asserted directly; always inferred.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk94_obs_pubicSymphysis">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Observation"/>
+    <rdfs:label xml:lang="en">Changes on the pubic symphysis and on the auricular surface</rdfs:label>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:observedOn rdf:resource="https://w3id.org/paleont/data/sk94"/>
+    <po:usedTechnique rdf:resource="https://w3id.org/paleont/data/transitionAnalysis"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/humerus">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Bone"/>
+    <rdfs:label xml:lang="en">humerus</rdfs:label>
+    <skos:exactMatch rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000976"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/harper">
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    <foaf:name>Kristin N. Harper</foaf:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/ortner2011">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Source"/>
+    <rdfs:label xml:lang="en">Ortner 2011, Virchows Arch 459:247–254</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk89_obs_mercury">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Observation"/>
+    <rdfs:label xml:lang="en">Hg concentration of 374 +/- 8 ng/g in the femur, against a 10 to 100 ng/g range normal for non-exposed medieval Danish individuals</rdfs:label>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:observedOn rdf:resource="https://w3id.org/paleont/data/sk89"/>
+    <po:onBone rdf:resource="https://w3id.org/paleont/data/femur"/>
+    <po:usedTechnique rdf:resource="https://w3id.org/paleont/data/cvaas"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/rf130_obs_transition">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Observation"/>
+    <rdfs:label xml:lang="en">Transition analysis on the auricular surface and pubic symphysis</rdfs:label>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:observedOn rdf:resource="https://w3id.org/paleont/data/rf130"/>
+    <po:usedTechnique rdf:resource="https://w3id.org/paleont/data/transitionAnalysis"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/appliedTo">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">applied to</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/paleont/MethodologicalClaim"/>
+    <rdfs:range rdf:resource="https://w3id.org/paleont/Specimen"/>
+    <rdfs:comment xml:lang="en">Decision D5. A methodological claim may NOT have
+        po:aboutSpecimen — the restriction above forbids it, because its
+        subject matter is a technique, not a skeleton. But a judgement about a
+        method is often reached in the course of examining particular
+        specimens, and the source says so: "the results of the archaeometric
+        analyses APPLIED HERE cannot elucidate the origin".
+
+        po:appliedTo records that occasion without claiming the judgement is
+        about the skeleton. "CT cannot separate the treponematoses" remains a
+        statement about CT; po:appliedTo says where that was found out.
+
+        Same shape of problem as D4, same shape of solution: when one property
+        is being asked to mean two things, split it rather than equivocate or
+        forbid.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b10">
+    <rdf:first rdf:resource="https://w3id.org/paleont/Specimen"/>
+    <rdf:rest rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b11"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b27">
+    <rdf:first rdf:resource="https://w3id.org/paleont/Probable"/>
+    <rdf:rest rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b28"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/hasDiscriminatingPower">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:label xml:lang="en">has discriminating power</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/paleont/MethodologicalClaim"/>
+    <rdfs:range rdf:resource="https://w3id.org/paleont/DiscriminatingPower"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/spar/cito/updates">
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/paleont/engagesWith"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/focalSuperficialCavitation">
+    <rdf:type rdf:resource="https://w3id.org/paleont/LesionType"/>
+    <rdfs:label xml:lang="en">focal superficial cavitation</rdfs:label>
+    <rdfs:comment xml:lang="en">An on-trial criterion after Hackett (1976); the Discussion treats it as a diagnostic criterion for treponemal infection once tuberculosis is excluded.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/DiscriminatingPower">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Discriminating power</rdfs:label>
+    <rdfs:comment xml:lang="en">How far a technique is said to separate competing
+        hypotheses. A small controlled list, so that 'which techniques
+        cannot discriminate' is a value filter rather than a second
+        question.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/pelvicMorphology">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Technique"/>
+    <rdfs:label xml:lang="en">sex estimation from pelvic morphology and skeletal robusticity</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk90_obs_isotopes">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Observation"/>
+    <rdfs:label xml:lang="en">δ13C −19.72 ‰, δ15N 8.88 ‰, C:N 3.4 — estimated marine diet 1 %</rdfs:label>
+    <po:declaredIn rdf:resource="https://w3id.org/paleont/data/schwarz2013"/>
+    <po:observedOn rdf:resource="https://w3id.org/paleont/data/sk90"/>
+    <po:usedTechnique rdf:resource="https://w3id.org/paleont/data/irms"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/spar/cito/disagreesWith">
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/paleont/engagesWith"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/MedievalHumoral">
+    <rdf:type rdf:resource="https://w3id.org/paleont/DiagnosticFramework"/>
+    <rdfs:label xml:lang="en">medieval humoral framework</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/yaws">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Condition"/>
+    <rdfs:label xml:lang="en">yaws (T. pertenue)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b26">
+    <rdf:first rdf:resource="https://w3id.org/paleont/Certain"/>
+    <rdf:rest rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b27"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/nasalAperture">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Bone"/>
+    <rdfs:label xml:lang="en">nasal aperture</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b14">
+    <rdf:first rdf:resource="https://w3id.org/paleont/Technique"/>
+    <rdf:rest rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b15"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/sk94_interval_c14_late">
+    <rdf:type rdf:resource="https://w3id.org/paleont/CalibratedInterval"/>
+    <rdfs:label xml:lang="en">calAD 1602-1614, the later of the two calibration ranges</rdfs:label>
+    <po:confidenceInterval>1 sigma, alternative calibration range</po:confidenceInterval>
+    <po:endYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1614</po:endYear>
+    <po:startYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1602</po:startYear>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/kiefferOlsen1993">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Source"/>
+    <rdfs:label xml:lang="en">Kieffer-Olsen 1993 — arm-position chronology for Danish medieval burials</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/Probable">
+    <rdf:type rdf:resource="https://w3id.org/paleont/ConfidenceLevel"/>
+    <rdfs:label xml:lang="en">probable</rdfs:label>
+    <po:weakerThan rdf:resource="https://w3id.org/paleont/Certain"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/frontal">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Bone"/>
+    <rdfs:label xml:lang="en">frontal bone</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/clusteredPitting">
+    <rdf:type rdf:resource="https://w3id.org/paleont/LesionType"/>
+    <rdfs:label xml:lang="en">clustered pitting</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/linearStriation">
+    <rdf:type rdf:resource="https://w3id.org/paleont/LesionType"/>
+    <rdfs:label xml:lang="en">coarse and linear striation</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="nd73158e56c8645c78fd4c60d10d25949b24">
+    <rdf:first rdf:resource="https://w3id.org/paleont/DiscriminatingPower"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/boneDeposits">
+    <rdf:type rdf:resource="https://w3id.org/paleont/LesionType"/>
+    <rdfs:label xml:lang="en">bone deposits with diffuse borders</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/paleont/data/orbit">
+    <rdf:type rdf:resource="https://w3id.org/paleont/Bone"/>
+    <rdfs:label xml:lang="en">orbit</rdfs:label>
+  </rdf:Description>
+</rdf:RDF>

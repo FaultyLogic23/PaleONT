@@ -1,0 +1,16 @@
+# CQ6 (no entailment) · Same question, written with a property path so that it
+# runs on a plain triple store. Kept alongside cq06.rq to show what the
+# superproperty buys: one term instead of an enumeration that must be edited
+# every time a new relation is added.
+PREFIX po:   <https://w3id.org/paleont/>
+PREFIX cito: <http://purl.org/spar/cito/>
+
+SELECT ?claim ?relation ?priorClaim ?agent ?source
+WHERE {
+  ?claim (po:rejects|cito:updates|cito:agreesWith|cito:disagreesWith) ?priorClaim .
+  ?claim ?relation ?priorClaim .
+  FILTER(?relation IN (po:rejects, cito:updates, cito:agreesWith, cito:disagreesWith))
+  OPTIONAL { ?priorClaim po:heldBy ?agent }
+  OPTIONAL { ?priorClaim po:declaredIn ?source }
+  FILTER NOT EXISTS { ?claim po:isNegated true }   # D6: a denial is not an assertion
+}

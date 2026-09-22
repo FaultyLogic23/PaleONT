@@ -1,0 +1,47 @@
+id,specimen,lesion_types,bone,technique,source,label
+ex:rf130_obs_armPosition,ex:rf130,,,ex:armPosition,ex:schwarz2013,Burial arm position recorded
+ex:rf130_obs_femur,ex:rf130,ex:coarsePitting|ex:rugoseExpansion,ex:femur,ex:macroscopic,ex:schwarz2013,"Femora with expanded diaphysis, rippling of the surface and coarse pitting"
+ex:rf130_obs_femur_ct,ex:rf130,ex:increasedRadiodensity,ex:femur,ex:ct,ex:schwarz2013,"CT: increased radiodensity in the right femur — described as non-specific, and possibly normal variation"
+ex:rf130_obs_fibula,ex:rf130,ex:periostealReaction,ex:fibula,ex:macroscopic,ex:schwarz2013,"Both fibulae thickened, with areas of new bone layers at the distal end"
+ex:rf130_obs_humerus,ex:rf130,ex:clusteredPitting,ex:humerus,ex:macroscopic,ex:schwarz2013,Distal ends of both humeri display clustered pitting
+ex:rf130_obs_isotopes,ex:rf130,,,ex:irms,ex:schwarz2013,"δ13C −18.61 ‰, δ15N 12.18 ‰, C:N 3.4 — estimated marine diet 13 %"
+ex:rf130_obs_mercury,ex:rf130,,,ex:cvaas,ex:schwarz2013,Hg concentration of 22 ± 3 ng/g — within the 10–100 ng/g range normal for non-exposed medieval Danish individuals
+ex:rf130_obs_radiocarbon,ex:rf130,,,ex:radiocarbon,ex:schwarz2013,Uncalibrated radiocarbon age 925 ± 25 BP; corrected 870 ± 25 BP
+ex:rf130_obs_radius,ex:rf130,ex:coarsePitting|ex:linearStriation|ex:rugoseExpansion,ex:radius,ex:macroscopic,ex:schwarz2013,"Left radius: coarse striations on the lateral distal side, coarse pitting and moderate rugose new bone on the medial distal end; right radius the same, with small round and oval depressions"
+ex:rf130_obs_sex,ex:rf130,,,ex:pelvicMorphology,ex:schwarz2013,Pelvic morphology consistent with a female individual
+ex:rf130_obs_tibia,ex:rf130,ex:linearStriation|ex:periostealReaction,ex:tibia,ex:macroscopic,ex:schwarz2013,Tibiae: multiple channelled vascular impressions posteriorly; periostitis and linear striations dominating the anterior and medial diaphysis; shaft slightly bowed anteriorly
+ex:rf130_obs_tibia_ct,ex:rf130,ex:osteolyticLesion,ex:tibia,ex:ct,ex:schwarz2013,CT: osteolytic changes within the cortex of the right tibia — described as non-specific
+ex:rf130_obs_transition,ex:rf130,,,ex:transitionAnalysis,ex:schwarz2013,Transition analysis on the auricular surface and pubic symphysis
+ex:sk90_obs_armPosition,ex:sk90,,,ex:armPosition,ex:schwarz2013,Burial arm position recorded
+ex:sk90_obs_epiphyses,ex:sk90,,,ex:epiphysealFusion,ex:schwarz2013,Epiphyseal fusion and dental development
+ex:sk90_obs_femur,ex:sk90,ex:osteolyticLesion,ex:femur,ex:ct,ex:schwarz2013,Osteolytic lesion of around 3.5 cm in the trabeculae of the trochanter major; high radiodensity in the proximal diaphysis
+ex:sk90_obs_humerus,ex:sk90,ex:periostealReaction,ex:humerus,ex:ct,ex:schwarz2013,"Periosteal reactions and cortical thickening, mainly in the distal end"
+ex:sk90_obs_isotopes,ex:sk90,,,ex:irms,ex:schwarz2013,"δ13C −19.72 ‰, δ15N 8.88 ‰, C:N 3.4 — estimated marine diet 1 %"
+ex:sk90_obs_mercury,ex:sk90,,ex:femur,ex:cvaas,ex:schwarz2013,Hg concentration of 388 ± 7 ng/g in the femur (normal range for medieval Denmark: 10–100 ng/g)
+ex:sk90_obs_parietal,ex:sk90,ex:clusteredPitting|ex:focalSuperficialCavitation,ex:parietal,ex:macroscopic,ex:schwarz2013,Focal superficial cavitation and clustered pits on the right parietal
+ex:sk90_obs_parietal_ct,ex:sk90,ex:osteolyticLesion,ex:parietal,ex:ct,ex:schwarz2013,"CT: increased density of the diploë, thickening of the tables, outer table interrupted by round notches, focal radiolucent areas"
+ex:sk90_obs_pelvis,ex:sk90,,,ex:macroscopic,ex:schwarz2013,Pelvic morphology and general robust appearance of the skeletal elements
+ex:sk90_obs_radiocarbon,ex:sk90,,,ex:radiocarbon,ex:schwarz2013,Uncalibrated radiocarbon age 420 ± 20 BP on bone collagen
+ex:sk90_obs_tibia,ex:sk90,ex:clusteredPitting|ex:periostealReaction,ex:tibia,ex:ct,ex:schwarz2013,"Thickened cortex, diffuse changes on the anterior surface, diffuse clustered pitting"
+ex:sk90_obs_transition,ex:sk90,,,ex:transitionAnalysis,ex:schwarz2013,Transition analysis on the auricular surface and pubic symphysis
+ex:sk89_obs_tibia,ex:sk89,ex:nodesWithStriation|ex:boneDeposits,ex:tibia,ex:macroscopic,ex:schwarz2013,"Both tibiae display nodes with striation on the medial side of the diaphysis; the surfaces appear very uneven and rugose, with bone deposits merging into the surrounding bone with diffuse borders"
+ex:sk89_obs_tibia_cavitation,ex:sk89,ex:focalSuperficialCavitation,ex:tibia,ex:macroscopic,ex:schwarz2013,"One of the nodes on the right tibia shows superficial cavitation, a diagnostic criterion after Hackett"
+ex:sk89_obs_tibia_bowing,ex:sk89,ex:diaphysealBowing,ex:tibia,ex:macroscopic,ex:schwarz2013,The tibia shafts are slightly bowed
+ex:sk89_obs_tibia_ct,ex:sk89,ex:osteolyticLesion|ex:periostealReaction,ex:tibia,ex:ct,ex:schwarz2013,"CT: an osteolytic lesion in the new bone on the anterior part of the right tibia, with very low density of the original bone; periosteal reactions on the anteriorly bowed cortex"
+ex:sk89_obs_mercury,ex:sk89,,ex:femur,ex:cvaas,ex:schwarz2013,"Hg concentration of 374 +/- 8 ng/g in the femur, against a 10 to 100 ng/g range normal for non-exposed medieval Danish individuals"
+ex:sk89_obs_radiocarbon,ex:sk89,,,ex:radiocarbon,ex:schwarz2013,"Uncalibrated radiocarbon age 490 +/- 25 BP; corrected for the marine component, 437 +/- 20 BP"
+ex:sk89_obs_isotopes,ex:sk89,,,ex:irms,ex:schwarz2013,"delta13C -18.64 per mil, delta15N 12.53 per mil, C:N 3.4, estimated marine diet 13 per cent"
+ex:sk94_obs_tibia,ex:sk94,ex:rugoseExpansion|ex:nodesWithStriation,ex:tibia,ex:macroscopic,ex:schwarz2013,Bone changes of the right tibia fit Hackett's on-trial criteria of rugose nodes and expansions
+ex:sk94_obs_tibia_ct,ex:sk94,ex:osteolyticLesion|ex:periostealReaction,ex:tibia,ex:ct,ex:schwarz2013,"CT: thickened diaphysis with several osteolytic foci in the cortical bone, destruction of the cortical structure and bone expansions; increased signal intensity in the remaining compact bone, consistent with inflammatory involvement"
+ex:sk94_obs_femur_ct,ex:sk94,ex:increasedRadiodensity,ex:femur,ex:ct,ex:schwarz2013,"CT: parts of the femur show high radiodensity, indicating an inflammatory process"
+ex:sk94_obs_mercury,ex:sk94,,ex:femur,ex:cvaas,ex:schwarz2013,"Hg concentration of 390 +/- 6 ng/g in the femur, against a 10 to 100 ng/g range normal for non-exposed medieval Danish individuals"
+ex:sk94_obs_radiocarbon,ex:sk94,,,ex:radiocarbon,ex:schwarz2013,"Uncalibrated radiocarbon age 425 +/- 20 BP; corrected for the marine component, 380 +/- 20 BP"
+ex:sk94_obs_isotopes,ex:sk94,,,ex:irms,ex:schwarz2013,"delta13C -18.82 per mil, delta15N 11.73 per mil, C:N 3.4, estimated marine diet 11 per cent"
+ex:sk94_obs_armPosition,ex:sk94,,,ex:armPosition,ex:schwarz2013,Burial arm position B recorded
+ex:sk94_obs_pubicSymphysis,ex:sk94,,,ex:transitionAnalysis,ex:schwarz2013,Changes on the pubic symphysis and on the auricular surface
+ex:sk94_obs_sex,ex:sk94,,,ex:pelvicMorphology,ex:schwarz2013,Skeletal indicators consistent with a male individual
+ex:tp292_obs_frontal,ex:tp292,ex:serpiginousCavitation,ex:frontal,ex:macroscopic,ex:schwarz2013,"Serpiginous cavitation on the frontal bone, continuing into the right orbit"
+ex:tp292_obs_frontal_ct,ex:tp292,ex:osteolyticLesion,ex:frontal,ex:ct,ex:schwarz2013,CT: the changes on the frontal and nasal bones are visible as translucent areas
+ex:tp292_obs_nasal,ex:tp292,ex:boneRemodelling,ex:nasalAperture,ex:macroscopic,ex:schwarz2013,Remodelling of the nasal aperture and of the inferior nasal conchae
+ex:tp292_obs_mercury,ex:tp292,,,ex:cvaas,ex:schwarz2013,"Hg concentration of 25 +/- 3 ng/g, within the 10 to 100 ng/g range normal for non-exposed medieval Danish individuals"
+ex:tp292_obs_armPosition,ex:tp292,,,ex:armPosition,ex:schwarz2013,"Burial arm position A recorded, placing the burial between AD 1100 and 1250"

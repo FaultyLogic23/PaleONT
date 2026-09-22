@@ -1,0 +1,17 @@
+# CQ6 · Which prior claims does this source engage with?
+# Expected: rows.  claim | relation | prior claim | agent | source
+#
+# ⚠ REQUIRES RDFS ENTAILMENT. po:engagesWith is a superproperty; plain SPARQL
+# over an unmaterialised graph does not infer it. Run against a store with
+# RDFS reasoning (GraphDB, Protege, rdflib + owlrl), or use cq06_noentail.rq.
+PREFIX po: <https://w3id.org/paleont/>
+
+SELECT ?claim ?relation ?priorClaim ?agent ?source
+WHERE {
+  ?claim po:engagesWith ?priorClaim .
+  ?claim ?relation      ?priorClaim .
+  FILTER(?relation != po:engagesWith)
+  OPTIONAL { ?priorClaim po:heldBy ?agent }
+  OPTIONAL { ?priorClaim po:declaredIn ?source }
+  FILTER NOT EXISTS { ?claim po:isNegated true }   # D6: a denial is not an assertion
+}

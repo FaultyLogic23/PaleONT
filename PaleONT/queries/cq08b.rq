@@ -1,0 +1,22 @@
+# CQ8b · For which specimens does a claim framing MEDIEVAL content coexist
+#        with a modern diagnosis?
+#
+# Decision D4. po:underFramework records where the claimant stands — always
+# ModernBiomedical in this source. po:framesContent records the system of
+# thought the content belongs to. The two frames do not coexist as equals:
+# the modern study represents the medieval one from outside.
+
+PREFIX po: <https://w3id.org/paleont/>
+
+SELECT ?specimen ?historicalClaim ?modernClaim ?standpoint
+WHERE {
+  ?historicalClaim po:aboutSpecimen  ?specimen ;
+                   po:framesContent  po:MedievalHumoral ;
+                   po:underFramework ?standpoint .
+
+  ?modernClaim a po:DiagnosticClaim ;
+               po:aboutSpecimen ?specimen ;
+               po:framesContent po:ModernBiomedical .
+  FILTER NOT EXISTS { ?historicalClaim po:isNegated true }
+  FILTER NOT EXISTS { ?modernClaim po:isNegated true }
+}

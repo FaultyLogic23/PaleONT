@@ -1,0 +1,13 @@
+# NCQ2 · In what year did this individual die?
+# MUST RETURN EMPTY.
+# There is no path from a Specimen to a year. Years live only inside a
+# po:CalibratedInterval, which is reachable only through a po:DatingClaim
+# carrying a technique, an agent and possibly a correction.
+PREFIX po: <https://w3id.org/paleont/>
+PREFIX ex: <https://w3id.org/paleont/data/>
+
+SELECT ?year
+WHERE {
+  ex:sk90 ?p ?interval .
+  ?interval po:startYear ?year .
+}
