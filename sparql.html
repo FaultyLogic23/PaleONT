@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <title>PaleONT</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../style/sparql.css">
+
+        <!-- Font style Api-->
+
+        <link rel="preconnect" href="https://googleapis.com">
+        <link rel="preconnect" href="https://gstatic.com" crossorigin>
+        <link href="https://googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,700;1,400&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Special+Elite&display=swap" rel="stylesheet">
+
+    </head>
+
+    <body>
+
+        <div id="head">
+            <h1>PaleONT</h1>
+            <h6>Skeletal Evidence & Inferred Diagnosis</h6>
+        </div>
+
+        <nav id="menu" class="minstyle">
+            <ul>
+                <li class="breadcrumb"><a href="PaleONT.html">The Project</a></li>
+                <li class="breadcrumb"><a href="Ontology.html">Ontology</a></li>
+                <li class="breadcrumb"><a href="sparql.html">Sparql Endpoint</a></li>            
+            </ul> 
+        </nav>
+
+        <div id="introbox">
+            <p>By using <link href="">triply.db</link> we can let you query our ontology
+            </p>
+            <p></p>
+
+            <!-- Change when ready, now it's just a placeholder-->
+            <div id="sparql-box">
+                <sparql-editor endpoint="https://dbpedia.org/sparql"></sparql-editors>
+            </div>
+
+            </div>
+
+        </div>
+        <footer>
+            <p>PaleONT Project</p>
+            <p>Made for the Knowledge Organization and Extraction Course</p>
+            <p>DHDK - 2025/2026</p>
+        </footer>
+    </body>
+    <script type="module" src="https://esm.sh/@sib-swiss/sparql-editor"></script>
+</html>

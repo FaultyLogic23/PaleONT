@@ -5,6 +5,12 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../style/paleont.css">
+
+        <!-- Font Api-->
+        <link rel="preconnect" href="https://googleapis.com">
+        <link rel="preconnect" href="https://gstatic.com" crossorigin>
+        <link href="https://googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,700;1,400&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Special+Elite&display=swap" rel="stylesheet">
+
     </head>
 
     <body>
@@ -16,15 +22,16 @@
 
         <nav id="menu" class="minstyle">
             <ul>
-                <li class="breadcrumb"><a href="#introduction">The Project</a></li>
-                <li class="breadcrumb"><a href="#article">Article</a></li>
-                <li class="breadcrumb"><a href="#ontology">Ontology</a></li>
-                <li class="breadcrumb"><a href="#competency-questions">Competency Questions</a></li>
+                <li class="breadcrumb"><a href="PaleONT.html">The Project</a></li>
+                <li class="breadcrumb"><a href="Ontology.html">Ontology</a></li>
+                <li class="breadcrumb"><a href="sparql.html">Sparql Endpoint</a></li>            
             </ul> 
         </nav>
 
         <div id="blankpaper">
             <div id="introduction">
+
+                <h3>Introduction</h3>
 
                 <p><a href="https://en.wikipedia.org/wiki/Paleopathology">Paleopathology</a> and <a href="https://en.wikipedia.org/wiki/Archaeological_science">archeometrics</a> are disciplines applied for todays studies
                 regarding ancient diseases and injuries in organisms. Both operates by applying chemical and physical analysis to the examination of fossils and quantitative analysis while examining early books, paintings
@@ -34,9 +41,33 @@
                 <h3>Our Idea</h3>
 
                 <p>
+                    An ontology about palaeopathological claims.
 
+                    PaleONT does not model the diseases of the people buried in medieval Danish cemeteries. 
+                    It models what someone <b>said</b> about them on the basis of which observation, 
+                    with which instrument, within which framework of thought, and with how much stated confidence.
+                </p>
+
+                <p>
+                    The goal is not to show that paleopathologists contradict one another, that would be a trivial
+                    conclusion. We neither want to be considered too skeptical nor too credulous, instead we
+                    want to show that every assertion carries with it the identity of who made it, the instruments
+                    used, and their underlying assumptions. Therefore, we states that scholarly disagreement is not 
+                    a system error; it is the diagnostic symptom that makes a specific
+                    scientific standpoint visible.
                 </p>
             </div>
+            
+            <button class="button" onclick="window.location.href='PaleONT.html#article';">Uncover The Ontology</button>
+
         </div>
+
+        <hr />
+
+        <footer>
+            <p>PaleONT Project</p>
+            <p>Made for the Knowledge Organization and Extraction Course</p>
+            <p>DHDK - 2025/2026</p>
+        </footer>
     </body>
 </html>

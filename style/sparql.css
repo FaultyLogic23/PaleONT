@@ -15,30 +15,40 @@
   --ash:       #7a7269;   /* testo secondario                     */
   --hairline:  #c6bba7;   /* linee sottili                        */
  
-  --font-display: "Speical Elite", "Courier Prime", monospace;
-  --font-body:    "Alegreya", Georgia, serif;
-  --font-mono:    "Courier Prime", monospace;
+  --font-display: "Cinzel", "EB Garamond", Georgia, serif;
+  --font-body:    "EB Garamond", Georgia, "Times New Roman", serif;
+  --font-mono:    "IBM Plex Mono", ui-monospace, "SF Mono", Consolas, monospace;
 }
 
-/* body */
-
-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  min-height: 100vh;
-  margin: 0;
-  padding-top: 1.5rem;
-  background-color: var(--ground);
+* {
+    box-sizing: border-box;
 }
 
-/* Heading */
+:root {
+  --bone:      #efeae0;   /* osso / avorio                        */
+  --paper:     #faf7f1;   /* il foglio — più chiaro del fondo     */
+  --ground:    #d8d1c2;   /* il piano su cui il foglio appoggia   */
+  --bone-warm: #e4dccd;
+  --sediment:  #cfc4b0;
+  --ochre:     #b07d3a;   /* accento caldo: filetti, numerazioni  */
+  --oxide:     #8a3a2b;   /* pagina corrente, enfasi              */
+  --verdigris: #4e7c6e;   /* link                                 */
+  --charcoal:  #2a2622;   /* testo                                */
+  --ash:       #7a7269;   /* testo secondario                     */
+  --hairline:  #c6bba7;   /* linee sottili                        */
  
+  --font-display: "Cinzel", "EB Garamond", Georgia, serif;
+  --font-body:    "EB Garamond", Georgia, "Times New Roman", serif;
+  --font-mono:    "IBM Plex Mono", ui-monospace, "SF Mono", Consolas, monospace;
+}
+
+
+/* Article */ 
+
 #head {
   max-width: var(--measure);
   margin-inline: auto;
-  padding-block: 1rem 1.6rem;
+  padding-block: 3.4rem 1.6rem;
   text-align: center;
 }
 
@@ -116,17 +126,15 @@ body {
   border-bottom-color: var(--verdigris);
 }
 
+/* body */
 
-
-/* Paper part */
+body {
+  background-color: var(--ground);
+}
 
 #blankpaper{
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   max-width: 100ch;
-  margin: 1rem auto;
+  margin: 2.4rem auto 3.5rem;
   padding: 3.2rem 3.4rem 3.6rem;
   background-color: var(--paper);
   border: 1px solid var(--hairline);
@@ -189,45 +197,4 @@ blockquote{
   line-height: 1.7;
   color: var(--ash);
   letter-spacing: 0.01em;
-}
-
-/* Button */
-
-.button {
-  font-family: var(--font-display);
-  font-size: 0.9rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--charcoal);
-  background-color: transparent;
-  
-  /* Struttura e bordi */
-  padding: 1rem 1.8rem;
-  border: 1px solid var(--hairline);
-  cursor: pointer;
-  transition: all 0.25s ease;
-  margin-top: 50px;
-}
-
-.button:hover {
-  color: var(--paper);
-  background-color: var(--ochre);
-  border-color: var(--ochre);
-  box-shadow: 0 4px 10px rgba(176, 125, 58, 0.15);
-}
-
-/* Footer */
-
-footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100ch;  
-  background-color: var(--paper);
-}
-
-footer > p {
-
-  text-align:  center;
 }

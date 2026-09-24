@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
-"""Deliberate-error probes.
+"""
+Deliberate-error probes.
 
-An ontology that reports "consistent" proves nothing on its own — an empty one
+An ontology that reports "consistent" proves nothing on its own, an empty one
 does too. These probes break the model on purpose and record whether the
 reasoner notices. Each row is a constraint we claim to enforce, verified.
 """
