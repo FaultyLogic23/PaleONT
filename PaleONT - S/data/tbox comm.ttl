@@ -8,7 +8,7 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix cito:    <http://purl.org/spar/cito/> .
 
-################################################################################
+#
 #  PaleONT — T-Box
 #
 #  An ontology for palaeopathological claims: what was observed on human
@@ -20,7 +20,7 @@
 #  po:Condition. No path leads from a set of remains to a disease except
 #  through a po:DiagnosticClaim, which always carries an agent, a framework
 #  and a hedge. See the note at the end of this file.
-################################################################################
+#
 
 <https://w3id.org/paleont/>
     a               owl:Ontology ;
@@ -32,11 +32,11 @@
     owl:versionInfo "0.1.0" .
 
 
-################################################################################
-#  1 · STRUCTURAL CLASSES
+#
+#  1 · Structural Classes
 #  These four carry the model. They have properties, constraints, and
 #  design decisions behind them.
-################################################################################
+#
 
 po:Specimen a owl:Class ;
     rdfs:label   "Specimen"@en ;
@@ -66,12 +66,12 @@ po:CalibratedInterval a owl:Class ;
         intervals, which a label cannot support."""@en .
 
 
-################################################################################
-#  2 · CLAIM SUBCLASSES
+#
+#  2 · Claim Subclasses
 #  One design decision instantiated six times, not six decisions.
 #  All six inherit aboutSpecimen, groundedIn, heldBy, underFramework,
 #  hedge and declaredIn from po:Claim.
-################################################################################
+#
 
 po:DiagnosticClaim a owl:Class ;
     rdfs:subClassOf po:Claim ;
@@ -122,12 +122,11 @@ po:MethodologicalClaim a owl:Class ;
                  po:AgeClaim po:TreatmentClaim po:MethodologicalClaim ) .
 
 
-################################################################################
-#  3 · VALUE CLASSES
-#  Controlled lists. Cheap to declare, filled with individuals.
-#  Each exists because some query needs to group, count, order or cite its
-#  members — never merely to have a name for something.
-################################################################################
+
+#  3 · Value classes
+#  Controlled lists filled with individual, each one exists because some query needs to group, count, order or cite its
+#  members, never merely to have a name for something.
+
 
 po:Technique a owl:Class ;
     rdfs:label   "Technique"@en ;
@@ -200,9 +199,9 @@ po:DiscriminatingPower a owl:Class ;
 # foaf:Organization.
 
 
-################################################################################
-#  4 · OBJECT PROPERTIES — LAYER 0, EVIDENCE
-################################################################################
+#
+#  4 · Object Properties, stating evidence
+#
 
 po:observedOn a owl:ObjectProperty , owl:FunctionalProperty ;
     rdfs:label   "observed on"@en ;
@@ -229,9 +228,9 @@ po:usedTechnique a owl:ObjectProperty ;
         that every use of a technique is an observation — see decision D2."""@en .
 
 
-################################################################################
-#  5 · OBJECT PROPERTIES — ON po:Claim, INHERITED BY ALL SIX SUBCLASSES
-################################################################################
+#
+#  5 · Object Properties made on po:Claim, Inherited every subclasses
+#
 
 po:aboutSpecimen a owl:ObjectProperty ;
     rdfs:label   "about specimen"@en ;
@@ -242,7 +241,7 @@ po:groundedIn a owl:ObjectProperty ;
     rdfs:label   "grounded in"@en ;
     rdfs:domain  po:Claim ;
     rdfs:range   po:Observation ;
-    rdfs:comment """THE boundary property. Everything on the left is evidence,
+    rdfs:comment """The boundary property. Everything on the left is evidence,
         everything on the right is interpretation. Not functional: one claim
         may rest on several observations. See decision D1 on whether the
         range should widen to include po:Claim."""@en .

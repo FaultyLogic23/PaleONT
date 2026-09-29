@@ -4,12 +4,12 @@
 # treatment implies a disease would be a second claim, made under another
 # frame, by another agent. No observation reaches a condition.
 PREFIX po: <https://w3id.org/paleont/>
-PREFIX ex: <https://w3id.org/paleont/data/>
+PREFIX pd: <https://w3id.org/paleont/data/>
 
 SELECT ?condition
 WHERE {
   ?obs a po:Observation ;
-       po:usedTechnique ex:cvaas ;
+       po:usedTechnique pd:cvaas ;
        ?p ?condition .
   ?condition a po:Condition .
 }

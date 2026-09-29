@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-"""Export the hand-written A-Box files into the four annotation tables.
+"""
+
+Export the hand-written A-Box files into the four annotation tables.
 
 This runs ONCE, as a handover. After it, the CSVs are the source of truth for
 the A-Box and data/abox_*.ttl stop being edited.
@@ -17,7 +19,7 @@ import csv, os
 from rdflib import Graph, Namespace, RDF, RDFS, Literal, URIRef
 
 PO = Namespace("https://w3id.org/paleont/")
-EX = Namespace("https://w3id.org/paleont/data/")
+PD = Namespace("https://w3id.org/paleont/data/")   # era PD/ex:
 CITO = Namespace("http://purl.org/spar/cito/")
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(BASE, "data", "csv")
@@ -27,6 +29,7 @@ CLAIM_TYPES = ["DiagnosticClaim", "RejectionClaim", "DatingClaim",
 
 # The one polymorphic column: which property carries "what this claim puts
 # forward" depends on the claim's type, and the type column disambiguates it.
+
 PROPOSES_BY_TYPE = {
     "DiagnosticClaim":     PO.proposesCondition,
     "TreatmentClaim":      PO.proposesTreatment,
@@ -39,7 +42,7 @@ PROPOSES_BY_TYPE = {
 def short(term):
     if term is None: return ""
     s = str(term)
-    for ns, pre in ((str(EX), "ex:"), (str(PO), "po:"), (str(CITO), "cito:")):
+    for ns, pre in ((str(PD), "pd:"), (str(PO), "po:"), (str(CITO), "cito:")):
         if s.startswith(ns): return pre + s[len(ns):]
     return s
 
@@ -74,7 +77,8 @@ def write(name, header, rows):
 def main():
     g = load()
 
-    # ---- specimens -----------------------------------------------------
+    # Specimens
+
     rows = []
     for s in sorted(g.subjects(RDF.type, PO.Specimen), key=str):
         rows.append([short(s), one(g, s, PO.specimenID), label(g, s),
@@ -82,7 +86,8 @@ def main():
     write("specimens.csv",
           ["id", "specimen_id", "label", "note"], rows)
 
-    # ---- observations --------------------------------------------------
+    # Observations
+
     rows = []
     for s in sorted(g.subjects(RDF.type, PO.Observation), key=str):
         rows.append([short(s), short(one(g, s, PO.observedOn) or ""),
@@ -93,7 +98,8 @@ def main():
           ["id", "specimen", "lesion_types", "bone", "technique",
            "source", "label"], rows)
 
-    # ---- intervals -----------------------------------------------------
+    # Intervals
+
     rows = []
     for s in sorted(g.subjects(RDF.type, PO.CalibratedInterval), key=str):
         rows.append([short(s), one(g, s, PO.startYear), one(g, s, PO.endYear),
@@ -101,7 +107,7 @@ def main():
     write("intervals.csv",
           ["id", "start_year", "end_year", "confidence_interval", "label"], rows)
 
-    # ---- claims --------------------------------------------------------
+    # Claims
     rows = []
     seen = set()
     for t in CLAIM_TYPES:

@@ -14,7 +14,7 @@ import csv, os
 from rdflib import Graph, Namespace, RDF, RDFS, Literal, XSD
 
 PO = Namespace("https://w3id.org/paleont/")
-EX = Namespace("https://w3id.org/paleont/data/")
+PD = Namespace("https://w3id.org/paleont/data/")   # era PD/ex:
 CITO = Namespace("http://purl.org/spar/cito/")
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CSV = os.path.join(BASE, "data", "csv")
@@ -33,10 +33,13 @@ PROPOSES_BY_TYPE = {
 def iri(token):
     token = token.strip()
     if not token: return None
-    if token.startswith("ex:"):   return EX[token[3:]]
+    # "ex:" resta accettato in ingresso: i CSV esistenti lo usano ancora e
+    # punta allo stesso namespace. In uscita si serializza sempre "pd:".
+    if token.startswith("pd:"):   return PD[token[3:]]
+    if token.startswith("ex:"):   return PD[token[3:]]
     if token.startswith("po:"):   return PO[token[3:]]
     if token.startswith("cito:"): return CITO[token[5:]]
-    return EX[token]
+    return PD[token]
 
 def each(cell):
     return [t for t in (cell or "").split("|") if t.strip()]
@@ -51,7 +54,7 @@ def add(g, s, p, o):
 
 def main():
     g = Graph()
-    g.bind("po", PO); g.bind("ex", EX); g.bind("cito", CITO)
+    g.bind("po", PO); g.bind("pd", PD); g.bind("cito", CITO)
 
     for r in rows("specimens.csv"):
         s = iri(r["id"])

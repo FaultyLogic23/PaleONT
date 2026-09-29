@@ -4,10 +4,10 @@
 # po:CalibratedInterval, which is reachable only through a po:DatingClaim
 # carrying a technique, an agent and possibly a correction.
 PREFIX po: <https://w3id.org/paleont/>
-PREFIX ex: <https://w3id.org/paleont/data/>
+PREFIX pd: <https://w3id.org/paleont/data/>
 
 SELECT ?year
 WHERE {
-  ex:sk90 ?p ?interval .
+  pd:sk90 ?p ?interval .
   ?interval po:startYear ?year .
 }

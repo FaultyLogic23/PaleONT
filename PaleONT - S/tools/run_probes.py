@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Deliberate-error probes.
+Deliberate error probes.
 
 An ontology that reports "consistent" proves nothing on its own, an empty one
 does too. These probes break the model on purpose and record whether the
@@ -29,7 +29,7 @@ def consistent(extra=""):
     except OwlReadyInconsistentOntologyError:
         return False
 
-PROBES = [
+probes = [
  ("baseline — untouched", "", True),
  ("reject a Condition instead of a Claim",
   f"{D}sk90_reject_leprosy> {P}rejects> {D}leprosy> .", False),
@@ -60,12 +60,16 @@ PROBES = [
 print(f"{'probe':62s} {'expected':10s} {'actual':10s}")
 print("-" * 86)
 ok_all = True
-for label, extra, expect_consistent in PROBES:
+
+for label, extra, expect_consistent in probes:
     actual = consistent(extra)
-    ok = actual == expect_consistent
-    ok_all &= ok
+    k = actual == expect_consistent
+    ok_all &= k
+    
     e = "consistent" if expect_consistent else "INCONSISTENT"
     a = "consistent" if actual else "INCONSISTENT"
-    print(f"{'✓' if ok else '✗'} {label:60s} {e:10s} {a:10s}")
+
+    print(f"{'✓' if k else '✗'} {label:60s} {e:10s} {a:10s}")
+
 print("-" * 86)
 print("all probes behaved as expected" if ok_all else "MISMATCH")
