@@ -9,15 +9,15 @@ import sys, glob, os
 from rdflib import Graph
 import owlrl
 
-BASE = os.path.dirname(os.path.abspath(__file__))
+Base = os.path.dirname(os.path.abspath(__file__))
 
 def load(materialise=False):
 
     g = Graph()
-    g.parse(os.path.join(BASE, "ontology/paleont.ttl"), format="turtle")
+    g.parse(os.path.join(Base, "ontology/paleont.ttl"), format="turtle")
     
     for d in ("vocabulary","abox_generated"):
-        g.parse(os.path.join(BASE, f"data/{d}.ttl"), format="turtle")
+        g.parse(os.path.join(Base, f"data/{d}.ttl"), format="turtle")
     if materialise:
         owlrl.RDFSClosure.RDFS_Semantics(g, False, False, False).closure()
     return g
@@ -49,11 +49,11 @@ def run(path, expect_rows):
     return ok
 
 print("COMPETENCY QUESTIONS — must return rows")
-cqs = sorted(glob.glob(os.path.join(BASE, "queries/*.rq")))
+cqs = sorted(glob.glob(os.path.join(Base, "queries/*.rq")))
 results = [run(p, True) for p in cqs]
 
 print("\nNEGATIVE COMPETENCY QUESTIONS — must return nothing")
-ncqs = sorted(glob.glob(os.path.join(BASE, "queries/negative/*.rq")))
+ncqs = sorted(glob.glob(os.path.join(Base, "queries/negative/*.rq")))
 results += [run(p, False) for p in ncqs]
 
 print(f"\n{sum(results)}/{len(results)} passed")

@@ -132,23 +132,7 @@ body {
   background-color: var(--ground);
 }
 
-#blankpaper{
-  max-width: 100ch;
-  margin: 2.4rem auto 3.5rem;
-  padding: 3.2rem 3.4rem 3.6rem;
-  background-color: var(--paper);
-  border: 1px solid var(--hairline);
-  /* due ombre: una stretta che stacca il bordo, una larga e
-     morbida che dà lo spessore del foglio sul piano */
-  box-shadow:
-    0 1px 2px rgba(42, 38, 34, 0.06),
-    0 14px 34px rgba(42, 38, 34, 0.10);
-}
- 
- 
-/* Text */
- 
-#blankpaper h3{
+#introbox {
   font-family: var(--font-mono);
   font-weight: 500;
   font-size: 1rem;
@@ -157,44 +141,19 @@ body {
   color: var(--ochre);
   margin: 2.2rem 0 0.7rem;
 }
-#blankpaper p{
-  margin: 0 0 1.15rem;
-  text-align: justify;
+
+/* Footer */
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100ch;  
+  background-color: var(--paper);
 }
-#blankpaper p:last-child{ margin-bottom: 0; }
- 
-/* L'apertura del documento: prima riga in maiuscoletto, invece del
-   capolettera — più sobrio e non si rompe con i link dentro */
-#blankpaper .lede::first-line{
-  font-variant: small-caps;
-  letter-spacing: 0.03em;
-}
- 
-#blankpaper a{
-  color: var(--verdigris);
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
-  text-decoration-color: var(--sediment);
-  transition: color .15s ease, text-decoration-color .15s ease;
-}
-#blankpaper a:hover{
-  color: var(--oxide);
-  text-decoration-color: var(--oxide);
-}
- 
-blockquote{
-  margin: 1.6rem 0;
-  padding-left: 1.3rem;
-  border-left: 2px solid var(--ochre);
-  font-style: italic;
-  color: #4a423a;
-}
- 
-.note{
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  line-height: 1.7;
-  color: var(--ash);
-  letter-spacing: 0.01em;
+
+footer > p {
+
+  text-align:  center;
 }

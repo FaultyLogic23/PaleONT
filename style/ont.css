@@ -176,3 +176,19 @@ blockquote{
   color: var(--ash);
   letter-spacing: 0.01em;
 }
+
+/* Footer */
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100ch;  
+  background-color: var(--paper);
+}
+
+footer > p {
+
+  text-align:  center;
+}

@@ -24,13 +24,13 @@ CITO = Namespace("http://purl.org/spar/cito/")
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(BASE, "data", "csv")
 
-CLAIM_TYPES = ["DiagnosticClaim", "RejectionClaim", "DatingClaim",
+Claimsby_type = ["DiagnosticClaim", "RejectionClaim", "DatingClaim",
                "AgeClaim", "TreatmentClaim", "MethodologicalClaim"]
 
 # The one polymorphic column: which property carries "what this claim puts
 # forward" depends on the claim's type, and the type column disambiguates it.
 
-PROPOSES_BY_TYPE = {
+Proposes_type = {
     "DiagnosticClaim":     PO.proposesCondition,
     "TreatmentClaim":      PO.proposesTreatment,
     "DatingClaim":         PO.hasResult,
@@ -110,8 +110,9 @@ def main():
     # Claims
     rows = []
     seen = set()
-    for t in CLAIM_TYPES:
-        prop = PROPOSES_BY_TYPE[t]
+
+    for t in Claimsby_type:
+        prop = Proposes_type[t]
         for s in sorted(g.subjects(RDF.type, PO[t]), key=str):
             if s in seen: continue
             seen.add(s)

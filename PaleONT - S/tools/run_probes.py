@@ -6,21 +6,22 @@ An ontology that reports "consistent" proves nothing on its own, an empty one
 does too. These probes break the model on purpose and record whether the
 reasoner notices. Each row is a constraint we claim to enforce, verified.
 """
+
 import os, owlready2
 from rdflib import Graph
 from owlready2 import sync_reasoner_hermit, OwlReadyInconsistentOntologyError
 
-BASE = os.path.dirname(os.path.abspath(__file__))
+Base = os.path.dirname(os.path.abspath(__file__))
 g = Graph()
-g.parse(f"{BASE}/ontology/paleont.ttl", format="turtle")
+g.parse(f"{Base}/ontology/paleont.ttl", format="turtle")
 for d in ("vocabulary","abox_generated"):
-    g.parse(f"{BASE}/data/{d}.ttl", format="turtle")
-BASE_TTL = g.serialize(format="turtle")
+    g.parse(f"{Base}/data/{d}.ttl", format="turtle")
+Base_ttl = g.serialize(format="turtle")
 
 P = "<https://w3id.org/paleont/"; D = "<https://w3id.org/paleont/data/"
 
 def consistent(extra=""):
-    open("/tmp/p.ttl", "w").write(BASE_TTL + "\n" + extra)
+    open("/tmp/p.ttl", "w").write(Base_ttl + "\n" + extra)
     Graph().parse("/tmp/p.ttl", format="turtle").serialize("/tmp/p.owl", format="xml")
     w = owlready2.World(); o = w.get_ontology("file:///tmp/p.owl").load()
     try:

@@ -10,6 +10,7 @@ This is the Python reference implementation of what the RML mapping must do.
 Keep it: when the RML mapping is written, its output must match this file, so
 this script doubles as the specification and the test oracle for the mapping.
 """
+
 import csv, os
 from rdflib import Graph, Namespace, RDF, RDFS, Literal, XSD
 
@@ -21,7 +22,8 @@ CSV = os.path.join(BASE, "data", "csv")
 
 # The polymorphic column resolved by the type column, the discriminator that
 # makes one column legitimate here where it was not in the T-Box.
-PROPOSES_BY_TYPE = {
+
+Proposesby_type = {
     "DiagnosticClaim":     PO.proposesCondition,
     "TreatmentClaim":      PO.proposesTreatment,
     "DatingClaim":         PO.hasResult,
@@ -33,8 +35,10 @@ PROPOSES_BY_TYPE = {
 def iri(token):
     token = token.strip()
     if not token: return None
+
     # "ex:" resta accettato in ingresso: i CSV esistenti lo usano ancora e
     # punta allo stesso namespace. In uscita si serializza sempre "pd:".
+    
     if token.startswith("pd:"):   return PD[token[3:]]
     if token.startswith("ex:"):   return PD[token[3:]]
     if token.startswith("po:"):   return PO[token[3:]]
@@ -85,10 +89,11 @@ def main():
     for r in rows("claims.csv"):
         s = iri(r["id"])
         g.add((s, RDF.type, PO[r["type"]]))
-        prop = PROPOSES_BY_TYPE[r["type"]]
+        prop = Proposesby_type[r["type"]]
         if prop is not None:
             for t in each(r["proposes"]):
                 g.add((s, prop, iri(t)))
+
         add(g, s, PO.aboutSpecimen, iri(r["specimen"]))
         add(g, s, PO.minAge, Literal(int(r["min_age"]), datatype=XSD.integer) if r["min_age"] else None)
         add(g, s, PO.maxAge, Literal(int(r["max_age"]), datatype=XSD.integer) if r["max_age"] else None)
@@ -97,21 +102,26 @@ def main():
         add(g, s, PO.framesContent, iri(r["frames_content"]))
         add(g, s, PO.hedge, iri(r["hedge"]))
         add(g, s, PO.hedgeWording, Literal(r["hedge_wording"]) if r["hedge_wording"] else None)
+        
         if r["negated"].strip().lower() == "true":
             g.add((s, PO.isNegated, Literal(True)))
         for o in each(r["grounded_in"]):
             g.add((s, PO.groundedIn, iri(o)))
         add(g, s, PO.appliedCorrection, iri(r["correction"]))
+        
         for o in each(r["applied_to"]):
             g.add((s, PO.appliedTo, iri(o)))
+        
         for c in each(r["discriminates_between"]):
             g.add((s, PO.discriminatesBetween, iri(c)))
         add(g, s, PO.hasDiscriminatingPower, iri(r["discriminating_power"]))
+        
         for group in (r["relation"] or "").split(";"):
             if not group.strip(): continue
             pred, _, targets = group.partition(">")
             for t in each(targets):
                 g.add((s, iri(pred), iri(t)))
+        
         add(g, s, PO.declaredIn, iri(r["source"]))
         add(g, s, RDFS.label, Literal(r["label"], lang="en") if r["label"] else None)
 
