@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
-"""Round trip check: does the CSV schema lose anything?
+"""
+Round trip answer to the question: Does the CSV schema lose anything?
 
-    hand-written A-Box  ->  CSV  ->  generated A-Box  ->  compare
+    A-Box  ->  CSV  ->  generated A-Box  ->  Comparison
 
 Compares Data triples only. The long rdfs:comment rationales are excluded by
-design, they are project documentation, not data about a skeleton therefore every other triple must survive.
+design, they are project documentation, not data about a skeleton therefore 
+every other triple must survive.
 
 A clean result proves the annotation tables are complete, the strongest thing
 that can be said about a mapping before it is trusted with five specimens.
@@ -18,21 +20,36 @@ Base = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 from rdflib import Namespace, RDF
 Po_n = Namespace("https://w3id.org/paleont/")
 
-# What the CSV is responsible for: specimens, observations, claims and
-# intervals, wherever they were hand-written. The controlled vocabulary
-# (techniques, bones, conditions, error sources) stays in vocabulary.ttl and
-# is deliberately outside the comparison.
+'''
+    What the CSV is responsible for: specimens, observations, claims and
+    intervals, wherever they were hand-written. The controlled vocabulary
+    (techniques, bones, conditions, error sources) stays in vocabulary.ttl and
+    is deliberately outside the comparison.
+'''
+
+# These are the classes that we want to compare
 
 Covered = [Po_n.Specimen, Po_n.Observation, Po_n.CalibratedInterval,
            Po_n.DiagnosticClaim, Po_n.RejectionClaim, Po_n.DatingClaim,
            Po_n.AgeClaim, Po_n.TreatmentClaim, Po_n.MethodologicalClaim]
 
+
+'''
+    We look at the individuals covered as subject, a triple as: vocabulary:X, po:Something, Specimen:Y
+    is not covered.
+'''
+
 def data_triples(g):
     subjects = {s for c in Covered for s in g.subjects(RDF.type, c)}
     return {t for t in g if t[0] in subjects and t[1] != RDFS.comment}
 
-# The two hand-written A-Box files live in data/legacy/ and are frozen.
-# They are the only independent record of what the CSV must be able to carry.
+
+'''
+    Now we want to create the graph with the vocabulary and the two legacy files as
+    references.
+    It doesn't re-generate the A-Box, it use it as is.
+
+'''
 
 original = Graph()
 original.parse(os.path.join(Base, "data", "vocabulary.ttl"), format="turtle")
@@ -42,10 +59,18 @@ for f in ("abox_sk90", "abox_rf130"):
 generated = Graph()
 generated.parse(os.path.join(Base, "data", "abox_generated.ttl"), format="turtle")
 
-# The CSV now also carries three specimens the hand-written files never had,
-# so the check is one-directional: nothing the hand-written files contained
-# may be missing from what the CSV regenerates.
+'''
+    The CSV also carries three specimens the hand-written files never had,
+    so the check is one-directional: nothing the hand-written files contained
+    may be missing from what the CSV regenerates.
+'''
 
+'''
+    Then we compare the legacy one with the generated one.
+    If "lost" is empty the CSV is full otherwise there is a loss of information, note that
+    the script always give 0 as output code. Even for losses.
+'''
+ 
 a, b = data_triples(original), data_triples(generated)
 lost = a - b
 gained = set()   # the CSV legitimately holds more than the legacy files did

@@ -5,13 +5,13 @@ It's an OWL ontology which aims to fill the gap between **what is observed on hu
 
 ## The thesis
 
-> **There is no view from nowhere.** Every assertion carries with it who made it, with which instrument, and under which assumptions. Disagreement is not the finding. It is the symptom that makes the standpoint visible.
+> **There is no view from nowhere.** Every assertion carries with it who made it, with which instrument, and under which assumptions, disagreement is not the finding, it is the symptom that makes the standpoint visible.
 
 ### What this project does not claim
 
-It does not set out to show that palaeopathologists contradict one another. That would be debunking, and a weaker result. Where two claims diverge, the divergence is not the conclusion: it is the evidence that a standpoint was there all along.
+It does not set out to show that palaeopathologists contradict one another instead tries to assert that the divergence between two claims is not the conclusion: It is the evidence that a standpoint was there all along.
 
-The difference is practical, not rhetorical. It is why the model records the correction applied to a dating (without it, an explained difference looks like a contradiction), and why `po:rejects` has range `po:Claim` and not `po:Condition` (you refuse an assertion, not a disease).
+The difference is practical, not rhetorical. It is why the model records the correction applied to a dating (without it, an explained difference looks like a contradiction), and why `po:rejects` has range `po:Claim` and not `po:Condition` (you can refuse an assertion but not a disease).
 
 ### The result, in one table
 
@@ -37,47 +37,6 @@ python3 tools/build.py        # CSV  ->  A-Box  ->  merged ontology
 python3 run_tests.py          # 21 unit tests
 python3 run_probes.py         # 12 deliberate errors
 ```
-
-To inspect the ontology in Protégé, open `ontology/paleont_merged.owl`. See `docs/REASONER.md`.
-
----
-
-## What is in the repository
-
-```
-SOURCE FILES, edited by hand
-  ontology/paleont.ttl         the T-Box
-  data/vocabulary.ttl          controlled terms with their alignments
-  data/csv/specimens.csv       \
-  data/csv/observations.csv     |  the annotation tables
-  data/csv/claims.csv           |  this is where daily work happens
-  data/csv/intervals.csv       /
-  queries/*.rq                 the competency questions
-  queries/negative/*.rq        the negative competency questions
-
-GENERATED, never edited
-  data/abox_generated.ttl      the A-Box
-  ontology/paleont_merged.ttl  T-Box plus A-Box
-  ontology/paleont_merged.owl  the same, for Protégé
-
-TOOLS
-  tools/build.py               the single command
-  tools/csv_to_ttl.py          the mapping, in Python
-  tools/roundtrip_check.py     proof that the CSV schema loses nothing
-  tools/ttl_to_csv.py          the initial export, run once
-  run_tests.py                 competency question suite
-  run_probes.py                constraint verification
-
-DOCUMENTATION
-  docs/DESIGN_DECISIONS.md     the seven decisions and why
-  docs/PROPERTIES.md           full property specification
-  docs/ANNOTATION_GUIDE.md     how to fill the tables
-  docs/TURTLE_GUIDE.md         how to read and write the Turtle
-  docs/REASONER.md             running HermiT, and what it caught
-  docs/PROJECT_STATUS.md       current state and what remains
-```
-
-**Working cycle.** Edit a CSV, run `tools/build.py`, run the two test scripts. Terms are curated by hand in `vocabulary.ttl`; claims are annotated in the CSV. Two different jobs, two different files.
 
 ---
 
@@ -114,7 +73,7 @@ Layer 2 is recognised by an absence: a methodological claim **cannot** carry `po
 
 ## Competency questions
 
-Sixteen questions, all executed against the full A-Box.
+Sixteen questions, all executed against the A-Box.
 
 | | question | rows |
 |---|---|---|
@@ -191,24 +150,19 @@ Three alignments are recorded as `skos:closeMatch` rather than `skos:exactMatch`
 
 One term, the parietal bone, is aligned to NCIT rather than UBERON, because neither UBERON nor MONDO carried a term at the required level of generality. Mixing alignment targets is acceptable when it is declared, and this is the declaration.
 
-On using CiTO between claims rather than between documents: CiTO declares no domain and no range on its properties, and says why, so that the ontology "could be easily integrated with other models". The extension of use is designed, not improvised.
+On using CiTO between claims rather than between documents: CiTO declares no domain and no range on its properties, and says why, so that the ontology "could be easily integrated with other models".
 
 ---
 
 ## Two things left visible on purpose
 
-**Refshale 130.** The paper states that this is the one specimen whose radiocarbon age is in complete accordance with the archaeological date. Read literally the two intervals conflict, and the strict CQ4b reports a disagreement. The numbers have not been adjusted to make the query agree with the prose. See D7 in `docs/DESIGN_DECISIONS.md`, where applying the paper's own stated precision resolves it.
+**Refshale 130. Skeleton** The paper states that this is the one specimen whose radiocarbon age is in complete accordance with the archaeological date. Read literally the two intervals conflict, and the strict CQ4b reports a disagreement. The numbers have not been adjusted to make the query agree with the prose.
 
-**St. Albani 94.** The body text dates the burial to AD 1250 to 1400 by arm position; Table 2 records 1250 to 1350 for the same burial. The body value is modelled and the difference is noted. The discrepancy is in the source.
-
----
-
-## Precedent
-
-**CONTRO** (KRKE 2023/24), on dialectical perspectives in argumentative discourse, is the precedent for treating perspective as the subject of an ontology rather than as noise to be removed.
+**St. Albani 94. Skeleton** The body text dates the burial to AD 1250 to 1400 by arm position; Table 2 records 1250 to 1350 for the same burial. The body value is modelled and the difference is noted. The discrepancy is in the source.
 
 ---
+
 
 ## Licence
 
-The ontology and the code are released under CC BY 4.0. The source article is CC BY 2.0 and is cited throughout; every `po:hedgeWording` value is a direct quotation from it.
+The ontology and the code are released under CC BY 4.0. The source article is CC BY 2.0 and is cited throughout.
