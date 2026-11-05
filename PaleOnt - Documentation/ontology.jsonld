@@ -1,0 +1,991 @@
+[ {
+  "@id" : "_:genid1",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#maxCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "0"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/paleont/aboutSpecimen"
+  } ]
+}, {
+  "@id" : "_:genid2",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
+  "http://www.w3.org/2002/07/owl#members" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/paleont/AgeClaim"
+    }, {
+      "@id" : "https://w3id.org/paleont/DatingClaim"
+    }, {
+      "@id" : "https://w3id.org/paleont/DiagnosticClaim"
+    }, {
+      "@id" : "https://w3id.org/paleont/MethodologicalClaim"
+    }, {
+      "@id" : "https://w3id.org/paleont/RejectionClaim"
+    }, {
+      "@id" : "https://w3id.org/paleont/TreatmentClaim"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid25",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDifferent" ],
+  "http://www.w3.org/2002/07/owl#distinctMembers" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/paleont/Certain"
+    }, {
+      "@id" : "https://w3id.org/paleont/Possible"
+    }, {
+      "@id" : "https://w3id.org/paleont/Probable"
+    }, {
+      "@id" : "https://w3id.org/paleont/Tentative"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid30",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDifferent" ],
+  "http://www.w3.org/2002/07/owl#distinctMembers" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/paleont/Discriminating"
+    }, {
+      "@id" : "https://w3id.org/paleont/Inconclusive"
+    }, {
+      "@id" : "https://w3id.org/paleont/Suggestive"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid34",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDifferent" ],
+  "http://www.w3.org/2002/07/owl#distinctMembers" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/paleont/MedievalHumoral"
+    }, {
+      "@id" : "https://w3id.org/paleont/ModernBiomedical"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid9",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
+  "http://www.w3.org/2002/07/owl#members" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/paleont/Bone"
+    }, {
+      "@id" : "https://w3id.org/paleont/CalibratedInterval"
+    }, {
+      "@id" : "https://w3id.org/paleont/Claim"
+    }, {
+      "@id" : "https://w3id.org/paleont/Condition"
+    }, {
+      "@id" : "https://w3id.org/paleont/ConfidenceLevel"
+    }, {
+      "@id" : "https://w3id.org/paleont/Correction"
+    }, {
+      "@id" : "https://w3id.org/paleont/DiagnosticFramework"
+    }, {
+      "@id" : "https://w3id.org/paleont/DiscriminatingPower"
+    }, {
+      "@id" : "https://w3id.org/paleont/ErrorSource"
+    }, {
+      "@id" : "https://w3id.org/paleont/LesionType"
+    }, {
+      "@id" : "https://w3id.org/paleont/Observation"
+    }, {
+      "@id" : "https://w3id.org/paleont/Source"
+    }, {
+      "@id" : "https://w3id.org/paleont/Specimen"
+    }, {
+      "@id" : "https://w3id.org/paleont/Technique"
+    }, {
+      "@id" : "https://w3id.org/paleont/Treatment"
+    } ]
+  } ]
+}, {
+  "@id" : "http://purl.org/dc/terms/description",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/title",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/spar/cito/agreesWith",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/paleont/engagesWith"
+  } ]
+}, {
+  "@id" : "http://purl.org/spar/cito/disagreesWith",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/paleont/engagesWith"
+  } ]
+}, {
+  "@id" : "http://purl.org/spar/cito/updates",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/paleont/engagesWith"
+  } ]
+}, {
+  "@id" : "http://xmlns.com/foaf/0.1/Agent",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://w3id.org/paleont/",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "Models the epistemic structure of palaeopathological\n        reporting: observations, the claims grounded in them, the frameworks\n        under which those claims are made, and the adjudication between\n        competing claims."
+  } ],
+  "http://purl.org/dc/terms/title" : [ {
+    "@language" : "en",
+    "@value" : "PaleONT — an ontology of palaeopathological claims"
+  } ],
+  "http://www.w3.org/2002/07/owl#versionInfo" : [ {
+    "@value" : "0.1.0"
+  } ]
+}, {
+  "@id" : "https://w3id.org/paleont/AgeClaim",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Proposes an age-at-death range. Age is a claim, not a\n        property of the specimen — deliberately the same shape as a\n        diagnosis."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Age claim"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/paleont/Claim"
+  } ]
+}, {
+  "@id" : "https://w3id.org/paleont/Bone",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Skeletal element. Individuals carry skos:exactMatch links\n        to UBERON rather than using UBERON classes directly as values, which\n        avoids punning."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Bone"
+  } ]
+}, {
+  "@id" : "https://w3id.org/paleont/CalibratedInterval",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A dated range with numeric bounds. A class rather than a\n        literal because CQ4b must COMPUTE disagreement by comparing two\n        intervals, which a label cannot support."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Calibrated interval"
+  } ]
+}, {
+  "@id" : "https://w3id.org/paleont/Certain",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/paleont/ConfidenceLevel"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "certain"
+  } ]
+}, {
+  "@id" : "https://w3id.org/paleont/Claim",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A proposition held by an agent, under a framework, with a\n        stated degree of confidence, grounded in one or more observations.\n        Nothing enters this graph as fact; everything enters as something\n        someone asserted."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Claim"
+  } ]
+}, {
+  "@id" : "https://w3id.org/paleont/Condition",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A disease or pathological condition. Individuals carry\n        skos:exactMatch links to MONDO. NOTE: there is no path from\n        po:Specimen to this class."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Condition"
+  } ]
+}, {
+  "@id" : "https://w3id.org/paleont/ConfidenceLevel",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The hedge attached to a claim, as an individual rather\n        than a string or a number. A number would invent precision the source\n        never produced; a string cannot be counted, grouped or ordered."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Confidence level"
+  } ]
+}, {
+  "@id" : "https://w3id.org/paleont/Correction",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An adjustment applied to one particular dating. A property\n        of THIS dating: it holds here. Recording it is what turns an apparent\n        contradiction between two dates into two declared treatments of one\n        measurement — and prevents CQ4b from reporting false positives."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Correction"
+  } ]
+}, {
+  "@id" : "https://w3id.org/paleont/DatingClaim",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Proposes a calibrated interval for a specimen."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Dating claim"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/paleont/Claim"
+  } ]
+}, {
+  "@id" : "https://w3id.org/paleont/DiagnosticClaim",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Proposes a condition for a specimen."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Diagnostic claim"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/paleont/Claim"
+  } ]
+}, {
+  "@id" : "https://w3id.org/paleont/DiagnosticFramework",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The standpoint from which a claim is made — modern\n        biomedical, medieval humoral. Two individuals carry the entire\n        perspectival argument: the same specimen seen through two\n        incommensurable lenses."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Diagnostic framework"
+  } ]
+}, {
+  "@id" : "https://w3id.org/paleont/Discriminating",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/paleont/DiscriminatingPower"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "discriminating"
+  } ]
+}, {
+  "@id" : "https://w3id.org/paleont/DiscriminatingPower",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "How far a technique is said to separate competing\n        hypotheses. A small controlled list, so that 'which techniques\n        cannot discriminate' is a value filter rather than a second\n        question."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Discriminating power"
+  } ]
+}, {
+  "@id" : "https://w3id.org/paleont/ErrorSource",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A known limitation of a technique — e.g. the marine\n        reservoir effect. A property of the TECHNIQUE: it holds always.\n        Contrast po:Correction."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Error source"
+  } ]
+}, {
+  "@id" : "https://w3id.org/paleont/Inconclusive",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/paleont/DiscriminatingPower"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "inconclusive"
+  } ]
+}, {
+  "@id" : "https://w3id.org/paleont/LesionType",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The type of a skeletal lesion, shared across specimens.\n        The concrete occurrence is the po:Observation. This split is what\n        makes CQ10 (recurrence across specimens) answerable."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Lesion type"
+  } ]
+}, {
+  "@id" : "https://w3id.org/paleont/MedievalHumoral",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/paleont/DiagnosticFramework"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "medieval humoral framework"
+  } ]
+}, {
+  "@id" : "https://w3id.org/paleont/MethodologicalClaim",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A claim about what a technique can or cannot establish.\n        The meta level. Note that it has NO po:aboutSpecimen: its subject\n        matter is a technique, not a skeleton. That absence is how the model\n        distinguishes 'this individual had leprosy' from 'this method cannot\n        tell leprosy from syphilis'."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Methodological claim"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/paleont/Claim"
+  }, {
+    "@id" : "_:genid1"
+  } ]
+}, {
+  "@id" : "https://w3id.org/paleont/ModernBiomedical",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/paleont/DiagnosticFramework"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "modern biomedical framework"
+  } ]
+}, {
+  "@id" : "https://w3id.org/paleont/Observation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "One act of examining a specimen with a technique, yielding\n        one datum. Carries what was seen, on which bone, by which technique.\n        This is the concrete occurrence: the lesion TYPE is shared across\n        specimens, the observation is not."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Observation"
+  } ]
+}, {
+  "@id" : "https://w3id.org/paleont/Possible",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/paleont/ConfidenceLevel"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "possible"
+  } ],
+  "https://w3id.org/paleont/weakerThan" : [ {
+    "@id" : "https://w3id.org/paleont/Probable"
+  } ]
+}, {
+  "@id" : "https://w3id.org/paleont/Probable",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/paleont/ConfidenceLevel"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "probable"
+  } ],
+  "https://w3id.org/paleont/weakerThan" : [ {
+    "@id" : "https://w3id.org/paleont/Certain"
+  } ]
+}, {
+  "@id" : "https://w3id.org/paleont/RejectionClaim",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Rejects another claim. Note the range of po:rejects: a\n        rejection is an act against an ASSERTION, never a verdict on the\n        truth of a disease. Acquittal is not innocence."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Rejection claim"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/paleont/Claim"
+  } ]
+}, {
+  "@id" : "https://w3id.org/paleont/Source",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A publication in which claims are declared."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Source"
+  } ]
+}, {
+  "@id" : "https://w3id.org/paleont/Specimen",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A set of skeletal remains attributed to one individual.\n        The anchor of the graph. Deliberately poor in properties: almost\n        nothing is said ABOUT a specimen, because almost everything one might\n        want to say is in fact a claim someone made."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Specimen"
+  } ]
+}, {
+  "@id" : "https://w3id.org/paleont/Suggestive",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/paleont/DiscriminatingPower"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "suggestive"
+  } ]
+}, {
+  "@id" : "https://w3id.org/paleont/Technique",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Any means by which an observation is produced: naked-eye\n        examination, radiography, radiocarbon dating, atomic absorption\n        spectrometry. ONE class, no hierarchy. Ranking techniques by\n        reliability is what the sources ARGUE about, so it must live in\n        po:MethodologicalClaim, never in the schema."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Technique"
+  } ]
+}, {
+  "@id" : "https://w3id.org/paleont/Tentative",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/paleont/ConfidenceLevel"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "tentative"
+  } ],
+  "https://w3id.org/paleont/weakerThan" : [ {
+    "@id" : "https://w3id.org/paleont/Possible"
+  } ]
+}, {
+  "@id" : "https://w3id.org/paleont/Treatment",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A therapeutic intervention received in life."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Treatment"
+  } ]
+}, {
+  "@id" : "https://w3id.org/paleont/TreatmentClaim",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Proposes a treatment received in life. Typically made\n        under a historical framework, and typically grounded in a chemical\n        observation such as mercury."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Treatment claim"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/paleont/Claim"
+  } ]
+}, {
+  "@id" : "https://w3id.org/paleont/aboutSpecimen",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/paleont/Claim"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "about specimen"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/paleont/Specimen"
+  } ]
+}, {
+  "@id" : "https://w3id.org/paleont/aboutTechnique",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/paleont/MethodologicalClaim"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "about technique"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/paleont/Technique"
+  } ]
+}, {
+  "@id" : "https://w3id.org/paleont/appliedCorrection",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/paleont/DatingClaim"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "applied correction"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/paleont/Correction"
+  } ]
+}, {
+  "@id" : "https://w3id.org/paleont/appliedTo",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Decision D5. A methodological claim may NOT have\n        po:aboutSpecimen — the restriction above forbids it, because its\n        subject matter is a technique, not a skeleton. But a judgement about a\n        method is often reached in the course of examining particular\n        specimens, and the source says so: \"the results of the archaeometric\n        analyses APPLIED HERE cannot elucidate the origin\".\n\n        po:appliedTo records that occasion without claiming the judgement is\n        about the skeleton. \"CT cannot separate the treponematoses\" remains a\n        statement about CT; po:appliedTo says where that was found out.\n\n        Same shape of problem as D4, same shape of solution: when one property\n        is being asked to mean two things, split it rather than equivocate or\n        forbid."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/paleont/MethodologicalClaim"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "applied to"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/paleont/Specimen"
+  } ]
+}, {
+  "@id" : "https://w3id.org/paleont/confidenceInterval",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The statistical confidence at which the bounds are stated:\n        \"1 sigma\", \"95% CI\", or \"archaeological\" for an interval that carries\n        no statistical claim at all.\n\n        Decision D7. Without this, CQ4b compares two intervals as if their\n        endpoints were hard boundaries — which is the very reduction this\n        project argues against, committed by our own query. A calibrated\n        radiocarbon interval is not a fact with edges: it is a hedged\n        estimate, and the source says so (\"the precision of the radiocarbon\n        dates of medieval samples are often better than ±25 to 30 years for\n        the 1 sigma statistical uncertainty\").\n\n        Consequence: a disagreement computed from bare bounds is a claim about\n        the bounds, not about the individual. queries/cq04b_tolerant.rq applies\n        the source's OWN stated precision and reports a different — and, as it\n        turns out, more faithful — result."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/paleont/CalibratedInterval"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "confidence interval"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "https://w3id.org/paleont/declaredIn",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "NO rdfs:domain, deliberately. Observations are published in\n        a source just as claims are, and an observation is not a claim — the\n        two classes are disjoint. Declaring the domain as po:Claim made every\n        observation carrying this property inferred to be a Claim, and the\n        ontology inconsistent. HermiT caught it. Either the domain goes, or a\n        union class is introduced; the union buys nothing here, so it goes."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "declared in"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/paleont/Source"
+  } ]
+}, {
+  "@id" : "https://w3id.org/paleont/discriminatesBetween",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/paleont/MethodologicalClaim"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "discriminates between"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/paleont/Condition"
+  } ]
+}, {
+  "@id" : "https://w3id.org/paleont/endYear",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/paleont/CalibratedInterval"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "end year"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
+  } ]
+}, {
+  "@id" : "https://w3id.org/paleont/engagesWith",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Superproperty. Never asserted directly; always inferred."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/paleont/Claim"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "engages with"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/paleont/Claim"
+  } ]
+}, {
+  "@id" : "https://w3id.org/paleont/framesContent",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The system of thought TO WHICH the content of the claim\n        belongs. Distinct from po:underFramework, which records where the\n        claimant stands.\n\n        Decision D4. A modern study asserting that an individual was treated\n        with an Hg-containing medicine makes a MODERN claim whose content\n        belongs to the MEDIEVAL humoral frame: mercury counted as a medicine\n        because medieval medicine said so. Collapsing the two into one\n        property forced a choice between a false uniformity (everything\n        modern, CQ8b empty) and an equivocation (the property meaning two\n        different things depending on the claim).\n\n        Deliberately NOT functional: a claim may frame content belonging to\n        more than one system — the mercury case arguably frames both a modern\n        chemical measurement and a medieval therapeutic act — and closing that\n        off buys nothing.\n\n        The consequence is sharper than the version it replaces: the two\n        frames do NOT coexist as equals. One contains the other. The paper\n        does not look at Sk. 90 from inside the medieval frame; it looks from\n        outside and REPRESENTS that frame. There is no standpoint from which\n        both can be seen externally."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/paleont/Claim"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "frames content"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/paleont/DiagnosticFramework"
+  } ]
+}, {
+  "@id" : "https://w3id.org/paleont/groundedIn",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "THE boundary property. Everything on the left is evidence,\n        everything on the right is interpretation. Not functional: one claim\n        may rest on several observations. See decision D1 on whether the\n        range should widen to include po:Claim."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/paleont/Claim"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "grounded in"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/paleont/Observation"
+  } ]
+}, {
+  "@id" : "https://w3id.org/paleont/hasDiscriminatingPower",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/paleont/MethodologicalClaim"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has discriminating power"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/paleont/DiscriminatingPower"
+  } ]
+}, {
+  "@id" : "https://w3id.org/paleont/hasEffect",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/paleont/ErrorSource"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has effect"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "https://w3id.org/paleont/hasErrorSource",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Domain is the technique: a known limitation holds always."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/paleont/Technique"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has error source"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/paleont/ErrorSource"
+  } ]
+}, {
+  "@id" : "https://w3id.org/paleont/hasResult",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/paleont/DatingClaim"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has result"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/paleont/CalibratedInterval"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/paleont/proposes"
+  } ]
+}, {
+  "@id" : "https://w3id.org/paleont/hedge",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/paleont/Claim"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "hedge"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/paleont/ConfidenceLevel"
+  } ]
+}, {
+  "@id" : "https://w3id.org/paleont/hedgeWording",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The source's EXACT words — 'cannot be excluded',\n        'consistent with'. po:hedge gives the normalised level for querying;\n        this keeps the original phrasing, so that our normalisation never\n        silently replaces the author's own hedging."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/paleont/Claim"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "hedge wording"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "https://w3id.org/paleont/heldBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/paleont/Claim"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "held by"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Agent"
+  } ]
+}, {
+  "@id" : "https://w3id.org/paleont/isNegated",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Decision D6. The claim asserts the NEGATIVE of its content:\n        not \"leprosy is proposed\" but \"leprosy is denied\", not \"treated with\n        mercury\" but \"not treated with mercury\".\n\n        WHY IT WAS NEEDED. Every property in this model was affirmative, so a\n        source could be recorded only when it asserted something. Schwarz et\n        al. say of the Refshale and Tirup individuals that they \"were not\n        exposed to high amounts of Hg during their life\" — a claim, with an\n        agent, a ground and a hedge, that the model simply could not hold.\n        That asymmetry was itself a position: it made denial invisible while\n        assertion was fully represented.\n\n        PRECEDENT. The course slides use exactly this device in the Ferguson\n        unit tests — \"who is refused to receive what?\" is answered with\n        ?e :isNegated \"true\", and the affirmative queries carry\n        FILTER NOT EXISTS { ?e :isNegated \"true\" }. Ours is typed boolean\n        rather than a string, but the pattern is theirs.\n\n        NOT THE SAME AS po:rejects. A RejectionClaim refuses SOMEONE ELSE'S\n        CLAIM — layer 3, a claim about a claim. po:isNegated is layer 1: the\n        claim's own content is asserted negatively. \"I reject your diagnosis\"\n        and \"I claim he was not treated\" are different acts.\n\n        NO TENSION WITH NCQ3. A negated claim is still a claim: it carries an\n        agent, a framework and a hedge. The model still cannot say that an\n        individual WAS healthy; it can say that someone denied a particular\n        condition for them. Denials are perspectival too — which is the thesis\n        applied symmetrically rather than an exception to it.\n\n        ABSENCE MEANS AFFIRMATIVE. Claims without this property are positive.\n        Consequence: every query that reports what a source asserts must carry\n        FILTER NOT EXISTS { ?claim po:isNegated true }, or it will report a\n        denial as an assertion. All affected queries were updated."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/paleont/Claim"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "is negated"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ]
+}, {
+  "@id" : "https://w3id.org/paleont/maxAge",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/paleont/AgeClaim"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "maximum age"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
+  } ]
+}, {
+  "@id" : "https://w3id.org/paleont/minAge",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/paleont/AgeClaim"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "minimum age"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
+  } ]
+}, {
+  "@id" : "https://w3id.org/paleont/observedOn",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Functional: one observation concerns one specimen."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/paleont/Observation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "observed on"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/paleont/Specimen"
+  } ]
+}, {
+  "@id" : "https://w3id.org/paleont/observesLesionType",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/paleont/Observation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "observes lesion type"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/paleont/LesionType"
+  } ]
+}, {
+  "@id" : "https://w3id.org/paleont/onBone",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/paleont/Observation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "on bone"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/paleont/Bone"
+  } ]
+}, {
+  "@id" : "https://w3id.org/paleont/proposes",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Superproperty. Never asserted directly; always inferred."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/paleont/Claim"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "proposes"
+  } ]
+}, {
+  "@id" : "https://w3id.org/paleont/proposesCondition",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/paleont/DiagnosticClaim"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "proposes condition"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/paleont/Condition"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/paleont/proposes"
+  } ]
+}, {
+  "@id" : "https://w3id.org/paleont/proposesTreatment",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/paleont/TreatmentClaim"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "proposes treatment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/paleont/Treatment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/paleont/proposes"
+  } ]
+}, {
+  "@id" : "https://w3id.org/paleont/rejects",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#IrreflexiveProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "RANGE IS po:Claim, NOT po:Condition. This single line is\n        the thesis expressed as an axiom: one rejects an assertion, not a\n        disease. A rejection says nothing about whether the individual was\n        ill."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/paleont/RejectionClaim"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "rejects"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/paleont/Claim"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/paleont/engagesWith"
+  } ]
+}, {
+  "@id" : "https://w3id.org/paleont/specimenID",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/paleont/Specimen"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "specimen ID"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "https://w3id.org/paleont/startYear",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "xsd:integer, NOT xsd:gYear. Two reasons. (1) xsd:gYear is\n        not part of the OWL 2 datatype map, so HermiT refuses to load an\n        ontology that uses it — the reasoner step fails before it starts.\n        (2) integers compare arithmetically, which CQ4b needs, and negative\n        values express BCE without special handling."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/paleont/CalibratedInterval"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "start year"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
+  } ]
+}, {
+  "@id" : "https://w3id.org/paleont/underFramework",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The standpoint FROM WHICH the claim is made — the frame the\n        claimant occupies. Functional: a claim is made from one position. Two\n        positions on the same content are two claims.\n        For a single modern source every claim is ModernBiomedical, and that\n        uniformity is a finding, not a defect: the paper never leaves the\n        modern frame. What varies is po:framesContent."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/paleont/Claim"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "under framework"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/paleont/DiagnosticFramework"
+  } ]
+}, {
+  "@id" : "https://w3id.org/paleont/usedTechnique",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Domain is Observation, not Claim. A dating claim therefore\n        reaches its technique through groundedIn/usedTechnique. This enforces\n        that every use of a technique is an observation — see decision D2."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/paleont/Observation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "used technique"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/paleont/Technique"
+  } ]
+}, {
+  "@id" : "https://w3id.org/paleont/weakerThan",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#TransitiveProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Orders the confidence levels. This ordering is OURS, not\n        the source's, and must be declared as such in the documentation."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/paleont/ConfidenceLevel"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "weaker than"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/paleont/ConfidenceLevel"
+  } ]
+} ]

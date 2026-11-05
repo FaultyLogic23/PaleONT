@@ -1,0 +1,1054 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://w3id.org/paleont/"
+     xml:base="https://w3id.org/paleont/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:paleont="https://w3id.org/paleont/">
+    <owl:Ontology rdf:about="https://w3id.org/paleont/">
+        <terms:description xml:lang="en">Models the epistemic structure of palaeopathological
+        reporting: observations, the claims grounded in them, the frameworks
+        under which those claims are made, and the adjudication between
+        competing claims.</terms:description>
+        <terms:title xml:lang="en">PaleONT — an ontology of palaeopathological claims</terms:title>
+        <owl:versionInfo>0.1.0</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/spar/cito/agreesWith -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/spar/cito/agreesWith">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/paleont/engagesWith"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/spar/cito/disagreesWith -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/spar/cito/disagreesWith">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/paleont/engagesWith"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/spar/cito/updates -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/spar/cito/updates">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/paleont/engagesWith"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/paleont/aboutSpecimen -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/paleont/aboutSpecimen">
+        <rdfs:domain rdf:resource="https://w3id.org/paleont/Claim"/>
+        <rdfs:range rdf:resource="https://w3id.org/paleont/Specimen"/>
+        <rdfs:label xml:lang="en">about specimen</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/paleont/aboutTechnique -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/paleont/aboutTechnique">
+        <rdfs:domain rdf:resource="https://w3id.org/paleont/MethodologicalClaim"/>
+        <rdfs:range rdf:resource="https://w3id.org/paleont/Technique"/>
+        <rdfs:label xml:lang="en">about technique</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/paleont/appliedCorrection -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/paleont/appliedCorrection">
+        <rdfs:domain rdf:resource="https://w3id.org/paleont/DatingClaim"/>
+        <rdfs:range rdf:resource="https://w3id.org/paleont/Correction"/>
+        <rdfs:label xml:lang="en">applied correction</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/paleont/appliedTo -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/paleont/appliedTo">
+        <rdfs:domain rdf:resource="https://w3id.org/paleont/MethodologicalClaim"/>
+        <rdfs:range rdf:resource="https://w3id.org/paleont/Specimen"/>
+        <rdfs:comment xml:lang="en">Decision D5. A methodological claim may NOT have
+        po:aboutSpecimen — the restriction above forbids it, because its
+        subject matter is a technique, not a skeleton. But a judgement about a
+        method is often reached in the course of examining particular
+        specimens, and the source says so: &quot;the results of the archaeometric
+        analyses APPLIED HERE cannot elucidate the origin&quot;.
+
+        po:appliedTo records that occasion without claiming the judgement is
+        about the skeleton. &quot;CT cannot separate the treponematoses&quot; remains a
+        statement about CT; po:appliedTo says where that was found out.
+
+        Same shape of problem as D4, same shape of solution: when one property
+        is being asked to mean two things, split it rather than equivocate or
+        forbid.</rdfs:comment>
+        <rdfs:label xml:lang="en">applied to</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/paleont/declaredIn -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/paleont/declaredIn">
+        <rdfs:range rdf:resource="https://w3id.org/paleont/Source"/>
+        <rdfs:comment xml:lang="en">NO rdfs:domain, deliberately. Observations are published in
+        a source just as claims are, and an observation is not a claim — the
+        two classes are disjoint. Declaring the domain as po:Claim made every
+        observation carrying this property inferred to be a Claim, and the
+        ontology inconsistent. HermiT caught it. Either the domain goes, or a
+        union class is introduced; the union buys nothing here, so it goes.</rdfs:comment>
+        <rdfs:label xml:lang="en">declared in</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/paleont/discriminatesBetween -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/paleont/discriminatesBetween">
+        <rdfs:domain rdf:resource="https://w3id.org/paleont/MethodologicalClaim"/>
+        <rdfs:range rdf:resource="https://w3id.org/paleont/Condition"/>
+        <rdfs:label xml:lang="en">discriminates between</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/paleont/engagesWith -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/paleont/engagesWith">
+        <rdfs:domain rdf:resource="https://w3id.org/paleont/Claim"/>
+        <rdfs:range rdf:resource="https://w3id.org/paleont/Claim"/>
+        <rdfs:comment xml:lang="en">Superproperty. Never asserted directly; always inferred.</rdfs:comment>
+        <rdfs:label xml:lang="en">engages with</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/paleont/framesContent -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/paleont/framesContent">
+        <rdfs:domain rdf:resource="https://w3id.org/paleont/Claim"/>
+        <rdfs:range rdf:resource="https://w3id.org/paleont/DiagnosticFramework"/>
+        <rdfs:comment xml:lang="en">The system of thought TO WHICH the content of the claim
+        belongs. Distinct from po:underFramework, which records where the
+        claimant stands.
+
+        Decision D4. A modern study asserting that an individual was treated
+        with an Hg-containing medicine makes a MODERN claim whose content
+        belongs to the MEDIEVAL humoral frame: mercury counted as a medicine
+        because medieval medicine said so. Collapsing the two into one
+        property forced a choice between a false uniformity (everything
+        modern, CQ8b empty) and an equivocation (the property meaning two
+        different things depending on the claim).
+
+        Deliberately NOT functional: a claim may frame content belonging to
+        more than one system — the mercury case arguably frames both a modern
+        chemical measurement and a medieval therapeutic act — and closing that
+        off buys nothing.
+
+        The consequence is sharper than the version it replaces: the two
+        frames do NOT coexist as equals. One contains the other. The paper
+        does not look at Sk. 90 from inside the medieval frame; it looks from
+        outside and REPRESENTS that frame. There is no standpoint from which
+        both can be seen externally.</rdfs:comment>
+        <rdfs:label xml:lang="en">frames content</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/paleont/groundedIn -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/paleont/groundedIn">
+        <rdfs:domain rdf:resource="https://w3id.org/paleont/Claim"/>
+        <rdfs:range rdf:resource="https://w3id.org/paleont/Observation"/>
+        <rdfs:comment xml:lang="en">THE boundary property. Everything on the left is evidence,
+        everything on the right is interpretation. Not functional: one claim
+        may rest on several observations. See decision D1 on whether the
+        range should widen to include po:Claim.</rdfs:comment>
+        <rdfs:label xml:lang="en">grounded in</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/paleont/hasDiscriminatingPower -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/paleont/hasDiscriminatingPower">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/paleont/MethodologicalClaim"/>
+        <rdfs:range rdf:resource="https://w3id.org/paleont/DiscriminatingPower"/>
+        <rdfs:label xml:lang="en">has discriminating power</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/paleont/hasErrorSource -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/paleont/hasErrorSource">
+        <rdfs:domain rdf:resource="https://w3id.org/paleont/Technique"/>
+        <rdfs:range rdf:resource="https://w3id.org/paleont/ErrorSource"/>
+        <rdfs:comment xml:lang="en">Domain is the technique: a known limitation holds always.</rdfs:comment>
+        <rdfs:label xml:lang="en">has error source</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/paleont/hasResult -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/paleont/hasResult">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/paleont/proposes"/>
+        <rdfs:domain rdf:resource="https://w3id.org/paleont/DatingClaim"/>
+        <rdfs:range rdf:resource="https://w3id.org/paleont/CalibratedInterval"/>
+        <rdfs:label xml:lang="en">has result</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/paleont/hedge -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/paleont/hedge">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/paleont/Claim"/>
+        <rdfs:range rdf:resource="https://w3id.org/paleont/ConfidenceLevel"/>
+        <rdfs:label xml:lang="en">hedge</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/paleont/heldBy -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/paleont/heldBy">
+        <rdfs:domain rdf:resource="https://w3id.org/paleont/Claim"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <rdfs:label xml:lang="en">held by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/paleont/observedOn -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/paleont/observedOn">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/paleont/Observation"/>
+        <rdfs:range rdf:resource="https://w3id.org/paleont/Specimen"/>
+        <rdfs:comment xml:lang="en">Functional: one observation concerns one specimen.</rdfs:comment>
+        <rdfs:label xml:lang="en">observed on</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/paleont/observesLesionType -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/paleont/observesLesionType">
+        <rdfs:domain rdf:resource="https://w3id.org/paleont/Observation"/>
+        <rdfs:range rdf:resource="https://w3id.org/paleont/LesionType"/>
+        <rdfs:label xml:lang="en">observes lesion type</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/paleont/onBone -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/paleont/onBone">
+        <rdfs:domain rdf:resource="https://w3id.org/paleont/Observation"/>
+        <rdfs:range rdf:resource="https://w3id.org/paleont/Bone"/>
+        <rdfs:label xml:lang="en">on bone</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/paleont/proposes -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/paleont/proposes">
+        <rdfs:domain rdf:resource="https://w3id.org/paleont/Claim"/>
+        <rdfs:comment xml:lang="en">Superproperty. Never asserted directly; always inferred.</rdfs:comment>
+        <rdfs:label xml:lang="en">proposes</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/paleont/proposesCondition -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/paleont/proposesCondition">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/paleont/proposes"/>
+        <rdfs:domain rdf:resource="https://w3id.org/paleont/DiagnosticClaim"/>
+        <rdfs:range rdf:resource="https://w3id.org/paleont/Condition"/>
+        <rdfs:label xml:lang="en">proposes condition</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/paleont/proposesTreatment -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/paleont/proposesTreatment">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/paleont/proposes"/>
+        <rdfs:domain rdf:resource="https://w3id.org/paleont/TreatmentClaim"/>
+        <rdfs:range rdf:resource="https://w3id.org/paleont/Treatment"/>
+        <rdfs:label xml:lang="en">proposes treatment</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/paleont/rejects -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/paleont/rejects">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/paleont/engagesWith"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/paleont/RejectionClaim"/>
+        <rdfs:range rdf:resource="https://w3id.org/paleont/Claim"/>
+        <rdfs:comment xml:lang="en">RANGE IS po:Claim, NOT po:Condition. This single line is
+        the thesis expressed as an axiom: one rejects an assertion, not a
+        disease. A rejection says nothing about whether the individual was
+        ill.</rdfs:comment>
+        <rdfs:label xml:lang="en">rejects</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/paleont/underFramework -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/paleont/underFramework">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/paleont/Claim"/>
+        <rdfs:range rdf:resource="https://w3id.org/paleont/DiagnosticFramework"/>
+        <rdfs:comment xml:lang="en">The standpoint FROM WHICH the claim is made — the frame the
+        claimant occupies. Functional: a claim is made from one position. Two
+        positions on the same content are two claims.
+        For a single modern source every claim is ModernBiomedical, and that
+        uniformity is a finding, not a defect: the paper never leaves the
+        modern frame. What varies is po:framesContent.</rdfs:comment>
+        <rdfs:label xml:lang="en">under framework</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/paleont/usedTechnique -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/paleont/usedTechnique">
+        <rdfs:domain rdf:resource="https://w3id.org/paleont/Observation"/>
+        <rdfs:range rdf:resource="https://w3id.org/paleont/Technique"/>
+        <rdfs:comment xml:lang="en">Domain is Observation, not Claim. A dating claim therefore
+        reaches its technique through groundedIn/usedTechnique. This enforces
+        that every use of a technique is an observation — see decision D2.</rdfs:comment>
+        <rdfs:label xml:lang="en">used technique</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/paleont/weakerThan -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/paleont/weakerThan">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/paleont/ConfidenceLevel"/>
+        <rdfs:range rdf:resource="https://w3id.org/paleont/ConfidenceLevel"/>
+        <rdfs:comment xml:lang="en">Orders the confidence levels. This ordering is OURS, not
+        the source&apos;s, and must be declared as such in the documentation.</rdfs:comment>
+        <rdfs:label xml:lang="en">weaker than</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://w3id.org/paleont/confidenceInterval -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/paleont/confidenceInterval">
+        <rdfs:domain rdf:resource="https://w3id.org/paleont/CalibratedInterval"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">The statistical confidence at which the bounds are stated:
+        &quot;1 sigma&quot;, &quot;95% CI&quot;, or &quot;archaeological&quot; for an interval that carries
+        no statistical claim at all.
+
+        Decision D7. Without this, CQ4b compares two intervals as if their
+        endpoints were hard boundaries — which is the very reduction this
+        project argues against, committed by our own query. A calibrated
+        radiocarbon interval is not a fact with edges: it is a hedged
+        estimate, and the source says so (&quot;the precision of the radiocarbon
+        dates of medieval samples are often better than ±25 to 30 years for
+        the 1 sigma statistical uncertainty&quot;).
+
+        Consequence: a disagreement computed from bare bounds is a claim about
+        the bounds, not about the individual. queries/cq04b_tolerant.rq applies
+        the source&apos;s OWN stated precision and reports a different — and, as it
+        turns out, more faithful — result.</rdfs:comment>
+        <rdfs:label xml:lang="en">confidence interval</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/paleont/endYear -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/paleont/endYear">
+        <rdfs:domain rdf:resource="https://w3id.org/paleont/CalibratedInterval"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label xml:lang="en">end year</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/paleont/hasEffect -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/paleont/hasEffect">
+        <rdfs:domain rdf:resource="https://w3id.org/paleont/ErrorSource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">has effect</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/paleont/hedgeWording -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/paleont/hedgeWording">
+        <rdfs:domain rdf:resource="https://w3id.org/paleont/Claim"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">The source&apos;s EXACT words — &apos;cannot be excluded&apos;,
+        &apos;consistent with&apos;. po:hedge gives the normalised level for querying;
+        this keeps the original phrasing, so that our normalisation never
+        silently replaces the author&apos;s own hedging.</rdfs:comment>
+        <rdfs:label xml:lang="en">hedge wording</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/paleont/isNegated -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/paleont/isNegated">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/paleont/Claim"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment xml:lang="en">Decision D6. The claim asserts the NEGATIVE of its content:
+        not &quot;leprosy is proposed&quot; but &quot;leprosy is denied&quot;, not &quot;treated with
+        mercury&quot; but &quot;not treated with mercury&quot;.
+
+        WHY IT WAS NEEDED. Every property in this model was affirmative, so a
+        source could be recorded only when it asserted something. Schwarz et
+        al. say of the Refshale and Tirup individuals that they &quot;were not
+        exposed to high amounts of Hg during their life&quot; — a claim, with an
+        agent, a ground and a hedge, that the model simply could not hold.
+        That asymmetry was itself a position: it made denial invisible while
+        assertion was fully represented.
+
+        PRECEDENT. The course slides use exactly this device in the Ferguson
+        unit tests — &quot;who is refused to receive what?&quot; is answered with
+        ?e :isNegated &quot;true&quot;, and the affirmative queries carry
+        FILTER NOT EXISTS { ?e :isNegated &quot;true&quot; }. Ours is typed boolean
+        rather than a string, but the pattern is theirs.
+
+        NOT THE SAME AS po:rejects. A RejectionClaim refuses SOMEONE ELSE&apos;S
+        CLAIM — layer 3, a claim about a claim. po:isNegated is layer 1: the
+        claim&apos;s own content is asserted negatively. &quot;I reject your diagnosis&quot;
+        and &quot;I claim he was not treated&quot; are different acts.
+
+        NO TENSION WITH NCQ3. A negated claim is still a claim: it carries an
+        agent, a framework and a hedge. The model still cannot say that an
+        individual WAS healthy; it can say that someone denied a particular
+        condition for them. Denials are perspectival too — which is the thesis
+        applied symmetrically rather than an exception to it.
+
+        ABSENCE MEANS AFFIRMATIVE. Claims without this property are positive.
+        Consequence: every query that reports what a source asserts must carry
+        FILTER NOT EXISTS { ?claim po:isNegated true }, or it will report a
+        denial as an assertion. All affected queries were updated.</rdfs:comment>
+        <rdfs:label xml:lang="en">is negated</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/paleont/maxAge -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/paleont/maxAge">
+        <rdfs:domain rdf:resource="https://w3id.org/paleont/AgeClaim"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label xml:lang="en">maximum age</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/paleont/minAge -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/paleont/minAge">
+        <rdfs:domain rdf:resource="https://w3id.org/paleont/AgeClaim"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label xml:lang="en">minimum age</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/paleont/specimenID -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/paleont/specimenID">
+        <rdfs:domain rdf:resource="https://w3id.org/paleont/Specimen"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">specimen ID</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/paleont/startYear -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/paleont/startYear">
+        <rdfs:domain rdf:resource="https://w3id.org/paleont/CalibratedInterval"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment xml:lang="en">xsd:integer, NOT xsd:gYear. Two reasons. (1) xsd:gYear is
+        not part of the OWL 2 datatype map, so HermiT refuses to load an
+        ontology that uses it — the reasoner step fails before it starts.
+        (2) integers compare arithmetically, which CQ4b needs, and negative
+        values express BCE without special handling.</rdfs:comment>
+        <rdfs:label xml:lang="en">start year</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Agent -->
+
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Agent"/>
+    
+
+
+    <!-- https://w3id.org/paleont/AgeClaim -->
+
+
+    <owl:Class rdf:about="https://w3id.org/paleont/AgeClaim">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/paleont/Claim"/>
+        <rdfs:comment xml:lang="en">Proposes an age-at-death range. Age is a claim, not a
+        property of the specimen — deliberately the same shape as a
+        diagnosis.</rdfs:comment>
+        <rdfs:label xml:lang="en">Age claim</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/paleont/Bone -->
+
+
+    <owl:Class rdf:about="https://w3id.org/paleont/Bone">
+        <rdfs:comment xml:lang="en">Skeletal element. Individuals carry skos:exactMatch links
+        to UBERON rather than using UBERON classes directly as values, which
+        avoids punning.</rdfs:comment>
+        <rdfs:label xml:lang="en">Bone</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/paleont/CalibratedInterval -->
+
+
+    <owl:Class rdf:about="https://w3id.org/paleont/CalibratedInterval">
+        <rdfs:comment xml:lang="en">A dated range with numeric bounds. A class rather than a
+        literal because CQ4b must COMPUTE disagreement by comparing two
+        intervals, which a label cannot support.</rdfs:comment>
+        <rdfs:label xml:lang="en">Calibrated interval</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/paleont/Claim -->
+
+
+    <owl:Class rdf:about="https://w3id.org/paleont/Claim">
+        <rdfs:comment xml:lang="en">A proposition held by an agent, under a framework, with a
+        stated degree of confidence, grounded in one or more observations.
+        Nothing enters this graph as fact; everything enters as something
+        someone asserted.</rdfs:comment>
+        <rdfs:label xml:lang="en">Claim</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/paleont/Condition -->
+
+
+    <owl:Class rdf:about="https://w3id.org/paleont/Condition">
+        <rdfs:comment xml:lang="en">A disease or pathological condition. Individuals carry
+        skos:exactMatch links to MONDO. NOTE: there is no path from
+        po:Specimen to this class.</rdfs:comment>
+        <rdfs:label xml:lang="en">Condition</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/paleont/ConfidenceLevel -->
+
+
+    <owl:Class rdf:about="https://w3id.org/paleont/ConfidenceLevel">
+        <rdfs:comment xml:lang="en">The hedge attached to a claim, as an individual rather
+        than a string or a number. A number would invent precision the source
+        never produced; a string cannot be counted, grouped or ordered.</rdfs:comment>
+        <rdfs:label xml:lang="en">Confidence level</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/paleont/Correction -->
+
+
+    <owl:Class rdf:about="https://w3id.org/paleont/Correction">
+        <rdfs:comment xml:lang="en">An adjustment applied to one particular dating. A property
+        of THIS dating: it holds here. Recording it is what turns an apparent
+        contradiction between two dates into two declared treatments of one
+        measurement — and prevents CQ4b from reporting false positives.</rdfs:comment>
+        <rdfs:label xml:lang="en">Correction</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/paleont/DatingClaim -->
+
+
+    <owl:Class rdf:about="https://w3id.org/paleont/DatingClaim">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/paleont/Claim"/>
+        <rdfs:comment xml:lang="en">Proposes a calibrated interval for a specimen.</rdfs:comment>
+        <rdfs:label xml:lang="en">Dating claim</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/paleont/DiagnosticClaim -->
+
+
+    <owl:Class rdf:about="https://w3id.org/paleont/DiagnosticClaim">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/paleont/Claim"/>
+        <rdfs:comment xml:lang="en">Proposes a condition for a specimen.</rdfs:comment>
+        <rdfs:label xml:lang="en">Diagnostic claim</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/paleont/DiagnosticFramework -->
+
+
+    <owl:Class rdf:about="https://w3id.org/paleont/DiagnosticFramework">
+        <rdfs:comment xml:lang="en">The standpoint from which a claim is made — modern
+        biomedical, medieval humoral. Two individuals carry the entire
+        perspectival argument: the same specimen seen through two
+        incommensurable lenses.</rdfs:comment>
+        <rdfs:label xml:lang="en">Diagnostic framework</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/paleont/DiscriminatingPower -->
+
+
+    <owl:Class rdf:about="https://w3id.org/paleont/DiscriminatingPower">
+        <rdfs:comment xml:lang="en">How far a technique is said to separate competing
+        hypotheses. A small controlled list, so that &apos;which techniques
+        cannot discriminate&apos; is a value filter rather than a second
+        question.</rdfs:comment>
+        <rdfs:label xml:lang="en">Discriminating power</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/paleont/ErrorSource -->
+
+
+    <owl:Class rdf:about="https://w3id.org/paleont/ErrorSource">
+        <rdfs:comment xml:lang="en">A known limitation of a technique — e.g. the marine
+        reservoir effect. A property of the TECHNIQUE: it holds always.
+        Contrast po:Correction.</rdfs:comment>
+        <rdfs:label xml:lang="en">Error source</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/paleont/LesionType -->
+
+
+    <owl:Class rdf:about="https://w3id.org/paleont/LesionType">
+        <rdfs:comment xml:lang="en">The type of a skeletal lesion, shared across specimens.
+        The concrete occurrence is the po:Observation. This split is what
+        makes CQ10 (recurrence across specimens) answerable.</rdfs:comment>
+        <rdfs:label xml:lang="en">Lesion type</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/paleont/MethodologicalClaim -->
+
+
+    <owl:Class rdf:about="https://w3id.org/paleont/MethodologicalClaim">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/paleont/Claim"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/paleont/aboutSpecimen"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A claim about what a technique can or cannot establish.
+        The meta level. Note that it has NO po:aboutSpecimen: its subject
+        matter is a technique, not a skeleton. That absence is how the model
+        distinguishes &apos;this individual had leprosy&apos; from &apos;this method cannot
+        tell leprosy from syphilis&apos;.</rdfs:comment>
+        <rdfs:label xml:lang="en">Methodological claim</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/paleont/Observation -->
+
+
+    <owl:Class rdf:about="https://w3id.org/paleont/Observation">
+        <rdfs:comment xml:lang="en">One act of examining a specimen with a technique, yielding
+        one datum. Carries what was seen, on which bone, by which technique.
+        This is the concrete occurrence: the lesion TYPE is shared across
+        specimens, the observation is not.</rdfs:comment>
+        <rdfs:label xml:lang="en">Observation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/paleont/RejectionClaim -->
+
+
+    <owl:Class rdf:about="https://w3id.org/paleont/RejectionClaim">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/paleont/Claim"/>
+        <rdfs:comment xml:lang="en">Rejects another claim. Note the range of po:rejects: a
+        rejection is an act against an ASSERTION, never a verdict on the
+        truth of a disease. Acquittal is not innocence.</rdfs:comment>
+        <rdfs:label xml:lang="en">Rejection claim</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/paleont/Source -->
+
+
+    <owl:Class rdf:about="https://w3id.org/paleont/Source">
+        <rdfs:comment xml:lang="en">A publication in which claims are declared.</rdfs:comment>
+        <rdfs:label xml:lang="en">Source</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/paleont/Specimen -->
+
+
+    <owl:Class rdf:about="https://w3id.org/paleont/Specimen">
+        <rdfs:comment xml:lang="en">A set of skeletal remains attributed to one individual.
+        The anchor of the graph. Deliberately poor in properties: almost
+        nothing is said ABOUT a specimen, because almost everything one might
+        want to say is in fact a claim someone made.</rdfs:comment>
+        <rdfs:label xml:lang="en">Specimen</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/paleont/Technique -->
+
+
+    <owl:Class rdf:about="https://w3id.org/paleont/Technique">
+        <rdfs:comment xml:lang="en">Any means by which an observation is produced: naked-eye
+        examination, radiography, radiocarbon dating, atomic absorption
+        spectrometry. ONE class, no hierarchy. Ranking techniques by
+        reliability is what the sources ARGUE about, so it must live in
+        po:MethodologicalClaim, never in the schema.</rdfs:comment>
+        <rdfs:label xml:lang="en">Technique</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/paleont/Treatment -->
+
+
+    <owl:Class rdf:about="https://w3id.org/paleont/Treatment">
+        <rdfs:comment xml:lang="en">A therapeutic intervention received in life.</rdfs:comment>
+        <rdfs:label xml:lang="en">Treatment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/paleont/TreatmentClaim -->
+
+
+    <owl:Class rdf:about="https://w3id.org/paleont/TreatmentClaim">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/paleont/Claim"/>
+        <rdfs:comment xml:lang="en">Proposes a treatment received in life. Typically made
+        under a historical framework, and typically grounded in a chemical
+        observation such as mercury.</rdfs:comment>
+        <rdfs:label xml:lang="en">Treatment claim</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://w3id.org/paleont/Certain -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/paleont/Certain">
+        <rdf:type rdf:resource="https://w3id.org/paleont/ConfidenceLevel"/>
+        <rdfs:label xml:lang="en">certain</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/paleont/Discriminating -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/paleont/Discriminating">
+        <rdf:type rdf:resource="https://w3id.org/paleont/DiscriminatingPower"/>
+        <rdfs:label xml:lang="en">discriminating</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/paleont/Inconclusive -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/paleont/Inconclusive">
+        <rdf:type rdf:resource="https://w3id.org/paleont/DiscriminatingPower"/>
+        <rdfs:label xml:lang="en">inconclusive</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/paleont/MedievalHumoral -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/paleont/MedievalHumoral">
+        <rdf:type rdf:resource="https://w3id.org/paleont/DiagnosticFramework"/>
+        <rdfs:label xml:lang="en">medieval humoral framework</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/paleont/ModernBiomedical -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/paleont/ModernBiomedical">
+        <rdf:type rdf:resource="https://w3id.org/paleont/DiagnosticFramework"/>
+        <rdfs:label xml:lang="en">modern biomedical framework</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/paleont/Possible -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/paleont/Possible">
+        <rdf:type rdf:resource="https://w3id.org/paleont/ConfidenceLevel"/>
+        <weakerThan rdf:resource="https://w3id.org/paleont/Probable"/>
+        <rdfs:label xml:lang="en">possible</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/paleont/Probable -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/paleont/Probable">
+        <rdf:type rdf:resource="https://w3id.org/paleont/ConfidenceLevel"/>
+        <weakerThan rdf:resource="https://w3id.org/paleont/Certain"/>
+        <rdfs:label xml:lang="en">probable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/paleont/Suggestive -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/paleont/Suggestive">
+        <rdf:type rdf:resource="https://w3id.org/paleont/DiscriminatingPower"/>
+        <rdfs:label xml:lang="en">suggestive</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/paleont/Tentative -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/paleont/Tentative">
+        <rdf:type rdf:resource="https://w3id.org/paleont/ConfidenceLevel"/>
+        <weakerThan rdf:resource="https://w3id.org/paleont/Possible"/>
+        <rdfs:label xml:lang="en">tentative</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/paleont/AgeClaim"/>
+            <rdf:Description rdf:about="https://w3id.org/paleont/DatingClaim"/>
+            <rdf:Description rdf:about="https://w3id.org/paleont/DiagnosticClaim"/>
+            <rdf:Description rdf:about="https://w3id.org/paleont/MethodologicalClaim"/>
+            <rdf:Description rdf:about="https://w3id.org/paleont/RejectionClaim"/>
+            <rdf:Description rdf:about="https://w3id.org/paleont/TreatmentClaim"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/paleont/Bone"/>
+            <rdf:Description rdf:about="https://w3id.org/paleont/CalibratedInterval"/>
+            <rdf:Description rdf:about="https://w3id.org/paleont/Claim"/>
+            <rdf:Description rdf:about="https://w3id.org/paleont/Condition"/>
+            <rdf:Description rdf:about="https://w3id.org/paleont/ConfidenceLevel"/>
+            <rdf:Description rdf:about="https://w3id.org/paleont/Correction"/>
+            <rdf:Description rdf:about="https://w3id.org/paleont/DiagnosticFramework"/>
+            <rdf:Description rdf:about="https://w3id.org/paleont/DiscriminatingPower"/>
+            <rdf:Description rdf:about="https://w3id.org/paleont/ErrorSource"/>
+            <rdf:Description rdf:about="https://w3id.org/paleont/LesionType"/>
+            <rdf:Description rdf:about="https://w3id.org/paleont/Observation"/>
+            <rdf:Description rdf:about="https://w3id.org/paleont/Source"/>
+            <rdf:Description rdf:about="https://w3id.org/paleont/Specimen"/>
+            <rdf:Description rdf:about="https://w3id.org/paleont/Technique"/>
+            <rdf:Description rdf:about="https://w3id.org/paleont/Treatment"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/paleont/Certain"/>
+            <rdf:Description rdf:about="https://w3id.org/paleont/Possible"/>
+            <rdf:Description rdf:about="https://w3id.org/paleont/Probable"/>
+            <rdf:Description rdf:about="https://w3id.org/paleont/Tentative"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/paleont/Discriminating"/>
+            <rdf:Description rdf:about="https://w3id.org/paleont/Inconclusive"/>
+            <rdf:Description rdf:about="https://w3id.org/paleont/Suggestive"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/paleont/MedievalHumoral"/>
+            <rdf:Description rdf:about="https://w3id.org/paleont/ModernBiomedical"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+

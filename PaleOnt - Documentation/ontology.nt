@@ -1,0 +1,571 @@
+<https://w3id.org/paleont/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://w3id.org/paleont/> <http://purl.org/dc/terms/description> "Models the epistemic structure of palaeopathological\n        reporting: observations, the claims grounded in them, the frameworks\n        under which those claims are made, and the adjudication between\n        competing claims."@en .
+<https://w3id.org/paleont/> <http://purl.org/dc/terms/title> "PaleONT — an ontology of palaeopathological claims"@en .
+<https://w3id.org/paleont/> <http://www.w3.org/2002/07/owl#versionInfo> "0.1.0" .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/spar/cito/agreesWith
+<http://purl.org/spar/cito/agreesWith> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spar/cito/agreesWith> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/paleont/engagesWith> .
+# 
+# http://purl.org/spar/cito/disagreesWith
+<http://purl.org/spar/cito/disagreesWith> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spar/cito/disagreesWith> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/paleont/engagesWith> .
+# 
+# http://purl.org/spar/cito/updates
+<http://purl.org/spar/cito/updates> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spar/cito/updates> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/paleont/engagesWith> .
+# 
+# https://w3id.org/paleont/aboutSpecimen
+<https://w3id.org/paleont/aboutSpecimen> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/paleont/aboutSpecimen> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/paleont/Claim> .
+<https://w3id.org/paleont/aboutSpecimen> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/paleont/Specimen> .
+<https://w3id.org/paleont/aboutSpecimen> <http://www.w3.org/2000/01/rdf-schema#label> "about specimen"@en .
+# 
+# https://w3id.org/paleont/aboutTechnique
+<https://w3id.org/paleont/aboutTechnique> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/paleont/aboutTechnique> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/paleont/MethodologicalClaim> .
+<https://w3id.org/paleont/aboutTechnique> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/paleont/Technique> .
+<https://w3id.org/paleont/aboutTechnique> <http://www.w3.org/2000/01/rdf-schema#label> "about technique"@en .
+# 
+# https://w3id.org/paleont/appliedCorrection
+<https://w3id.org/paleont/appliedCorrection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/paleont/appliedCorrection> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/paleont/DatingClaim> .
+<https://w3id.org/paleont/appliedCorrection> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/paleont/Correction> .
+<https://w3id.org/paleont/appliedCorrection> <http://www.w3.org/2000/01/rdf-schema#label> "applied correction"@en .
+# 
+# https://w3id.org/paleont/appliedTo
+<https://w3id.org/paleont/appliedTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/paleont/appliedTo> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/paleont/MethodologicalClaim> .
+<https://w3id.org/paleont/appliedTo> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/paleont/Specimen> .
+<https://w3id.org/paleont/appliedTo> <http://www.w3.org/2000/01/rdf-schema#comment> "Decision D5. A methodological claim may NOT have\n        po:aboutSpecimen — the restriction above forbids it, because its\n        subject matter is a technique, not a skeleton. But a judgement about a\n        method is often reached in the course of examining particular\n        specimens, and the source says so: \"the results of the archaeometric\n        analyses APPLIED HERE cannot elucidate the origin\".\n\n        po:appliedTo records that occasion without claiming the judgement is\n        about the skeleton. \"CT cannot separate the treponematoses\" remains a\n        statement about CT; po:appliedTo says where that was found out.\n\n        Same shape of problem as D4, same shape of solution: when one property\n        is being asked to mean two things, split it rather than equivocate or\n        forbid."@en .
+<https://w3id.org/paleont/appliedTo> <http://www.w3.org/2000/01/rdf-schema#label> "applied to"@en .
+# 
+# https://w3id.org/paleont/declaredIn
+<https://w3id.org/paleont/declaredIn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/paleont/declaredIn> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/paleont/Source> .
+<https://w3id.org/paleont/declaredIn> <http://www.w3.org/2000/01/rdf-schema#comment> "NO rdfs:domain, deliberately. Observations are published in\n        a source just as claims are, and an observation is not a claim — the\n        two classes are disjoint. Declaring the domain as po:Claim made every\n        observation carrying this property inferred to be a Claim, and the\n        ontology inconsistent. HermiT caught it. Either the domain goes, or a\n        union class is introduced; the union buys nothing here, so it goes."@en .
+<https://w3id.org/paleont/declaredIn> <http://www.w3.org/2000/01/rdf-schema#label> "declared in"@en .
+# 
+# https://w3id.org/paleont/discriminatesBetween
+<https://w3id.org/paleont/discriminatesBetween> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/paleont/discriminatesBetween> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/paleont/MethodologicalClaim> .
+<https://w3id.org/paleont/discriminatesBetween> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/paleont/Condition> .
+<https://w3id.org/paleont/discriminatesBetween> <http://www.w3.org/2000/01/rdf-schema#label> "discriminates between"@en .
+# 
+# https://w3id.org/paleont/engagesWith
+<https://w3id.org/paleont/engagesWith> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/paleont/engagesWith> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/paleont/Claim> .
+<https://w3id.org/paleont/engagesWith> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/paleont/Claim> .
+<https://w3id.org/paleont/engagesWith> <http://www.w3.org/2000/01/rdf-schema#comment> "Superproperty. Never asserted directly; always inferred."@en .
+<https://w3id.org/paleont/engagesWith> <http://www.w3.org/2000/01/rdf-schema#label> "engages with"@en .
+# 
+# https://w3id.org/paleont/framesContent
+<https://w3id.org/paleont/framesContent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/paleont/framesContent> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/paleont/Claim> .
+<https://w3id.org/paleont/framesContent> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/paleont/DiagnosticFramework> .
+<https://w3id.org/paleont/framesContent> <http://www.w3.org/2000/01/rdf-schema#comment> "The system of thought TO WHICH the content of the claim\n        belongs. Distinct from po:underFramework, which records where the\n        claimant stands.\n\n        Decision D4. A modern study asserting that an individual was treated\n        with an Hg-containing medicine makes a MODERN claim whose content\n        belongs to the MEDIEVAL humoral frame: mercury counted as a medicine\n        because medieval medicine said so. Collapsing the two into one\n        property forced a choice between a false uniformity (everything\n        modern, CQ8b empty) and an equivocation (the property meaning two\n        different things depending on the claim).\n\n        Deliberately NOT functional: a claim may frame content belonging to\n        more than one system — the mercury case arguably frames both a modern\n        chemical measurement and a medieval therapeutic act — and closing that\n        off buys nothing.\n\n        The consequence is sharper than the version it replaces: the two\n        frames do NOT coexist as equals. One contains the other. The paper\n        does not look at Sk. 90 from inside the medieval frame; it looks from\n        outside and REPRESENTS that frame. There is no standpoint from which\n        both can be seen externally."@en .
+<https://w3id.org/paleont/framesContent> <http://www.w3.org/2000/01/rdf-schema#label> "frames content"@en .
+# 
+# https://w3id.org/paleont/groundedIn
+<https://w3id.org/paleont/groundedIn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/paleont/groundedIn> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/paleont/Claim> .
+<https://w3id.org/paleont/groundedIn> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/paleont/Observation> .
+<https://w3id.org/paleont/groundedIn> <http://www.w3.org/2000/01/rdf-schema#comment> "THE boundary property. Everything on the left is evidence,\n        everything on the right is interpretation. Not functional: one claim\n        may rest on several observations. See decision D1 on whether the\n        range should widen to include po:Claim."@en .
+<https://w3id.org/paleont/groundedIn> <http://www.w3.org/2000/01/rdf-schema#label> "grounded in"@en .
+# 
+# https://w3id.org/paleont/hasDiscriminatingPower
+<https://w3id.org/paleont/hasDiscriminatingPower> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/paleont/hasDiscriminatingPower> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/paleont/hasDiscriminatingPower> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/paleont/MethodologicalClaim> .
+<https://w3id.org/paleont/hasDiscriminatingPower> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/paleont/DiscriminatingPower> .
+<https://w3id.org/paleont/hasDiscriminatingPower> <http://www.w3.org/2000/01/rdf-schema#label> "has discriminating power"@en .
+# 
+# https://w3id.org/paleont/hasErrorSource
+<https://w3id.org/paleont/hasErrorSource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/paleont/hasErrorSource> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/paleont/Technique> .
+<https://w3id.org/paleont/hasErrorSource> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/paleont/ErrorSource> .
+<https://w3id.org/paleont/hasErrorSource> <http://www.w3.org/2000/01/rdf-schema#comment> "Domain is the technique: a known limitation holds always."@en .
+<https://w3id.org/paleont/hasErrorSource> <http://www.w3.org/2000/01/rdf-schema#label> "has error source"@en .
+# 
+# https://w3id.org/paleont/hasResult
+<https://w3id.org/paleont/hasResult> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/paleont/hasResult> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/paleont/proposes> .
+<https://w3id.org/paleont/hasResult> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/paleont/DatingClaim> .
+<https://w3id.org/paleont/hasResult> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/paleont/CalibratedInterval> .
+<https://w3id.org/paleont/hasResult> <http://www.w3.org/2000/01/rdf-schema#label> "has result"@en .
+# 
+# https://w3id.org/paleont/hedge
+<https://w3id.org/paleont/hedge> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/paleont/hedge> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/paleont/hedge> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/paleont/Claim> .
+<https://w3id.org/paleont/hedge> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/paleont/ConfidenceLevel> .
+<https://w3id.org/paleont/hedge> <http://www.w3.org/2000/01/rdf-schema#label> "hedge"@en .
+# 
+# https://w3id.org/paleont/heldBy
+<https://w3id.org/paleont/heldBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/paleont/heldBy> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/paleont/Claim> .
+<https://w3id.org/paleont/heldBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://xmlns.com/foaf/0.1/Agent> .
+<http://xmlns.com/foaf/0.1/Agent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/paleont/heldBy> <http://www.w3.org/2000/01/rdf-schema#label> "held by"@en .
+# 
+# https://w3id.org/paleont/observedOn
+<https://w3id.org/paleont/observedOn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/paleont/observedOn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/paleont/observedOn> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/paleont/Observation> .
+<https://w3id.org/paleont/observedOn> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/paleont/Specimen> .
+<https://w3id.org/paleont/observedOn> <http://www.w3.org/2000/01/rdf-schema#comment> "Functional: one observation concerns one specimen."@en .
+<https://w3id.org/paleont/observedOn> <http://www.w3.org/2000/01/rdf-schema#label> "observed on"@en .
+# 
+# https://w3id.org/paleont/observesLesionType
+<https://w3id.org/paleont/observesLesionType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/paleont/observesLesionType> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/paleont/Observation> .
+<https://w3id.org/paleont/observesLesionType> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/paleont/LesionType> .
+<https://w3id.org/paleont/observesLesionType> <http://www.w3.org/2000/01/rdf-schema#label> "observes lesion type"@en .
+# 
+# https://w3id.org/paleont/onBone
+<https://w3id.org/paleont/onBone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/paleont/onBone> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/paleont/Observation> .
+<https://w3id.org/paleont/onBone> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/paleont/Bone> .
+<https://w3id.org/paleont/onBone> <http://www.w3.org/2000/01/rdf-schema#label> "on bone"@en .
+# 
+# https://w3id.org/paleont/proposes
+<https://w3id.org/paleont/proposes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/paleont/proposes> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/paleont/Claim> .
+<https://w3id.org/paleont/proposes> <http://www.w3.org/2000/01/rdf-schema#comment> "Superproperty. Never asserted directly; always inferred."@en .
+<https://w3id.org/paleont/proposes> <http://www.w3.org/2000/01/rdf-schema#label> "proposes"@en .
+# 
+# https://w3id.org/paleont/proposesCondition
+<https://w3id.org/paleont/proposesCondition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/paleont/proposesCondition> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/paleont/proposes> .
+<https://w3id.org/paleont/proposesCondition> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/paleont/DiagnosticClaim> .
+<https://w3id.org/paleont/proposesCondition> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/paleont/Condition> .
+<https://w3id.org/paleont/proposesCondition> <http://www.w3.org/2000/01/rdf-schema#label> "proposes condition"@en .
+# 
+# https://w3id.org/paleont/proposesTreatment
+<https://w3id.org/paleont/proposesTreatment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/paleont/proposesTreatment> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/paleont/proposes> .
+<https://w3id.org/paleont/proposesTreatment> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/paleont/TreatmentClaim> .
+<https://w3id.org/paleont/proposesTreatment> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/paleont/Treatment> .
+<https://w3id.org/paleont/proposesTreatment> <http://www.w3.org/2000/01/rdf-schema#label> "proposes treatment"@en .
+# 
+# https://w3id.org/paleont/rejects
+<https://w3id.org/paleont/rejects> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/paleont/rejects> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/paleont/engagesWith> .
+<https://w3id.org/paleont/rejects> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#IrreflexiveProperty> .
+<https://w3id.org/paleont/rejects> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/paleont/RejectionClaim> .
+<https://w3id.org/paleont/rejects> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/paleont/Claim> .
+<https://w3id.org/paleont/rejects> <http://www.w3.org/2000/01/rdf-schema#comment> "RANGE IS po:Claim, NOT po:Condition. This single line is\n        the thesis expressed as an axiom: one rejects an assertion, not a\n        disease. A rejection says nothing about whether the individual was\n        ill."@en .
+<https://w3id.org/paleont/rejects> <http://www.w3.org/2000/01/rdf-schema#label> "rejects"@en .
+# 
+# https://w3id.org/paleont/underFramework
+<https://w3id.org/paleont/underFramework> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/paleont/underFramework> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/paleont/underFramework> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/paleont/Claim> .
+<https://w3id.org/paleont/underFramework> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/paleont/DiagnosticFramework> .
+<https://w3id.org/paleont/underFramework> <http://www.w3.org/2000/01/rdf-schema#comment> "The standpoint FROM WHICH the claim is made — the frame the\n        claimant occupies. Functional: a claim is made from one position. Two\n        positions on the same content are two claims.\n        For a single modern source every claim is ModernBiomedical, and that\n        uniformity is a finding, not a defect: the paper never leaves the\n        modern frame. What varies is po:framesContent."@en .
+<https://w3id.org/paleont/underFramework> <http://www.w3.org/2000/01/rdf-schema#label> "under framework"@en .
+# 
+# https://w3id.org/paleont/usedTechnique
+<https://w3id.org/paleont/usedTechnique> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/paleont/usedTechnique> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/paleont/Observation> .
+<https://w3id.org/paleont/usedTechnique> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/paleont/Technique> .
+<https://w3id.org/paleont/usedTechnique> <http://www.w3.org/2000/01/rdf-schema#comment> "Domain is Observation, not Claim. A dating claim therefore\n        reaches its technique through groundedIn/usedTechnique. This enforces\n        that every use of a technique is an observation — see decision D2."@en .
+<https://w3id.org/paleont/usedTechnique> <http://www.w3.org/2000/01/rdf-schema#label> "used technique"@en .
+# 
+# https://w3id.org/paleont/weakerThan
+<https://w3id.org/paleont/weakerThan> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/paleont/weakerThan> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#TransitiveProperty> .
+<https://w3id.org/paleont/weakerThan> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/paleont/ConfidenceLevel> .
+<https://w3id.org/paleont/weakerThan> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/paleont/ConfidenceLevel> .
+<https://w3id.org/paleont/weakerThan> <http://www.w3.org/2000/01/rdf-schema#comment> "Orders the confidence levels. This ordering is OURS, not\n        the source's, and must be declared as such in the documentation."@en .
+<https://w3id.org/paleont/weakerThan> <http://www.w3.org/2000/01/rdf-schema#label> "weaker than"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/paleont/confidenceInterval
+<https://w3id.org/paleont/confidenceInterval> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/paleont/confidenceInterval> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/paleont/CalibratedInterval> .
+<https://w3id.org/paleont/confidenceInterval> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/paleont/confidenceInterval> <http://www.w3.org/2000/01/rdf-schema#comment> "The statistical confidence at which the bounds are stated:\n        \"1 sigma\", \"95% CI\", or \"archaeological\" for an interval that carries\n        no statistical claim at all.\n\n        Decision D7. Without this, CQ4b compares two intervals as if their\n        endpoints were hard boundaries — which is the very reduction this\n        project argues against, committed by our own query. A calibrated\n        radiocarbon interval is not a fact with edges: it is a hedged\n        estimate, and the source says so (\"the precision of the radiocarbon\n        dates of medieval samples are often better than ±25 to 30 years for\n        the 1 sigma statistical uncertainty\").\n\n        Consequence: a disagreement computed from bare bounds is a claim about\n        the bounds, not about the individual. queries/cq04b_tolerant.rq applies\n        the source's OWN stated precision and reports a different — and, as it\n        turns out, more faithful — result."@en .
+<https://w3id.org/paleont/confidenceInterval> <http://www.w3.org/2000/01/rdf-schema#label> "confidence interval"@en .
+# 
+# https://w3id.org/paleont/endYear
+<https://w3id.org/paleont/endYear> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/paleont/endYear> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/paleont/CalibratedInterval> .
+<https://w3id.org/paleont/endYear> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<https://w3id.org/paleont/endYear> <http://www.w3.org/2000/01/rdf-schema#label> "end year"@en .
+# 
+# https://w3id.org/paleont/hasEffect
+<https://w3id.org/paleont/hasEffect> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/paleont/hasEffect> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/paleont/ErrorSource> .
+<https://w3id.org/paleont/hasEffect> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/paleont/hasEffect> <http://www.w3.org/2000/01/rdf-schema#label> "has effect"@en .
+# 
+# https://w3id.org/paleont/hedgeWording
+<https://w3id.org/paleont/hedgeWording> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/paleont/hedgeWording> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/paleont/Claim> .
+<https://w3id.org/paleont/hedgeWording> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/paleont/hedgeWording> <http://www.w3.org/2000/01/rdf-schema#comment> "The source's EXACT words — 'cannot be excluded',\n        'consistent with'. po:hedge gives the normalised level for querying;\n        this keeps the original phrasing, so that our normalisation never\n        silently replaces the author's own hedging."@en .
+<https://w3id.org/paleont/hedgeWording> <http://www.w3.org/2000/01/rdf-schema#label> "hedge wording"@en .
+# 
+# https://w3id.org/paleont/isNegated
+<https://w3id.org/paleont/isNegated> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/paleont/isNegated> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/paleont/isNegated> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/paleont/Claim> .
+<https://w3id.org/paleont/isNegated> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/paleont/isNegated> <http://www.w3.org/2000/01/rdf-schema#comment> "Decision D6. The claim asserts the NEGATIVE of its content:\n        not \"leprosy is proposed\" but \"leprosy is denied\", not \"treated with\n        mercury\" but \"not treated with mercury\".\n\n        WHY IT WAS NEEDED. Every property in this model was affirmative, so a\n        source could be recorded only when it asserted something. Schwarz et\n        al. say of the Refshale and Tirup individuals that they \"were not\n        exposed to high amounts of Hg during their life\" — a claim, with an\n        agent, a ground and a hedge, that the model simply could not hold.\n        That asymmetry was itself a position: it made denial invisible while\n        assertion was fully represented.\n\n        PRECEDENT. The course slides use exactly this device in the Ferguson\n        unit tests — \"who is refused to receive what?\" is answered with\n        ?e :isNegated \"true\", and the affirmative queries carry\n        FILTER NOT EXISTS { ?e :isNegated \"true\" }. Ours is typed boolean\n        rather than a string, but the pattern is theirs.\n\n        NOT THE SAME AS po:rejects. A RejectionClaim refuses SOMEONE ELSE'S\n        CLAIM — layer 3, a claim about a claim. po:isNegated is layer 1: the\n        claim's own content is asserted negatively. \"I reject your diagnosis\"\n        and \"I claim he was not treated\" are different acts.\n\n        NO TENSION WITH NCQ3. A negated claim is still a claim: it carries an\n        agent, a framework and a hedge. The model still cannot say that an\n        individual WAS healthy; it can say that someone denied a particular\n        condition for them. Denials are perspectival too — which is the thesis\n        applied symmetrically rather than an exception to it.\n\n        ABSENCE MEANS AFFIRMATIVE. Claims without this property are positive.\n        Consequence: every query that reports what a source asserts must carry\n        FILTER NOT EXISTS { ?claim po:isNegated true }, or it will report a\n        denial as an assertion. All affected queries were updated."@en .
+<https://w3id.org/paleont/isNegated> <http://www.w3.org/2000/01/rdf-schema#label> "is negated"@en .
+# 
+# https://w3id.org/paleont/maxAge
+<https://w3id.org/paleont/maxAge> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/paleont/maxAge> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/paleont/AgeClaim> .
+<https://w3id.org/paleont/maxAge> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<https://w3id.org/paleont/maxAge> <http://www.w3.org/2000/01/rdf-schema#label> "maximum age"@en .
+# 
+# https://w3id.org/paleont/minAge
+<https://w3id.org/paleont/minAge> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/paleont/minAge> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/paleont/AgeClaim> .
+<https://w3id.org/paleont/minAge> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<https://w3id.org/paleont/minAge> <http://www.w3.org/2000/01/rdf-schema#label> "minimum age"@en .
+# 
+# https://w3id.org/paleont/specimenID
+<https://w3id.org/paleont/specimenID> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/paleont/specimenID> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/paleont/Specimen> .
+<https://w3id.org/paleont/specimenID> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/paleont/specimenID> <http://www.w3.org/2000/01/rdf-schema#label> "specimen ID"@en .
+# 
+# https://w3id.org/paleont/startYear
+<https://w3id.org/paleont/startYear> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/paleont/startYear> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/paleont/CalibratedInterval> .
+<https://w3id.org/paleont/startYear> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<https://w3id.org/paleont/startYear> <http://www.w3.org/2000/01/rdf-schema#comment> "xsd:integer, NOT xsd:gYear. Two reasons. (1) xsd:gYear is\n        not part of the OWL 2 datatype map, so HermiT refuses to load an\n        ontology that uses it — the reasoner step fails before it starts.\n        (2) integers compare arithmetically, which CQ4b needs, and negative\n        values express BCE without special handling."@en .
+<https://w3id.org/paleont/startYear> <http://www.w3.org/2000/01/rdf-schema#label> "start year"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://xmlns.com/foaf/0.1/Agent
+# 
+# https://w3id.org/paleont/AgeClaim
+<https://w3id.org/paleont/AgeClaim> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/paleont/AgeClaim> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/paleont/Claim> .
+<https://w3id.org/paleont/AgeClaim> <http://www.w3.org/2000/01/rdf-schema#comment> "Proposes an age-at-death range. Age is a claim, not a\n        property of the specimen — deliberately the same shape as a\n        diagnosis."@en .
+<https://w3id.org/paleont/AgeClaim> <http://www.w3.org/2000/01/rdf-schema#label> "Age claim"@en .
+# 
+# https://w3id.org/paleont/Bone
+<https://w3id.org/paleont/Bone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/paleont/Bone> <http://www.w3.org/2000/01/rdf-schema#comment> "Skeletal element. Individuals carry skos:exactMatch links\n        to UBERON rather than using UBERON classes directly as values, which\n        avoids punning."@en .
+<https://w3id.org/paleont/Bone> <http://www.w3.org/2000/01/rdf-schema#label> "Bone"@en .
+# 
+# https://w3id.org/paleont/CalibratedInterval
+<https://w3id.org/paleont/CalibratedInterval> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/paleont/CalibratedInterval> <http://www.w3.org/2000/01/rdf-schema#comment> "A dated range with numeric bounds. A class rather than a\n        literal because CQ4b must COMPUTE disagreement by comparing two\n        intervals, which a label cannot support."@en .
+<https://w3id.org/paleont/CalibratedInterval> <http://www.w3.org/2000/01/rdf-schema#label> "Calibrated interval"@en .
+# 
+# https://w3id.org/paleont/Claim
+<https://w3id.org/paleont/Claim> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/paleont/Claim> <http://www.w3.org/2000/01/rdf-schema#comment> "A proposition held by an agent, under a framework, with a\n        stated degree of confidence, grounded in one or more observations.\n        Nothing enters this graph as fact; everything enters as something\n        someone asserted."@en .
+<https://w3id.org/paleont/Claim> <http://www.w3.org/2000/01/rdf-schema#label> "Claim"@en .
+# 
+# https://w3id.org/paleont/Condition
+<https://w3id.org/paleont/Condition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/paleont/Condition> <http://www.w3.org/2000/01/rdf-schema#comment> "A disease or pathological condition. Individuals carry\n        skos:exactMatch links to MONDO. NOTE: there is no path from\n        po:Specimen to this class."@en .
+<https://w3id.org/paleont/Condition> <http://www.w3.org/2000/01/rdf-schema#label> "Condition"@en .
+# 
+# https://w3id.org/paleont/ConfidenceLevel
+<https://w3id.org/paleont/ConfidenceLevel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/paleont/ConfidenceLevel> <http://www.w3.org/2000/01/rdf-schema#comment> "The hedge attached to a claim, as an individual rather\n        than a string or a number. A number would invent precision the source\n        never produced; a string cannot be counted, grouped or ordered."@en .
+<https://w3id.org/paleont/ConfidenceLevel> <http://www.w3.org/2000/01/rdf-schema#label> "Confidence level"@en .
+# 
+# https://w3id.org/paleont/Correction
+<https://w3id.org/paleont/Correction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/paleont/Correction> <http://www.w3.org/2000/01/rdf-schema#comment> "An adjustment applied to one particular dating. A property\n        of THIS dating: it holds here. Recording it is what turns an apparent\n        contradiction between two dates into two declared treatments of one\n        measurement — and prevents CQ4b from reporting false positives."@en .
+<https://w3id.org/paleont/Correction> <http://www.w3.org/2000/01/rdf-schema#label> "Correction"@en .
+# 
+# https://w3id.org/paleont/DatingClaim
+<https://w3id.org/paleont/DatingClaim> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/paleont/DatingClaim> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/paleont/Claim> .
+<https://w3id.org/paleont/DatingClaim> <http://www.w3.org/2000/01/rdf-schema#comment> "Proposes a calibrated interval for a specimen."@en .
+<https://w3id.org/paleont/DatingClaim> <http://www.w3.org/2000/01/rdf-schema#label> "Dating claim"@en .
+# 
+# https://w3id.org/paleont/DiagnosticClaim
+<https://w3id.org/paleont/DiagnosticClaim> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/paleont/DiagnosticClaim> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/paleont/Claim> .
+<https://w3id.org/paleont/DiagnosticClaim> <http://www.w3.org/2000/01/rdf-schema#comment> "Proposes a condition for a specimen."@en .
+<https://w3id.org/paleont/DiagnosticClaim> <http://www.w3.org/2000/01/rdf-schema#label> "Diagnostic claim"@en .
+# 
+# https://w3id.org/paleont/DiagnosticFramework
+<https://w3id.org/paleont/DiagnosticFramework> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/paleont/DiagnosticFramework> <http://www.w3.org/2000/01/rdf-schema#comment> "The standpoint from which a claim is made — modern\n        biomedical, medieval humoral. Two individuals carry the entire\n        perspectival argument: the same specimen seen through two\n        incommensurable lenses."@en .
+<https://w3id.org/paleont/DiagnosticFramework> <http://www.w3.org/2000/01/rdf-schema#label> "Diagnostic framework"@en .
+# 
+# https://w3id.org/paleont/DiscriminatingPower
+<https://w3id.org/paleont/DiscriminatingPower> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/paleont/DiscriminatingPower> <http://www.w3.org/2000/01/rdf-schema#comment> "How far a technique is said to separate competing\n        hypotheses. A small controlled list, so that 'which techniques\n        cannot discriminate' is a value filter rather than a second\n        question."@en .
+<https://w3id.org/paleont/DiscriminatingPower> <http://www.w3.org/2000/01/rdf-schema#label> "Discriminating power"@en .
+# 
+# https://w3id.org/paleont/ErrorSource
+<https://w3id.org/paleont/ErrorSource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/paleont/ErrorSource> <http://www.w3.org/2000/01/rdf-schema#comment> "A known limitation of a technique — e.g. the marine\n        reservoir effect. A property of the TECHNIQUE: it holds always.\n        Contrast po:Correction."@en .
+<https://w3id.org/paleont/ErrorSource> <http://www.w3.org/2000/01/rdf-schema#label> "Error source"@en .
+# 
+# https://w3id.org/paleont/LesionType
+<https://w3id.org/paleont/LesionType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/paleont/LesionType> <http://www.w3.org/2000/01/rdf-schema#comment> "The type of a skeletal lesion, shared across specimens.\n        The concrete occurrence is the po:Observation. This split is what\n        makes CQ10 (recurrence across specimens) answerable."@en .
+<https://w3id.org/paleont/LesionType> <http://www.w3.org/2000/01/rdf-schema#label> "Lesion type"@en .
+# 
+# https://w3id.org/paleont/MethodologicalClaim
+<https://w3id.org/paleont/MethodologicalClaim> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/paleont/MethodologicalClaim> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/paleont/Claim> .
+<https://w3id.org/paleont/MethodologicalClaim> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid1 .
+_:genid1 <http://www.w3.org/2002/07/owl#maxCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid1 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/paleont/aboutSpecimen> .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/paleont/MethodologicalClaim> <http://www.w3.org/2000/01/rdf-schema#comment> "A claim about what a technique can or cannot establish.\n        The meta level. Note that it has NO po:aboutSpecimen: its subject\n        matter is a technique, not a skeleton. That absence is how the model\n        distinguishes 'this individual had leprosy' from 'this method cannot\n        tell leprosy from syphilis'."@en .
+<https://w3id.org/paleont/MethodologicalClaim> <http://www.w3.org/2000/01/rdf-schema#label> "Methodological claim"@en .
+# 
+# https://w3id.org/paleont/Observation
+<https://w3id.org/paleont/Observation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/paleont/Observation> <http://www.w3.org/2000/01/rdf-schema#comment> "One act of examining a specimen with a technique, yielding\n        one datum. Carries what was seen, on which bone, by which technique.\n        This is the concrete occurrence: the lesion TYPE is shared across\n        specimens, the observation is not."@en .
+<https://w3id.org/paleont/Observation> <http://www.w3.org/2000/01/rdf-schema#label> "Observation"@en .
+# 
+# https://w3id.org/paleont/RejectionClaim
+<https://w3id.org/paleont/RejectionClaim> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/paleont/RejectionClaim> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/paleont/Claim> .
+<https://w3id.org/paleont/RejectionClaim> <http://www.w3.org/2000/01/rdf-schema#comment> "Rejects another claim. Note the range of po:rejects: a\n        rejection is an act against an ASSERTION, never a verdict on the\n        truth of a disease. Acquittal is not innocence."@en .
+<https://w3id.org/paleont/RejectionClaim> <http://www.w3.org/2000/01/rdf-schema#label> "Rejection claim"@en .
+# 
+# https://w3id.org/paleont/Source
+<https://w3id.org/paleont/Source> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/paleont/Source> <http://www.w3.org/2000/01/rdf-schema#comment> "A publication in which claims are declared."@en .
+<https://w3id.org/paleont/Source> <http://www.w3.org/2000/01/rdf-schema#label> "Source"@en .
+# 
+# https://w3id.org/paleont/Specimen
+<https://w3id.org/paleont/Specimen> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/paleont/Specimen> <http://www.w3.org/2000/01/rdf-schema#comment> "A set of skeletal remains attributed to one individual.\n        The anchor of the graph. Deliberately poor in properties: almost\n        nothing is said ABOUT a specimen, because almost everything one might\n        want to say is in fact a claim someone made."@en .
+<https://w3id.org/paleont/Specimen> <http://www.w3.org/2000/01/rdf-schema#label> "Specimen"@en .
+# 
+# https://w3id.org/paleont/Technique
+<https://w3id.org/paleont/Technique> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/paleont/Technique> <http://www.w3.org/2000/01/rdf-schema#comment> "Any means by which an observation is produced: naked-eye\n        examination, radiography, radiocarbon dating, atomic absorption\n        spectrometry. ONE class, no hierarchy. Ranking techniques by\n        reliability is what the sources ARGUE about, so it must live in\n        po:MethodologicalClaim, never in the schema."@en .
+<https://w3id.org/paleont/Technique> <http://www.w3.org/2000/01/rdf-schema#label> "Technique"@en .
+# 
+# https://w3id.org/paleont/Treatment
+<https://w3id.org/paleont/Treatment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/paleont/Treatment> <http://www.w3.org/2000/01/rdf-schema#comment> "A therapeutic intervention received in life."@en .
+<https://w3id.org/paleont/Treatment> <http://www.w3.org/2000/01/rdf-schema#label> "Treatment"@en .
+# 
+# https://w3id.org/paleont/TreatmentClaim
+<https://w3id.org/paleont/TreatmentClaim> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/paleont/TreatmentClaim> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/paleont/Claim> .
+<https://w3id.org/paleont/TreatmentClaim> <http://www.w3.org/2000/01/rdf-schema#comment> "Proposes a treatment received in life. Typically made\n        under a historical framework, and typically grounded in a chemical\n        observation such as mercury."@en .
+<https://w3id.org/paleont/TreatmentClaim> <http://www.w3.org/2000/01/rdf-schema#label> "Treatment claim"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/paleont/Certain
+<https://w3id.org/paleont/Certain> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/paleont/Certain> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/paleont/ConfidenceLevel> .
+<https://w3id.org/paleont/Certain> <http://www.w3.org/2000/01/rdf-schema#label> "certain"@en .
+# 
+# https://w3id.org/paleont/Discriminating
+<https://w3id.org/paleont/Discriminating> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/paleont/Discriminating> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/paleont/DiscriminatingPower> .
+<https://w3id.org/paleont/Discriminating> <http://www.w3.org/2000/01/rdf-schema#label> "discriminating"@en .
+# 
+# https://w3id.org/paleont/Inconclusive
+<https://w3id.org/paleont/Inconclusive> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/paleont/Inconclusive> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/paleont/DiscriminatingPower> .
+<https://w3id.org/paleont/Inconclusive> <http://www.w3.org/2000/01/rdf-schema#label> "inconclusive"@en .
+# 
+# https://w3id.org/paleont/MedievalHumoral
+<https://w3id.org/paleont/MedievalHumoral> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/paleont/MedievalHumoral> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/paleont/DiagnosticFramework> .
+<https://w3id.org/paleont/MedievalHumoral> <http://www.w3.org/2000/01/rdf-schema#label> "medieval humoral framework"@en .
+# 
+# https://w3id.org/paleont/ModernBiomedical
+<https://w3id.org/paleont/ModernBiomedical> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/paleont/ModernBiomedical> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/paleont/DiagnosticFramework> .
+<https://w3id.org/paleont/ModernBiomedical> <http://www.w3.org/2000/01/rdf-schema#label> "modern biomedical framework"@en .
+# 
+# https://w3id.org/paleont/Possible
+<https://w3id.org/paleont/Possible> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/paleont/Possible> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/paleont/ConfidenceLevel> .
+<https://w3id.org/paleont/Possible> <https://w3id.org/paleont/weakerThan> <https://w3id.org/paleont/Probable> .
+<https://w3id.org/paleont/Probable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/paleont/Possible> <http://www.w3.org/2000/01/rdf-schema#label> "possible"@en .
+# 
+# https://w3id.org/paleont/Probable
+<https://w3id.org/paleont/Probable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/paleont/ConfidenceLevel> .
+<https://w3id.org/paleont/Probable> <https://w3id.org/paleont/weakerThan> <https://w3id.org/paleont/Certain> .
+<https://w3id.org/paleont/Probable> <http://www.w3.org/2000/01/rdf-schema#label> "probable"@en .
+# 
+# https://w3id.org/paleont/Suggestive
+<https://w3id.org/paleont/Suggestive> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/paleont/Suggestive> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/paleont/DiscriminatingPower> .
+<https://w3id.org/paleont/Suggestive> <http://www.w3.org/2000/01/rdf-schema#label> "suggestive"@en .
+# 
+# https://w3id.org/paleont/Tentative
+<https://w3id.org/paleont/Tentative> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/paleont/Tentative> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/paleont/ConfidenceLevel> .
+<https://w3id.org/paleont/Tentative> <https://w3id.org/paleont/weakerThan> <https://w3id.org/paleont/Possible> .
+<https://w3id.org/paleont/Tentative> <http://www.w3.org/2000/01/rdf-schema#label> "tentative"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    General axioms
+# #
+# #################################################################
+# 
+# 
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointClasses> .
+_:genid2 <http://www.w3.org/2002/07/owl#members> _:genid8 .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid7 .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid6 .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid5 .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid4 .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid3 .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/paleont/TreatmentClaim> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/paleont/RejectionClaim> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/paleont/MethodologicalClaim> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/paleont/DiagnosticClaim> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/paleont/DatingClaim> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/paleont/AgeClaim> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+# 
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointClasses> .
+_:genid9 <http://www.w3.org/2002/07/owl#members> _:genid24 .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid23 .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid22 .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid21 .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid20 .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid19 .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid18 .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid17 .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid16 .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid15 .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid14 .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid13 .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid12 .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid11 .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid10 .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/paleont/Treatment> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/paleont/Technique> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/paleont/Specimen> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/paleont/Source> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/paleont/Observation> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/paleont/LesionType> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/paleont/ErrorSource> .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/paleont/DiscriminatingPower> .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/paleont/DiagnosticFramework> .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/paleont/Correction> .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/paleont/ConfidenceLevel> .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/paleont/Condition> .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/paleont/Claim> .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/paleont/CalibratedInterval> .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/paleont/Bone> .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+# 
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDifferent> .
+_:genid25 <http://www.w3.org/2002/07/owl#distinctMembers> _:genid29 .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid28 .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid27 .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid26 .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/paleont/Tentative> .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/paleont/Probable> .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/paleont/Possible> .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/paleont/Certain> .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+# 
+_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDifferent> .
+_:genid30 <http://www.w3.org/2002/07/owl#distinctMembers> _:genid33 .
+_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid32 .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid31 .
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/paleont/Suggestive> .
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/paleont/Inconclusive> .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/paleont/Discriminating> .
+_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+# 
+_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDifferent> .
+_:genid34 <http://www.w3.org/2002/07/owl#distinctMembers> _:genid36 .
+_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid35 .
+_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/paleont/ModernBiomedical> .
+_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/paleont/MedievalHumoral> .
+_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
