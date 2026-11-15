@@ -4,7 +4,7 @@
     python3 tools/csv_to_ttl.py
 
 Reads  : data/csv/*.csv
-Writes : data/abox_generated.ttl
+Writes : data/abox.ttl
 
 This is the Python reference implementation of what the RML mapping must do.
 Keep it: when the RML mapping is written, its output must match this file, so
@@ -35,10 +35,6 @@ Proposesby_type = {
 def iri(token):
     token = token.strip()
     if not token: return None
-
-    # "ex:" resta accettato in ingresso: i CSV esistenti lo usano ancora e
-    # punta allo stesso namespace. In uscita si serializza sempre "pd:".
-    
     if token.startswith("pd:"):   return PD[token[3:]]
     if token.startswith("ex:"):   return PD[token[3:]]
     if token.startswith("po:"):   return PO[token[3:]]
@@ -125,7 +121,7 @@ def main():
         add(g, s, PO.declaredIn, iri(r["source"]))
         add(g, s, RDFS.label, Literal(r["label"], lang="en") if r["label"] else None)
 
-    out = os.path.join(BASE, "data", "abox_generated.ttl")
+    out = os.path.join(BASE, "data", "abox.ttl")
     header = ("# PaleONT, A-Box, GENERATED from data/csv/*.csv\n"
               "# Do not edit. Change the CSV and regenerate.\n"
               "#   python3 tools/csv_to_ttl.py\n\n")

@@ -13,8 +13,8 @@ from owlready2 import sync_reasoner_hermit, OwlReadyInconsistentOntologyError
 
 Base = os.path.dirname(os.path.abspath(__file__))
 g = Graph()
-g.parse(f"{Base}/ontology/paleont.ttl", format="turtle")
-for d in ("vocabulary","abox_generated"):
+g.parse(f"{Base}/data/paleont.ttl", format="turtle")
+for d in ("vocabulary","abox"):
     g.parse(f"{Base}/data/{d}.ttl", format="turtle")
 Base_ttl = g.serialize(format="turtle")
 

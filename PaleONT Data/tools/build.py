@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Rebuild everything from source.  python3 tools/build.py
 
-    data/csv/*.csv  →  data/abox_generated.ttl  →  ontology/paleont_merged.{ttl,owl}
+    data/csv/*.csv  →  data/abox.ttl  →  ontology/paleont_merged.{ttl,owl}
 """
 import os, subprocess, sys
 from rdflib import Graph
@@ -13,9 +13,9 @@ subprocess.run([sys.executable, os.path.join(base, "tools", "csv_to_ttl.py")], c
 # We join everything in a graph, we create an empty graph and load the T-Box
 
 g = Graph()
-g.parse(os.path.join(base, "ontology", "paleont.ttl"), format="turtle")
+g.parse(os.path.join(base, "data", "paleont.ttl"), format="turtle")
 
-for f in ("vocabulary", "abox_generated"):
+for f in ("vocabulary", "abox"):
     g.parse(os.path.join(base, "data", f + ".ttl"), format="turtle")
 
 # We save the output
